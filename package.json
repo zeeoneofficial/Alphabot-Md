@@ -1,0 +1,32 @@
+{
+  "name": "alphabot-md",
+  "version": "1.0.0",
+  "description": "Simple whatsapp bot with multi device.",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "rashidsiregar28",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "awesome-phonenumber": "^2.64.0",
+    "axios": "^0.24.0",
+    "chalk": "^4.1.2",
+    "fetch": "^1.1.0",
+    "figlet": "^1.5.2",
+    "file-type": "^16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
+    "moment-timezone": "^0.5.34",
+    "node-fetch": "^2.6.4",
+    "pino": "^7.2.0",
+    "util": "^0.12.4",
+    "xfarr-api": "^1.0.0"
+  }
+}
