@@ -80,7 +80,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
     return `
 *Selamat ${salam} ${pushname} 😖*
 *⌚Time Server : ${time}*
-*📚 List-Menu Chika Beta :*
+*📚 List-Menu Alphabot Beta :*
 
 🤖 *INFO*
 ├ ${prefix}owner
