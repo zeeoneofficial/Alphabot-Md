@@ -172,6 +172,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ Rashid
 ├ Xfarr api
 ├ Fatih A.
+├ ZeeoneOfc
 ├ Baileys#multi-device
 ├ And all support
 └──────
