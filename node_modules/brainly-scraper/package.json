@@ -1,0 +1,37 @@
+{
+  "name": "brainly-scraper",
+  "version": "1.0.3",
+  "description": "Brainly scrape for gethering information",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defrindr/brainly-scraper.git"
+  },
+  "keywords": [
+    "brainly",
+    "scrape",
+    "gath",
+    "information",
+    "scraping",
+    "crawl"
+  ],
+  "author": "Defri Indra Mahardika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/defrindr/brainly-scraper/issues"
+  },
+  "homepage": "https://github.com/defrindr/brainly-scraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
+  }
+}

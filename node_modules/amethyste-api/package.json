@@ -1,0 +1,30 @@
+{
+  "name": "amethyste-api",
+  "version": "1.1.4",
+  "description": "Module non-officiel de l'api Améthyste",
+  "main": "index.js",
+  "keywords": [
+    "amethyste",
+    "api",
+    "module",
+    "node.js",
+    "npm",
+    "discord.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeatReed/amethyste-api.git"
+  },
+  "author": "MeatReed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeatReed/amethyste-api/issues"
+  },
+  "homepage": "https://github.com/MeatReed/amethyste-api#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

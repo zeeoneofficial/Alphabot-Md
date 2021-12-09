@@ -1,0 +1,36 @@
+{
+  "name": "twitter-url-direct",
+  "version": "1.0.1",
+  "description": "Get Twitter direct url from Tweet media link",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorsouzaleal/twitter-direct-url.git"
+  },
+  "keywords": [
+    "twitter",
+    "downloader",
+    "media",
+    "link",
+    "photo",
+    "picture",
+    "video",
+    "url",
+    "image",
+    "download"
+  ],
+  "author": "victorsouzaleal <victorsouzaleal@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorsouzaleal/twitter-direct-url/issues"
+  },
+  "homepage": "https://github.com/victorsouzaleal/twitter-direct-url#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "qs": "^6.9.6"
+  }
+}
