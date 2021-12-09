@@ -7,7 +7,7 @@
 <a href="#"><img title="ALPHABOT MULTI DEVICE" src="https://img.shields.io/badge/ALPHABOT MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/DikaArdnt"><img title="Author" src="https://img.shields.io/badge/Author-Dika-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/rashidsiregar28/chikabot"><img title="Author" src="https://img.shields.io/badge/Author-rashidsiregar28-red.svg?style=for-the-badge&logo=github"></a>
 <a href="https://github.com/zeeoneofc/Alphabot-Md"><img title="Recode" src="https://img.shields.io/badge/Recode-ZeeoneOfc-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
@@ -34,7 +34,7 @@
 ---
 
 ## Information
-> Alpahbot-Md adalah bot yang awalnya memakai base dari [Chikabot](https://github.com/rashidsiregar28/chikabot/blob/main/README.md), sekarang pindah base [Hisoka-Morou](https://github.com/DikaArdnt/Hisoka-Morou). Alphabot-Md is a bot whatsapp using a Baileys library.
+> Alpahbot-Md adalah bot yang memakai base dari [Chikabot](https://github.com/rashidsiregar28/chikabot/blob/main/README.md) . Alphabot-Md is a bot whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 
 ## Bugs and Tester
@@ -47,7 +47,7 @@
 * [FFmpeg](https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2020-12-08-13-03/ffmpeg-n4.3.1-26-gca55240b8c-win64-gpl-4.3.zip) (for sticker command)
 
 # Instalasi
-## For Windows/RDP
+## For Windows
 ```bash
 git clone https://github.com/zeeoneofc/Alphabot-Md.git
 cd Alphabot-Md
@@ -65,11 +65,21 @@ npm install
 node main
 ```
 
+## For VPS
+```bash
+apt install nodejs git ffmpeg
+git clone https://github.com/zeeoneofc/Alphabot-Md.git
+cd Alphabot-Md
+npm install
+node main
+```
+
 ## Edit file
-- Change ownerNumber on [this section](https://github.com/zeeoneofc/aAlphabot-Md/blob/7a7ebe69cf44686d8a577f616b38b5d299ffefcc/config.json#L2)
-- Change botName on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/7a7ebe69cf44686d8a577f616b38b5d299ffefcc/config.json#L3)
-- You can edit list and display menu or donate on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/main/help/ind.js)
-- You can add fiture on [this section](https://github.com/zeeoneofc/Alphabot-Md/tree/main/message)
+- Change session on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/v2/session.json#L1)
+- Change ownerNumber on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/v2/setting.json#L7)
+- Change botName on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/v2/setting.json#L2)
+- You can edit list and display menu or donate on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/v2/language/indonesia.js#L83)
+- You can add fiture on [this section](https://github.com/zeeoneofc/Alphabot-Md/blob/v2/index.js)
 
 
 ## Installing the FFmpeg for Windows
@@ -100,17 +110,10 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
 
 
 # Thanks to
-<a href="https://github.com/DikaArdnt"><img src="https://github.com/DikaArdnt.png?size=100" width="100" height="100"></a> | [![NURUTOMO](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) 
----|---
-[Dika](https://github.com/DikaArdnt)  | [Nurutomo](https://github.com/Nurutomo)
-Owner Hisoka-Morou | Constributor |
-<a href="https://github.com/MhankBarBar"><img src="https://github.com/MhankBarBar.png?size=100" width="100" height="100"></a> | [![FATIH](https://github.com/fatiharridho.png?size=100)](https://github.com/fatiharridho) 
-[Mhankbarbar](https://github.com/MhankBarBar)  | [Fatih A.](https://github.com/fatiharridho)
-Constributor | For Help |
-<a href="https://github.com/FERDIZ-afk"><img src="https://github.com/FERDIZ-afk.png?size=100" width="100" height="100"></a> | [![RASHID](http://github.com/rashidsiregar28.png?size=100)](http://github.com/rashidsiregar28) 
-[Ferdiz](https://github.com/FERDIZ-afk)  | [Rashid](https://github.com/rashidsiregar28)
-For Help | Owner Chikabot |
 <a href="https://github.com/adiwajshing"><img src="https://github.com/adiwajshing.png?size=100" width="100" height="100"></a> | [![FAJAR](http://github.com/xfar05.png?size=100)](http://github.com/xfar05) 
+---|---
 [Adiwajshing](https://github.com/adiwajshing) | [Fabil](https://github.com/xfar05)
-Owner of Baileys | Owner of X-Far api |
-
+ Owner of Baileys | Owner of X-Far api |
+<a href="https://github.com/fatiharridho"><img src="https://github.com/fatiharridho.png?size=100" width="100" height="100"></a> | [![RASHID](http://github.com/rashidsiregar28.png?size=100)](http://github.com/rashidsiregar28) 
+[Fatih](https://github.com/fatiharridho)  | [Rashid](https://github.com/rashidsiregar28)
+For Help | Owner Chikabot |
