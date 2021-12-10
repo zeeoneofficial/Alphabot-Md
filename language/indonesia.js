@@ -250,6 +250,10 @@ return`*── 「 SOURCE 」 ──*
 
 Base : https://github.com/DikaArdnt/Hisoka-Morou
 Recode : https://github.com/zeeoneofc/Alphabot-Md
+
+Untuk tutorial penginstalan kalian bisa tonton
+video terbaru di playlist ini.
+https://youtube.com/playlist?list=PLFCglBzFPHG7vSQaa9S3P8yfla_d9w-2-
 `
 }
 exports.tos = (ownernomer) => {
