@@ -1,0 +1,38 @@
+{
+  "name": "scraper-instagram",
+  "version": "1.0.17",
+  "description": "Instagram scraper without authenticated API",
+  "keywords": [
+    "insta",
+    "instagram",
+    "ig",
+    "scraper",
+    "ig-scraper",
+    "instagram-scraper",
+    "api",
+    "scraper"
+  ],
+  "homepage": "https://git.kaki87.net/KaKi87/ig-scraper",
+  "license": "GPL-2.0-only",
+  "author": {
+    "name": "KaKi87",
+    "email": "tiana.lemesle@live.fr",
+    "url": "kaki87.net"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.kaki87.net/KaKi87/ig-scraper.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^8.2.1"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha index.spec.js"
+  }
+}
