@@ -59,7 +59,7 @@
 git clone https://github.com/zeeoneofc/Alphabot-Md.git
 cd Alphabot-Md
 npm install
-node main
+node zeeone.js
 ```
 ## For Termux
 ```bash
@@ -69,7 +69,7 @@ pkg install nodejs git ffmpeg
 git clone https://github.com/zeeoneofc/Alphabot-Md.git
 cd Alphabot-Md
 npm install
-node main
+node zeeone.js
 ```
 
 ## Edit file
