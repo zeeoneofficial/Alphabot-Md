@@ -35,7 +35,7 @@ const ameClient = require("amethyste-api")
 const ameApi = new ameClient("1f486b04b157f12adf0b1fe0bd83c92a28ce768683871d2a390e25614150d0c8fa404fd01b82a5ebf5b82cbfa22e365e611c8501225a93d5d1e87f9f420eb91b")
 const hx = require('hxz-api');
 const yts = require('yt-search');
-const igs = require('insta-fetcher')
+//const igs = require('insta-fetcher')
 const { performance } = require('perf_hooks')
 
 const { yta, ytv, ytvhd, ytvfhd, servers } = require('./lib/y2mate')
