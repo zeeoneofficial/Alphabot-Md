@@ -329,7 +329,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             reply(lang.source())
             break
             case 'donasi': case 'donate':
-            reply(lang.tos(ownernomer))
+            //reply(lang.tos(ownernomer))
             var but = [
           {
             "urlButton": {
