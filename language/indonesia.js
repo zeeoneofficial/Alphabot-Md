@@ -448,7 +448,9 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 ╭─❒ 「 Others 」
 ├ ${prefix}kalkulator
-╰❒
+├ ${prefix}ttp [text]
+╰❒ ${prefix}attp [text]
+
 ╭─❒ 「 TqTo 」 
 ├ My God
 ├ My Parents
@@ -903,6 +905,8 @@ exports.textpro = (prefix) =>{
 exports.other = (prefix) =>{
 return`*Others*
 • ${prefix}kalkulator
+• ${prefix}ttp [text]
+• ${prefix}attp [text]
 `
 }
 
