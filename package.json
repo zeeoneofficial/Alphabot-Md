@@ -1,0 +1,68 @@
+{
+  "name": "AlphabotMD",
+  "version": "0.0.4",
+  "description": "Alpha Bot Multi Device, Only update in YouTube ZEEONE OFC",
+  "main": "zeeone.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node zeeone.js",
+    "postinstall": "npm i typescript -g && tsc -p ./node_modules/@adiwajshing/baileys-md/"
+  },
+  "keywords": [
+    "termux",
+    "whatsapp",
+    "2021",
+    "wabase-md",
+    "base",
+    "baileys-md",
+    "bot"
+  ],
+  "author": "ZeeoneOfc",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "awesome-phonenumber": "^2.64.0",
+    "amethyste-api":"^1.1.5",
+    "api-alphabot":"^1.0.1",
+    "axios": "^0.24.0",
+    "cfonts": "^2.10.0",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.10",
+    "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
+    "fetch": "^1.1.0",
+    "figlet": "^1.5.2",
+    "file-type": "^16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
+    "got": "^11.8.3",
+    "g-i-s": "^2.1.6",
+    "hxz-api": "^1.0.1",
+    "jimp": "^0.16.1",
+    "jsdom": "^18.1.1",
+    "human-readable": "^0.2.1",
+    "moment-timezone": "^0.5.34",
+    "node-fetch": "^2.6.4",
+    "node-webpmux": "^3.1.0",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "perf_hooks": "0.0.1",
+    "pino": "^7.2.0",
+    "request": "^2.88.2",
+    "util": "^0.12.4",
+    "xfarr-api": "^1.0.2",
+    "yargs": "^17.2.1",
+    "yt-search": "^2.7.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeeoneofc/"
+  },
+  "bugs": {
+    "url": "https://github.com/zeeoneofc/"
+  },
+  "homepage": "https://github.com/zeeoneofc/"
+}
