@@ -8,8 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "node zeeone.js",
-    "postinstall": "npm i typescript -g && tsc -p ./node_modules/@adiwajshing/baileys-md/"
+    "start": "node zeeone.js"
   },
   "keywords": [
     "termux",
