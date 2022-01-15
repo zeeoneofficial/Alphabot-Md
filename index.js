@@ -100,8 +100,8 @@ module.exports = alpha = async (alpha, m, chatUpdate) => {
         const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
 		const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
         const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
-        const groupOwner = m.isGroup ? groupMetadata.owner : ''
-        const isGroupOwner = m.isGroup ? groupOwner.includes(m.sender) : false
+        //const groupOwner = m.isGroup ? groupMetadata.owner : ''
+        //const isGroupOwner = m.isGroup ? groupOwner.includes(m.sender) : false
         const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
 
 		const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: fs.readFileSync(setting.thumbnail), surface: 200, message: `© ${ownername}`, orderTitle: 'FATIHmek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
@@ -144,7 +144,7 @@ module.exports = alpha = async (alpha, m, chatUpdate) => {
         })
         
         
-        if (m.isGroup && !m.key.fromMe && database.allow.antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
+        if (m.isGroup && !m.key.fromMe && database.allow.antilink && !isCreator && !isGroupAdmins){
         	if (budy.match(`https://chat.whatsapp.com`)) {
         	alpha.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}`}, {quoted:m})
 			alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
