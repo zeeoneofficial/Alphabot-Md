@@ -39,7 +39,7 @@ const hx = require('hxz-api');
 const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 const { performance } = require('perf_hooks')
-const zee = require('api-alphabot')
+const zee = require('xfarr-api')
 
 const { yta, ytv, ytvd, ytvf, servers } = require('./lib/y2mate')
 const { pinterest, wallpaper, wikimedia, hentai, quotesAnime} = require('./lib/scraper')
