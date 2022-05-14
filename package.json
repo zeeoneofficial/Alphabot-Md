@@ -22,7 +22,7 @@
   "author": "ZeeoneOfc",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "@adiwajshing/baileys": "^4.1.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^2.64.0",
     "@vitalets/google-translate-api": "^7.0.0",
