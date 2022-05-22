@@ -55,9 +55,10 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ```
 ## For Termux
 ```ts
-termux-setup-storage
 apt update && apt upgrade
-pkg install bash
+pkg install bash git
+git clone https://github.com/zeeone-ofc/Alphabot-Md
+cd Alphabot-Md
 bash install.sh
 ```
 
