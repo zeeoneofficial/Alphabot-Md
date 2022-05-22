@@ -57,16 +57,8 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ```ts
 termux-setup-storage
 apt update && apt upgrade
-pkg install nodejs git ffmpeg libwebp imagemagick
-git clone https://github.com/zeeone-ofc/Alphabot-Md.git
-cd Alphabot-Md
-pkg install yarn
-yarn install
-npm i -g typescript
-tsc -p ./node_modules/@adiwajshing/baileys-md/
-rm -rf session.json
-rm -rf store.json
-npm start
+pkg install bash
+bash install.sh
 ```
 
 ## Edit file
