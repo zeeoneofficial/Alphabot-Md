@@ -58,7 +58,7 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ## HOW TO CONNECT TO MONGODB
 
 - Salin Url database mongoDB
-- Constoh `worker: node . --db 'Link Database MongoDb'`
+- Contoh `worker: node . --db 'Link Database MongoDb'`
 - Contoh `worker: node . --db 'mongodb+srv://mongodb-bot:abcdefghij@zeeoneofc.aWpl9.mongodb.net/?retryWrites=true&w=majority'`
 
 ## For Termux
