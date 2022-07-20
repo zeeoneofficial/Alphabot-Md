@@ -57,7 +57,7 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 
 ## HOW TO CONNECT TO MONGODB
 
-- Salin Url database mongoDB
+- Salin Url database mongoDB Kemudian edit file `Procfile`
 - Contoh `worker: node . --db 'Link Database MongoDb'`
 - Contoh `worker: node . --db 'mongodb+srv://mongodb-bot:abcdefghij@zeeoneofc.aWpl9.mongodb.net/?retryWrites=true&w=majority'`
 
@@ -73,28 +73,35 @@ bash install.sh
 ## Edit file
 `./settings.js`
 ```ts
+// setting 
 global.autoread = false // auto read pesan / message
-global.autorecording = true //status auto merekam ( auto record )
-global.autoketik = false //status auto mengetik (auto typing)
-global.available = false //status online (online)
+global.autobio = true 
 
 // Other
-global.botname = "Alphabot-Mdོ"
-global.ownername= "ᴹᴿ᭄ ZeeoneOfcོ ×፝֟͜×"
-global.myweb ="https://api-alphabot.herokuapp.com/"
-global.youtube = "https://youtube.com/c/ZeeoneOfc"
-global.github = "https://zeeone-ofc.github.io/"
-global.email = "zeeoneofc@gmail.com"
-global.region = "Indonesia"
-global.ownernomer = "62887435047326"
-global.ownernomerr = "+62887435047326"
-global.thumbnail = "./image/lol.jpg"
-global.donasi = "./image/donasi.jpg"
+global.botname = "Alphabot-Mdོ" //namabot kalian
+global.ownername= "ᴹᴿ᭄ ZeeoneOfcོ ×፝֟͜×" //nama kalian
+global.myweb ="https://api.zeeoneofc.xyz" //bebas asal jan hapus
+global.youtube = "https://youtube.com/c/ZeeoneOfc" //bebas asal jan hapus
+global.github = "https://zeeone-ofc.github.io/" //bebas
+global.email = "zeeoneofc@gmail.com" //bebas
+global.region = "Indonesia" //bebas
+global.timezone = 'Asia/Jakarta' //  timezone wib
+global.premium = ['62887435047326'] //premium user
+global.owner = ["622150996855","6285342106390"] //ganti agar fitur owner bisa di gunakan
+global.ownernomer = "62887435047326" // nomor wa kalian
+global.ownernomerr = "+62887435047326" //nmr wa kalian
+global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
+global.donasi = "./image/donasi.jpg" // foto donasi di folder image
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
-global.owner = ["62887435047326","62887435047326","6285342106390"] //ganti agar fitur owner bisa di gunakan
-global.packname = '© Alphabot-Mdོ' //sticker wm
-global.author = 'Di Buat Oleh ZeeoneOfc' //sticker wm
+global.packname = '© Alphabot-Mdོ' //sticker wm ubah
+global.author = 'Di Buat Oleh ZeeoneOfc' //sticker wm ganti nama kalian
 global.sessionName = 'session'
+global.typemenu = 'document'
+
+global.limitawal = {
+    premium: "Infinity",
+    free: 100
+}
 ```
 
 ## ```HOW TO DEPLOY```
