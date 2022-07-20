@@ -53,6 +53,7 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ## How to Get Mongodb URI
 - Tonton [Di YouTube](https://youtu.be/M8H9S3djxTg)
 <img src="https://telegra.ph/file/682c1315ff9a43bb1a724.jpg" width="300">
+
 - Jika sudah memiliki database mongoDB ikuti tutorial di bawah
 
 ## HOW TO CONNECT TO MONGODB
