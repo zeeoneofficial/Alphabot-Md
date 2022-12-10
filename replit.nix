@@ -2,9 +2,9 @@
     deps = [
 
         pkgs.nodejs-16_x
-         pkgs.nodejs-16_x
+        pkgs.libwebp
         pkgs.python
-	    	pkgs.nodePackages.typescript
+	pkgs.nodePackages.typescript
         pkgs.libuuid
         pkgs.ffmpeg
         pkgs.imagemagick  
