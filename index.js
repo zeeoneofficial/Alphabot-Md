@@ -59,6 +59,8 @@ const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'));
 
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
 moment.tz.setDefault("Asia/Jakarta").locale("id");
