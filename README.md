@@ -33,7 +33,6 @@
 - [Install bot termux](#for-termux)
 - [Edit Owner](#edit-owner)
 - [Priview bot feature](#fitur-bot-preview)
-- [Deploy to heroku](#how-to-deploy)
 - [Donate](#donate)
 - [Alphabot group](#official-group)
 - [Thanks to](#thanks-to)
@@ -55,6 +54,14 @@ But some I haven't changed the language 🛐
 ## FOR REPLIT USER
 [![Run on Repl.it](https://repl.it/badge/github/zeeone-ofc/Alphabot-Md)](https://repl.it/github/zeeone-ofc/Alphabot-Md)
 
+[`Click Here For Tutorial`](https://youtu.be/jom_scHK09c)<br>
+
+----------
+
+<p align="center">
+  <a href="https://youtu.be/jom_scHK09c"><img src="https://telegra.ph/file/eb8dbe898ed8f9c32f013.jpg" />
+</p>
+
 ## FOR RAILWAY USER 
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fzeeone-ofc%2FAlphabot-Md)
@@ -68,10 +75,10 @@ But some I haven't changed the language 🛐
 </p>
 
 ## For Termux
-- [Download script MediaFire](https://telegra.ph/file/5f3dcbfb5a43066f25f6f.jpg)
+- [Download script MediaFire](https://youtu.be/TbORlUmQ0aQ)
 
 <p align="center">
-<a href="https://youtu.be/983P1OwOzaE"><img src="https://telegra.ph/file/5f3dcbfb5a43066f25f6f.jpg" />
+<a href="https://youtu.be/TbORlUmQ0aQ"><img src="https://telegra.ph/file/4c671336cf93284d1f848.jpg" />
 </p>
 
 ## Edit Owner 
