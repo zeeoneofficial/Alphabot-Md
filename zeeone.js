@@ -80,6 +80,7 @@ enter = '\n'
 lang = global.language
 const Jimp = require('jimp')
 const fs = require('fs')
+const { welcome } = require ('./lib/welcome')
 
 // save database every 30seconds
 if (global.db) setInterval(async () => {
