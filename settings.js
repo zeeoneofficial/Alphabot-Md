@@ -4,12 +4,12 @@ const  { indonesia, english, spanyol} = require(`./language`)
 
 // Website Api (jgn di ganti tomlol)
 global.APIs = {
-	alfa: 'https://api.zeeoneofc.xyz', //apabila link api eror, segera laporkan ke owner
+	alfa: 'https://api.zeeoneofc.my.id', //apabila link api eror, segera laporkan ke owner
 }
 
 // Free apikey (Apikey expired silahkan login terus ganti V12 dgn apikey lu)
 global.APIKeys = {
-	'https://api.zeeoneofc.xyz': 'V12',  // 👉 login https://api.zeeoneofc.xyz to get apikey
+	'https://api.zeeoneofc.my.id': 'V12',  // 👉 login https://api.zeeoneofc.xyz to get apikey
 }
 
 // setting 
