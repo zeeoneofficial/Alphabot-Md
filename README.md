@@ -68,7 +68,7 @@ But some I haven't changed the language 🛐
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fzeeone-ofc%2FAlphabot-Md)
 
-[`Click Here For Tutorial`](https://youtu.be/BqRauxohbLg)<br>
+- [`Click Here For Tutorial`](https://youtu.be/BqRauxohbLg)<br>
 
 <a href="https://youtu.be/BqRauxohbLg"><img src="https://telegra.ph/file/ba58c4ad1b43bc285f16b.jpg" />
 
@@ -76,13 +76,9 @@ But some I haven't changed the language 🛐
 
 ## For Termux
 
-- [Download script MediaFire](https://youtu.be/iGKJDJxYG98)
-
-<p align="center">
+- [`Download script MediaFire`](https://youtu.be/iGKJDJxYG98)
 
 <a href="https://youtu.be/iGKJDJxYG98"><img src="https://telegra.ph/file/7c40da18ca3d746d0c815.jpg" />
-
-</p>
 
 ----------
 
