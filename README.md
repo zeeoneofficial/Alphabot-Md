@@ -87,7 +87,7 @@ But some I haven't changed the language 🛐
 <details>
     <summary> <b>Edit Owner Settings.js</b></summary><br/>
 
-```ts
+``` ts
 
 // Website Api (jgn di ganti tomlol)
 global.APIs = {
