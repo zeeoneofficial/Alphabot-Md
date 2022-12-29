@@ -5,10 +5,11 @@
 -----------------------------------------------------
 
 <p align="center">
-<img src="https://github.com/zeeone-ofc/Alphabot-Md/blob/v7.1/image/lol_1.jpg" alt="ALPHA BOT" width="100"/>
 
+<img src="https://github.com/zeeone-ofc/Alphabot-Md/blob/v16.5/image/lol.jpg" alt="ALPHA BOT" width="100"/>
 
 </p>
+
 <p align="center">
 <a href="#"><img title="ALPHABOT MULTI DEVICE" src="https://img.shields.io/badge/ALPHABOT MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
@@ -26,11 +27,11 @@
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeone-ofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
 <a href="https://github.com/zeeone-ofc/Alphabot-Md/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
-</div>
 
 ---
 
 ## Contents:
+
 - [Information](#information)
 - [Language support](#support-language)
 - [Install bot](#instalasi)
@@ -39,7 +40,6 @@
 - [Install bot termux](#for-termux)
 - [Edit Owner](#edit-owner)
 - [Priview bot feature](#fitur-bot-preview)
-- [Deploy to heroku](#how-to-deploy)
 - [Donate](#donate)
 - [Alphabot group](#official-group)
 - [Thanks to](#thanks-to)
@@ -59,6 +59,7 @@ But some I haven't changed the language 🛐
 
 # Instalasi
 ## FOR REPLIT USER
+
 [![Run on Repl.it](https://repl.it/badge/github/zeeone-ofc/Alphabot-Md)](https://repl.it/github/zeeone-ofc/Alphabot-Md)
 
 ## FOR RAILWAY USER 
@@ -70,14 +71,20 @@ But some I haven't changed the language 🛐
 ----------
 
 <p align="center">
+
   <a href="https://youtu.be/BqRauxohbLg"><img src="https://telegra.ph/file/ba58c4ad1b43bc285f16b.jpg" />
+
 </p>
 
+
 ## For Termux
+
 - [Download script MediaFire](https://youtu.be/iGKJDJxYG98)
 
 <p align="center">
+
 <a href="https://youtu.be/iGKJDJxYG98"><img src="https://telegra.ph/file/7c40da18ca3d746d0c815.jpg" />
+
 </p>
 
 ## Edit Owner 
@@ -86,6 +93,7 @@ But some I haven't changed the language 🛐
     <summary> <b>Edit Owner Settings.js</b></summary><br/>
 
 ```ts
+
 // Website Api (jgn di ganti tomlol)
 global.APIs = {
 	alfa: 'https://api.zeeoneofc.xyz', //apabila link api eror, segera laporkan ke owner
