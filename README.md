@@ -6,7 +6,7 @@
 
 <p align="center">
 
-<img src="https://github.com/zeeone-ofc/Alphabot-Md/blob/v16.5/image/lol.jpg" alt="ALPHA BOT" width="100"/>
+<img src="https://github.com/zeeone-ofc.png" alt="ALPHA BOT" width="100"/>
 
 </p>
 
@@ -88,7 +88,6 @@ But some I haven't changed the language 🛐
     <summary> <b>Edit Owner Settings.js</b></summary><br/>
 
 ``` ts
-
 // Website Api (jgn di ganti tomlol)
 global.APIs = {
 	alfa: 'https://api.zeeoneofc.xyz', //apabila link api eror, segera laporkan ke owner
