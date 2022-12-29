@@ -62,13 +62,13 @@ But some I haven't changed the language 🛐
 
 [![Run on Repl.it](https://repl.it/badge/github/zeeone-ofc/Alphabot-Md)](https://repl.it/github/zeeone-ofc/Alphabot-Md)
 
+----------
+
 ## FOR RAILWAY USER 
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fzeeone-ofc%2FAlphabot-Md)
 
 [`Click Here For Tutorial`](https://youtu.be/BqRauxohbLg)<br>
-
-----------
 
 <p align="center">
 
@@ -76,6 +76,7 @@ But some I haven't changed the language 🛐
 
 </p>
 
+----------
 
 ## For Termux
 
@@ -86,6 +87,8 @@ But some I haven't changed the language 🛐
 <a href="https://youtu.be/iGKJDJxYG98"><img src="https://telegra.ph/file/7c40da18ca3d746d0c815.jpg" />
 
 </p>
+
+----------
 
 ## Edit Owner 
 
@@ -203,6 +206,8 @@ global.rpg = {
 ```
 
 </details>
+
+----------
 
 ## Fitur bot preview
 <details>
