@@ -70,11 +70,7 @@ But some I haven't changed the language 🛐
 
 [`Click Here For Tutorial`](https://youtu.be/BqRauxohbLg)<br>
 
-<p align="center">
-
-  <a href="https://youtu.be/BqRauxohbLg"><img src="https://telegra.ph/file/ba58c4ad1b43bc285f16b.jpg" />
-
-</p>
+<a href="https://youtu.be/BqRauxohbLg"><img src="https://telegra.ph/file/ba58c4ad1b43bc285f16b.jpg" />
 
 ----------
 
