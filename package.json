@@ -20,6 +20,7 @@
     "@adiwajshing/baileys": "npm:baileys@^6.0.7",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^2.0.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@vitalets/google-translate-api": "^7.0.0",
     "awesome-phonenumber": "^2.64.0",
     "amethyste-api": "^1.1.5",
