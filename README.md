@@ -89,10 +89,10 @@ But some I haven't changed the language 🛐
 </p> -->
 
 ## For Termux
-- [Download script MediaFire](https://telegra.ph/file/5f3dcbfb5a43066f25f6f.jpg)
+- [Download script MediaFire](https://youtu.be/c-RwcMoajE0)
 
 <p align="center">
-<a href="https://youtu.be/983P1OwOzaE"><img src="https://telegra.ph/file/5f3dcbfb5a43066f25f6f.jpg" />
+<a href="https://youtu.be/c-RwcMoajE0"><img src="https://telegra.ph/file/a69b67c7e5436945daea0.jpg" />
 </p>
 
 ## Edit Owner 
