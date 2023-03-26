@@ -35,7 +35,7 @@ global.groupOnly = false //bot hanya bisa di gunakan dalam grup
 //language
 //Available in indonesia , english & spanyol 
 //You can request others language 
-global.language = indonesia //change indonesia to english if you don't understand the language used by the bot
+global.language = english //change indonesia to english if you don't understand the language used by the bot
 //global.language = english // use this for English language
 //global.language = spanyol // use this for Spanyol language
 
@@ -48,7 +48,7 @@ global.youtube = "https://youtube.com/c/@ZeeoneOfc" //bebas asal jan hapus
 global.myweb2 = "https://s.id/zeeoneofc" //bebas
 global.email = "zeeoneofc@gmail.com" //bebas
 global.region = "Indonesia" //bebas
-global.timezone = 'Asia/Jakarta' //  timezone wib
+global.timezone = 'Asia/Kolkata' //  timezone wib
 global.premium = ['62887435047326'] //premium user
 global.owner = ["62887435047326", "62821931157232"] //ganti agar fitur owner bisa di gunakan
 global.ownernomer = "62887435047326" // nomor wa kalian
