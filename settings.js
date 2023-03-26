@@ -43,7 +43,7 @@ global.language = english //change indonesia to english if you don't understand 
 // Other
 global.botname = "𝗝𝗢-𝗝0 𝗕𝗢𝗧" //namabot kalian
 global.ownername = "𝐽𝑂-𝑗𝑜" //nama kalian
-global.myweb = "http://wa.me/918593074023" //bebas asal jan hapus
+global.myweb = "" //bebas asal jan hapus
 global.youtube = "http://wa.me/918593074023" //bebas asal jan hapus
 global.myweb2 = "" //bebas
 global.email = "" //bebas
@@ -52,7 +52,7 @@ global.timezone = 'Asia/Kolkata' //  timezone wib
 global.premium = ['918593074023'] //premium user
 global.owner = ["918593074023", "918593074023"] //ganti agar fitur owner bisa di gunakan
 global.ownernomer = "918593074023" // nomor wa kalian
-global.ownernomerr = "+0"+ownernomer //nmr wa kalian
+global.ownernomerr = "918593074023"+ownernomer //nmr wa kalian
 global.thumbnail = "./image/c8c0746f-9e07-4d81-9f4d-a593064ff529.jpeg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/c8c0746f-9e07-4d81-9f4d-a593064ff529.jpeg" // foto donasi di folder image
 global.background_welcome = "https://telegra.ph/file/edca4b513ddf29fd52c0e.jpg" // maks size 30kb, agar welcome image nya tdk delay
@@ -61,9 +61,9 @@ global.packname = '© 𝗝𝗢-𝗝0 𝗕𝗢𝗧' + botname //sticker wm ubah
 global.author = 'Created By JO-jo ' + ownername //sticker wm ganti nama kalian
 global.sessionName = 'session'
 //type menu for menu
-global.typemenu = 'menuDocument' //
+global.typemenu = 'document' //
 //type menu for downloadmenu, animemenu, etc
-global.typemenu2 = 'menuDocument' //
+global.typemenu2 = 'document' //
 global.multiplier = 69
 global.limitawal = {
    premium: "Infinity", //unlimited
