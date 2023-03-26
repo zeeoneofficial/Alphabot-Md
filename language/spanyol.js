@@ -1,53 +1,59 @@
-exports.DelSetWel = `Éxito en la eliminación del conjunto bienvenido en este grupo`
-exports.NoSetWel = `Todavía no hay set de bienvenida en este grupo`
-exports.DelSetLeft = `Éxito eliminar establecer adiós en este grupo`
-exports.NoSetLeft = `Todavía no hay un adiós establecido en este grupo.`
-exports.doneSet = `ha sido cambiado antes`
-exports.serverErr = `El servidor está caído`
+//I only use google translate, so if there is an error please correct it 
+exports.DelSetWel = `Success delete set welcome in this group`
+exports.NoSetWel = `There is no welcome set in this group yet`
+exports.DelSetLeft = `Success delete set goodbye in this group`
+exports.NoSetLeft = `There is no set goodbye yet in this group`
+exports.doneSet = `It's been changed before`
+exports.serverErr = `Server is down!`
 exports.limitLu = (m) =>{
-	return`Su límite restante : ${m} `
+	return`Your remaining limit : ${m} `
 	}
 	
 exports.addstik = (a, b) =>{
-	return`Lista ${a} con clave ${b} yes en la base de datos`
+	return`List ${a} with key ${b} already in the database`
 	}
 exports.delstik = (a, b) =>{
-	return`Lista ${a} con clave ${b} no existe en la base de datos`
+	return`List ${a} with key ${b} not in database`
 	}
-exports.profile = (username, m, about, pasangan, PhoneNumber, exp, min, xp, math, prefix, level, role, limit, registered, tanggal__, regTime,premium, msToDate , premiumDate, now, lastclaim) =>{
-	return`📛 Nombre: ${username} (@${m.sender.split`@`[0]})${about ? '\n💌 Bio: ' + about : ''}
-👨‍❤️‍👨 Estado: ${pasangan ? `Berpacaran @${pasangan.split`@`[0]}` : '-' }
-#️⃣ Número: ${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}
-🔗 Enlace: https://wa.me/${m.sender.split`@`[0]}
+exports.profile = (username, m, about, pasangan, PhoneNumber, exp, min, xp, math, prefix, level, role, limit, registered, tanggal_, regTime,premium, msToDate , premiumDate, now, lastclaim) =>{
+	return`📛 Name: ${username} (@${m.sender.split`@`[0]})${about ? '\n💌 Bio: ' + about : ''}
+👨‍❤️‍👨 Status: ${pasangan ? `Berpacaran @${pasangan.split`@`[0]}` : '-' }
+#️⃣ Number: ${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}
+🔗 Link: https://wa.me/${m.sender.split`@`[0]}
 🤷‍♂️ XP: Total ${exp} (${exp - min} / ${xp}) [ ${math <= 0 ? `Ready to *${prefix}levelup*` : `${math} XP left to levelup`} ]
-🎚️ Nivel: ${level}
+🎚️ Level: ${level}
 🎢 Role: ${role}
-📊 Límite: ${limit}
-®️ Registered: ${registered ? '✅ (' + tanggal__(regTime) + ')': '❌'}
-⛽ De primera calidad: ${premium ? `✅\n⏰ Prima vencida : msToDate(premiumDate - now)` : '❌'}
-🛄 Last claim: ${lastclaim > 0 ? tanggal__(lastclaim) : ''}`
+📊 Limit: ${limit}
+®️ Registered: ${registered ? '✅ (' + tanggal_(regTime) + ')': '❌'}
+⛽ Premium: ${premium ? `✅\n⏰ Expired Premium : msToDate(premiumDate - now)` : '❌'}
+🛄 Last claim: ${lastclaim > 0 ? tanggal_(lastclaim) : ''}`
 	}
-
 
 exports.needReg = (a, b, c) =>{
 	return`🇲🇨 Daftar dulu bang
 
 Gini : #daftar nama|umur|gender|hobi
+
 Contoh : #daftar ${a}|18|cowo|Game
+
+
 
 🇺🇲 Please register first
 
+
+
 Like this : #register name|age|gender|hobby
+
 Example : #register ${a}|18|male|Games`
 }
 exports.Nolimit = (prefix) =>{
-	return`Tu límite de hoy se ha agotado ⚠️\n\nPor favor compre un límite escribiendo ${prefix}buy o ${prefix}buyall`
+	return`Your limit today has run out ⚠️\n\nPlease buy a limit by typing ${prefix}buy or ${prefix}buyall`
 	}
-exports.Noseri = () =>{
-	return`El número de serie (sn) es incorrecto`
+exports.i = () =>{
+	return`The serial number (sn) is wrong\n.ceksn -- _check serial number_`
 	}
 exports.NoseriOk = () =>{
-	return`Cancelar correctamente el registro!`
+	return`Successfully cancel registration!`
 	}
 exports.ExReg = (c) =>{
 	return`🇲🇨 Gunakan tanda "|" sebagai pembatas
@@ -66,1741 +72,1772 @@ Like this : #register name|age|gender|hobby
 Example : #register ${a}|18|male|Games`
 	}
 exports.DoneReg = () =>{
-	return`Ya estás registrado en la base de datos`
+	return`You are already registered in the database`
 	}
 exports.UmurReg = () =>{
-	return`La edad debe ser un número.`
+	return`Age must be a number`
 	}
 exports.NamaReg = () =>{
-	return`Tu nombre es muy largo, solo usa tu primer nombre`
+	return`Your name is really long, just use your first name`
 	}
 exports.HobiReg = () =>{
-	return`Tienes muchas aficiones, solo 1 o 2 aficiones`
+	return`You have a lot of hobbies, just 1 or 2 hobbies`
 	}
 exports.RegReg = (a,b,c,d,e,f,g,h,i) =>{
-	return`╭─「 *VERIFICACIÓN EXITOSA* 」
-│\`\`\`Verificación exitosa con\`\`\` 
+	return`╭─「 *SUCCESSFUL VERIFICATION* 」
+│\`\`\`Verification Success With\`\`\` 
 │
 │\`\`\`SN: ${a}\`\`\`
-│\`\`\`En : ${b}\`\`\`
-│\`\`\`Nombre : ${c}\`\`\`
-│\`\`\`Años : ${d}\`\`\`
-│\`\`\`Género : ${e}\`\`\`
-│\`\`\`Número : @${f}\`\`\`
-│\`\`\`Para usar bots por favor \`\`\`
-│\`\`\`Enviar pedidos ${g}menu\`\`\`
-│\`\`\`o ${h}allmenu\`\`\`
+│\`\`\`On : ${b}\`\`\`
+│\`\`\`Name : ${c}\`\`\`
+│\`\`\`Age : ${d}\`\`\`
+│\`\`\`Gender : ${e}\`\`\`
+│\`\`\`Number : @${f}\`\`\`
+│\`\`\`To use bot Please \`\`\`
+│\`\`\`Send command ${g}menu\`\`\`
+│\`\`\`or ${h}allmenu\`\`\`
 │
 │\`\`\`\Total : ${i} Users\`\`\`
 ╰─────────────────────`
 	}
 exports.genderReg = (a) =>{
-	return`Seleccione uno ( male / female)\n\n${a}`
+	return`Select one ( male / female)\n\n${a}`
 	}
 exports.UmurXReg = () =>{
-	return`Eres muy viejo`
+	return`You are too old`
 	}
 exports.firstChat = (a, b, c) =>{
-	return`Hola ${a} ${b} 🤗, soy ${c} bots de whatsapp. Puedo ayudarte?`
+	return`Hi ${a} ${b} 🤗, I am ${c} whatsapp bots. Can i help u?`
 	}
+
 exports.AddstikOk = (q, a, b, prefix, command) =>{
-	return`Se agregó correctamente ${q} a la base de datos ${a}\n\nCorregido por ${prefix}${b}`
+	return`Success Add ${q} Into Database ${a}\n\nCheck with command ${prefix}${b}`
 	}
-	
-exports.AddstikOk_ = (a,b) =>{
-	return`La duración de ${a} segundos, que es la duración máxima de ${b} que el bot puede guardar en la base de datos`
-	}
+
 exports.Addvn = () =>{
-	return`Espera un minuto, intentaré subir este medio a la base de datos.`
+	return`Wait a minute, I will try to upload this media to the database`
 	}
-	
+
+exports.AddstikOk_ = (a, b) =>{
+	return`The duration is ${a} seconds, which is the maximum ${b} duration that bots can save into the database`
+	}
+
 exports.ListStik = (a) =>{
-	return`Para tomar ${a}, envíe un mensaje de acuerdo con la lista de ${a} anterior`
+	return`_To take ${a} please send a message according to the list of ${a} the one above_`
 	}
+
+
 exports.noAbsen = () =>{
-return `❌ ¡No hay ausencias en este grupo!`
+return `❌ No absences take place in this group!\n.absen -- start absen`
 }
 exports.StartAbsen = () =>{
-	return`Empezar ausente`
+	return`Start Absence`
 	}
 exports.DahAbsen = () =>{
-	return`estas ausente`
+	return`You're absent`
 	}
 exports.DelAbsen = () =>{
-	return`✅ Ausencias eliminadas con éxito en este grupo`
+	return`✅ Successfully deleted absences in this group`
 	}
 exports.adaAbsen = () =>{
-	return`Todavía hay sesiones ausentes en este grupo !`
+	return`There are still absent sessions in this group!`
 	}
 exports.SAbsen = () =>{
-	return`Comienza la ausencia`
+	return`Absence begins`
 	}
 //
 exports.SetCmd = (prefix, command) =>{
-	return`¡Pegatinas de respuesta!\nEjemplo : ${prefix + command} .menu\n\n\n*Nota: Debe ir acompañado de Prefijo!!*`
+	return`Reply stiker!!\nExample : ${prefix + command} .menu\n\n\n*Note : Must be accompanied by a Prefix!!*`
 	}
 exports.CmdApa = () =>{
-	return`¿Para qué comandos?`
+	return`For What Command?`
 	}
 exports.UCmd = () =>{
-	return`No tienes permiso para modificar este pedido de pegatinas.`
+	return`You don't have permission to modify this sticker order`
 	}
 exports.HashCmd = () =>{
-	return`sin hashes`
+	return`No hashes`
 	}
 exports.DelCmd = () =>{
-	return`✅ Se eliminó la etiqueta cmd`
+	return`✅ The cmd sticker has been removed`
 	}
 exports.LockCmd = () =>{
-	return`Mensaje de respuesta`
+	return`Reply message`
 	}
 exports.NoCmd = () =>{
-	return`Hash no encontrado en la base de datos`
+	return`Hash not found in database`
 	}
 exports.ReplyMsg = () =>{
-	return`Mensaje de respuesta que desea guardar en la base de datos`
+	return`Reply Message You Want To Save In Database`
 	}
 exports.NoMsg = (prefix, command) =>{
-	return`Ejemplo : ${prefix + command} Nombre del archivo`
+	return`Example : ${prefix + command} filename`
 	}
 exports.AdMsg = (text) => {
-    return `'${text}' registrado en la lista de mensajes`
+    return `'${text}' has been registered in the message list`
 }
 exports.DoneMsg = (prefix, text) => {
-    return `Mensaje agregado con éxito en la lista de mensajes como '${text}'
+    return `Successfully added message in message list as '${text}'
     
-Acceso con ${prefix}getmsg ${text}
-Ver lista de mensajes con ${prefix}listmsg`
+Access with ${prefix}getmsg ${text}
+View list of Messages With ${prefix}listmsg`
 }
 exports.GetMsg = (prefix, command) => {
-    return `Ejemplo : ${prefix + command} file name\n\nVer lista de mensajes con ${prefix}listmsg`
+    return `Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`
 }
 exports.NoInMsg = (text) => {
-    return `'${text}' no aparece en la lista de mensajes`
+    return `'${text}' not listed in the message list`
 }
 exports.DelMsg = (text) => {
-    return `Se eliminó con éxito '${text}' de la lista de mensajes`
+    return `Delete successfully '${text}' from the message list`
 }
 
 exports.OnBef = () => {
-    return `Ha sido activado antes`
+    return `It's been activated before`
 }
 exports.OffYaBef = () => {
-    return `Ha sido desactivado antes`
+    return `It's been deactivated before`
 }
 exports.OkOn = (command) => {
-    return `${command} ¡Activado con éxito!`
+    return `${command} Successfully Activated !`
 }
 exports.OffBef = (command) => {
-    return `${command} ¡Deshabilitado con éxito!`
+    return `${command} Successfully Deactivated !`
 }
 exports.OkMute = () => {
-    return `El bot ha sido silenciado en este grupo`
+    return `Bot has been muted in this group`
 }
 exports.OkUnMute = () => {
-    return `Bot tuvo éxito en UnMute`
+    return `Bot Succeeded In UnMute`
 }
 exports.OkUnBanC = () => {
-    return `El bot desbaneó con éxito el chat`
+    return `Bot Successfully Unban chat`
 }
 exports.NoMute = () => {
-    return `El bot no ha sido baneado en este grupo`
+    return `Bot has not been banned in this group`
 }
 
 exports.NoMsgBot = () => {
-    return `¡El mensaje no fue enviado por un bot!`
+    return `The message was not sent by a bot!`
 }
 exports.ToimgErr = () => {
-    return `Lo siento, actualmente no es compatible con Gif Pegatina`
+    return `Sorry Currently Not Support Gif Sticker`
 }
 exports.NoToImg = (prefix, command) => {
-    return `Pegatina de respuesta con subtítulo *${prefix + command}*`
+    return `Reply Sticker With Caption *${prefix + command}*`
 }
 exports.BotPublic = () => {
-    return `Cambio exitoso al modo público`
+    return `Success Change To Public Mode`
 }
 exports.BotSelf = () => {
-    return `Cambio exitoso al modo propio\n\nPara cambiar al modo público, use el número de bot`
+    return `Successfully Change To Self Mode\n\nTo change to public mode, please use the bot number`
 }
 exports.NoToStik = (prefix, command) => {
-    return `Enviar/Responder imagen/video con subtítulo ${prefix + command}\n\nDuración de la etiqueta de video 1-9 segundos`
+    return `Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds`
 }
 exports.NoPpBot = (prefix, command) => {
-    return `Enviar/Responder imagen con título ${prefix + command}`
+    return `Send/Reply Image With Caption ${prefix + command}`
 }
 exports.ToAud = (prefix, command) => {
-    return `Enviar/responder video/audio que desea usar como audio con subtítulos ${prefix + command}`
+    return `Send/Reply the Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
 }
 exports.ToMp3 = (prefix, command) => {
-    return `Enviar/responder video/audio que desea convertir a MP3 con subtítulos ${prefix + command}`
+    return `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
 }
 exports.ToVn= (prefix, command) => {
-    return `Responder video/audio que desea ser VN con subtítulos ${prefix + command}`
+    return `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
 }
 exports.NoQouted = () => {
-    return `El mensaje al que respondió no contiene una respuesta`
+    return `The message you replied to does not contain a reply`
 }
 exports.SetGcName = (prefix, command) => {
-    return `Enviar comando ${prefix + command} *texto*`
+    return `Send command ${prefix + command} *text*`
 }
 exports.SetPpGc = (prefix, command) => {
-    return `Enviar/Responder imagen con título ${prefix + command}`
+    return `Send/Reply Image With Caption ${prefix + command}`
 }
 exports.JoinGc = () => {
-    return `Introduce el enlace del grupo!`
+    return `Enter the group link!`
 }
 exports.MauKick = () => {
-    return `Envía el número objetivo/etiqueta/respuesta que quieres patear !`
+    return `Send the target number/tag/reply you want to kick!`
 }
 exports.MauAdd = () => {
-    return `¡Envíe el número objetivo/etiqueta/respuesta que desea agregar!`
+    return `Send the target number/tag/reply you want to add!`
 }
 exports.NakPm= () => {
-    return `¡Envíe el número objetivo/etiqueta/respuesta que desea promocionar!`
+    return `Send the target number/tag/reply you want to promote!`
 }
 exports.NakDm = () => {
-    return `¡Envíe el número objetivo/etiqueta/respuesta que desea degradar!`
+    return `Send the target number/tag/reply you want to demote!`
 }
 exports.Family = () => {
-    return `¡Esta pregunta no ha terminado!`
+    return `This question is not finished!`
 }
 exports.NoWm = (prefix, command) => {
-    return `Enviar comando ${prefix + command} packname|author`
+    return `Send command ${prefix + command} packname|author`
 }
 exports.DoneExif = (packname, author) => {
-    return `Exif convertido con éxito a\n\nPackname : ${packname}\nAuthor : ${author}`
+    return `Exif Successfully Converted To\n\nPackname : ${packname}\nAuthor : ${author}`
 }
 exports.NoTeksOne = (prefix, command) => {
-    return `Enviar comando ${prefix + command} *texto*\n\nEjemplo : ${prefix + command} Robot de Whatsapp`
+    return `Send command ${prefix + command} *teks*\n\nExample : ${prefix + command} WhatsApp Bot`
 }
 exports.NoTeksTwo = (prefix, command) => {
-    return `Enviar comando ${prefix + command} *texto 1|texto 2*\n\nEjemplo : ${prefix + command} WhatsApp|bot`
+    return `Send command ${prefix + command} *teks 1|teks 2*\n\nExample : ${prefix + command} WhatsApp|Bot`
 }
 exports.OffNsfw = () => {
-    return `Fitur nsfw belum di aktifkan`
+    return `The nsfw feature has not been activated`
 }
 exports.CoverBanLol = (prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|heroes\nEjemplo: ${prefix + command} zeeone|jinx7`
+    return `Example : ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`
 }
 exports.coverbannerlol = (style) => {
-    return `*Los héroes que ingresaste están equivocados*\n\n_Aquí hay una lista de los héroes correctos, Total_ *${style}* _heroes_\n\n`
+    return `*The Heroes You Entered are Wrong*\n\n_Here's the list of true heroes, Total_ *${style}* _heroes_\n\n`
 }
 exports.pubglogomaker = (prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|style\n Ejemplo: ${prefix + command} zeeone|women`
+    return `Example : ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`
 }
 exports.pubglogomaker_ = (style) => {
-    return `*El estilo que ingresaste es incorrecto*\n\n_Aquí hay una lista de los estilos correctos, Total_ *${style}* _style_\n\n`
+    return `*The style you entered is wrong*\n\n_Here's a list of the correct styles, Total_ *${style}* _style_\n\n`
 }
 exports.colorfulpubg = (prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|color\nEjemplo: ${prefix + command} zeeone|gold`
+    return `Example : ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`
 }
 exports.colorfulpubg_ = (style) => {
-    return `*El color que ingresaste es incorrecto*\n\n_Aquí hay una lista de los colores correctos, Total_ *${style}* _color_\n\n`
+    return `*The color you entered is wrong*\n\n_Here's a list of the correct colors, Total_ *${style}* _color_\n\n`
 }
 exports.astronotspace = (prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|style\nEjemplos de uso: ${prefix + command} zeeone|anubis`
+    return `Example: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`
 }
 exports.wallpaperaov = (prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|heroes\nEjemplos de uso: ${prefix + command} zeeone|allain`
+    return `Example: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`
 }
 exports.maketeamlogo = (style, style2, prefix, command) => {
-    return `Ejemplo: ${prefix + command} nombre|${style}\nEjemplos de uso: ${prefix + command} zeeone|${style2}`
+    return `Example: ${prefix + command} nama|${style}\nUsage: ${prefix + command} zeeone|${style2}`
 }
 
 exports.MaketeamlogoT = (a, b, c, d, e, f, g, h) => {
-    return `Ejemplo: ${g + h} ${a}|${b}|${c}\nEjemplos de uso: ${g + h} ${e}|${f}|${d}`
+    return `Example : ${g + h} ${a}|${b}|${c}\nUsage: ${g + h} ${e}|${f}|${d}`
 }
 exports.maketeamlogo_ = (style, style2) => {
-    return `*${style2} lo que ingresaste esta mal*\n\n_Aquí hay una lista ${style2} Así es, total_ *${style}* _${style2}_\n\n`
+    return `*${style2} What you entered is wrong*\n\n_Here's a List ${style2} Correct, Total_ *${style}* _${style2}_\n\n`
 }
 
 exports.KisahNabi = (prefix, command, style, style2 = "query") => {
-    return `Ejemplos de uso: \n${prefix + command} ${style2}\n\n${prefix + command} ${style}`
+    return `Send orders: \n${prefix + command} ${style2}\n\nExamples of use:\n${prefix + command} ${style}`
 }
 exports.quran2 = (prefix, command, juz , brp) => {
-    return `Ejemplo : ${prefix + command} ${juz}\nEjemplos de uso: ${prefix + command} ${brp}`
+    return `Example : ${prefix + command} ${juz}\nUsage: ${prefix + command} ${brp}`
 }
 
 exports.quran3 = (prefix, command, surah , ayat, brp, brp2) => {
-return`Ejemplo : ${prefix + command} ${surah}|${ayat}\nEjemplos de uso: ${prefix + command} ${brp}|${brp2}`
+return`Example : ${prefix + command} ${surah}|${ayat}\nUsage: ${prefix + command} ${brp}|${brp2}`
 }
 
 exports.JwbErr = () => {
-    return `❌ Respuesta incorrecta`
+    return `❌ Wrong answer`
 }
 
 exports.JwbTrue = (tebak, exp) => {
-return`🎮 ${tebak} 🎮\n\nRespuesta correcta 🎉\n+${exp} XP`
+return`🎮 ${tebak} 🎮\n\nCorrect answer 🎉\n+${exp} XP`
 }
 exports.TbGam = () => {
-    return `Adivina la foto`
+    return `Guess the picture`
 }
 exports.TbKa = () => {
-    return `Adivina la palabra`
+    return `Guess the word`
 }
 exports.TbBe = () => {
-    return `Adivina la bandera`
+    return `Guess the Flag`
 }
 exports.TbCak = () => {
     return `Cak Lontong`
 }
 exports.TbSu = () => {
-    return `Organizar palabras`
+    return `Arrange Words`
 }
 exports.TbAt = () => {
-    return `Adivina la frase`
+    return `Guess the Sentence`
 }
 exports.TbSi = () => {
-    return `Adivina quién`
+    return `Guess who`
 }
 exports.Tbte = () => {
-    return `Rompecabezas`
+    return `Teka Teki`
 }
 exports.TbEn = () => {
-    return `Adivina el Distrito`
+    return `Guess the District`
 }
 exports.TbKi = () => {
-    return `Supongo que la química`
+    return `Guess Chemistry`
 }
 exports.TbLi = () => {
-    return `Adivina la letra`
+    return `Guess the Lyrics`
 }
 exports.TbKan = () => {
-    return `Adivinanzas`
+    return `Riddles`
 }
 
 exports.TbFamily = (soal, jawaban, find) => {
-    return `*Responde las siguientes preguntas :*\n${soal}\n\nHay *${jawaban}* Responder ${find}`
+    return `*Answer the following questions :*\n${soal}\n\nThere is *${jawaban}* Answer ${find}`
 }
 
 exports.TbAfk = (nama, afk) => {
-    return `${nama} tiene afk con razon ${afk ? ': ' + afk : 'Nada'}`
+    return `${nama} Has Afk With Reason ${afk ? ': ' + afk : 'Nothing'}`
 }
 
 exports.TbGambar = (desk, time, exp) => {
-    return `Por favor responda la pregunta anterior\n\nDescripción : ${desk}\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `Please answer the questions above\n\nDescription : ${desk}\nTime : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbGambar_ = (jawaban) => {
-    return `Tiempo de espera\nRespuesta:  ${jawaban}`
+    return `Time has run out\nAnswer:  ${jawaban}`
 }
 exports.TbGambar__ = (jawaban, desk) => {
-    return `Tiempo de espera\nRespuesta:  ${jawaban}}\nDescripción : ${desk}`
+    return `Time has run out\nAnswer:  ${jawaban}}\nDescription : ${desk}`
 }
 exports.TbKata = (soal, time, exp) => {
-    return `Por favor, conteste a las siguientes preguntas\n\n${soal}\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `Please Answer The Following Questions\n\n${soal}\nTime : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbBendera = (time, exp) => {
-    return `Por favor responda la pregunta anterior\n\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `Please Answer The Question Above\n\nWaktu : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbKabupaten = (time, exp) => {
-    return `La imagen de arriba es una imagen del distrito.?\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `The picture above is a picture of the district?\nTime : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbKimia = (soal, time, exp) => {
-    return `que significa el simbolo : *${soal}*?\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `What does the symbol mean? : *${soal}*?\nWaktu : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbLirik = (soal, time, exp) => {
-    return `esta es la letra de la cancion? : *${soal}*?\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `These are the lyrics of the song? : *${soal}*?\nTime : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbSusun = (soal, tipe, time, exp) => {
-    return `*Responde las siguientes preguntas :*\nPregunta : ${soal}\nEscribe : ${tipe}\nTiempo : ${time} segundos\nRecompensas : ${exp} XP`
+    return `*Answer the following questions :*\nQuestion : ${soal}\nType : ${tipe}\nTime : ${time} seconds\n Reward : ${exp} XP`
 }
 exports.TbMath = (modes, prefix, command) => {
-    return `Modo: ${modes}\nEjemplos de uso: ${prefix + command} medium`
+    return `Mode: ${modes}\nUsage examples: ${prefix + command} medium`
 }
 exports.TbMath_ = (soal, time) => {
-    return `*¿Cuál es el resultado de: ${soal}*?\n\nTiempo: ${time} segundo`
+    return `*What is the result of: ${soal}*?\n\nTime: ${time} detik`
 }
 exports.TbJail = (prefix, command) => {
-    return `Enviar/responder foto/pegatina con leyenda ${prefix + command}`
+    return `Send/Reply Photo/Sticker With Caption ${prefix + command}`
 }
 exports.TbRepo = (prefix, command) => {
-    return `Enviar comando ${prefix + command} *user* *repo* *branch*\n\nEjemplos de uso: ${prefix + command} *zeeone-ofc* *Alphabot-Md* *v12*`
+    return `Send command ${prefix + command} *user* *repo* *branch*\n\nExp. ${prefix + command} *zeeone-ofc* *Alphabot-Md* *v12*`
 }
 exports.StalkIg = () => {
-    return `Introduzca su nombre de usuario`
+    return `Enter username`
 }
 exports.Tomp4 = (prefix, command) => {
-    return `Responder pegatina gif con subtítulo ${prefix + command}`
+    return `Reply gif sticker with caption ${prefix + command}`
 }
 exports.Tourl = (prefix, command) => {
-    return `Enviar/Responder medios con subtítulos ${prefix + command}`
+    return `Send/Reply Media With Caption ${prefix + command}`
 }
 exports.Smeme = (prefix, command) => {
-    return `Enviar/Responder foto con leyenda ${prefix + command} *teks*`
+    return `Send/Reply Photo With Caption ${prefix + command} *teks*`
 }
 exports.Smeme_ = (prefix, command) => {
-    return `Enviar/Responder foto con leyenda ${prefix + command} *teks|tesk2*`
+    return `Send/Reply Photo With Caption ${prefix + command} *teks|tesk2*`
 }
 exports.Bcall = (anu, time, chat) => {
-    return `Enviar difusión a ${anu} ${chat}\nSe acabó el tiempo ${time * 1.5} detik`
+    return `Send Broadcast To ${anu} ${chat}\nTime's up ${time * 1.5} detik`
 }
 exports.Stag = (prefix, command) => {
-    return `Pegatina de respuesta con subtítulo ${prefix + command}`
+    return `Reply sticker with caption ${prefix + command}`
 }
 exports.Vtag = (prefix, command, video) => {
-    return `Enviar respuesta ${video} con subtítulo ${prefix + command}`
+    return `Send/reply ${video} with caption ${prefix + command}`
 }
 exports.TrLate = (prefix, command) => {
-    return `Ejemplo :
+    return `Example :
 
-1. Enviar pedidos ${prefix + command} *Código de lenguaje* *texto*
-	• Ejemplo : ${prefix + command} id Hola
-2. Reply chat dengan caption ${prefix + command} *Código de lenguaje*
-	• Ejemplo : ${prefix + command} id Hola
-Lista de idiomas admitidos : https://cloud.google.com/translate/docs/languages`
+1. Send command ${prefix + command} *language code* *teks*
+	• Example : ${prefix + command} id hi
+2. Reply chat with caption ${prefix + command} *language code*
+	• Example : ${prefix + command} id hi
+List of supported languages : https://cloud.google.com/translate/docs/languages`
 }
 exports.Addlist = () => {
-    return `La clave no puede ser la misma que el bot de función/comando`
+    return `Key cannot be the same as feature/command bot`
 }
 exports.Addlist_ = (prefix, command) => {
-    return `Úsalo de una manera ${prefix + command} *key|response*\n\n_Ejemplo_\n\n${prefix + command} Hi|Halo`
+    return `Use it in a way ${prefix + command} *key|response*\n\n_Example_\n\n${prefix + command} Hi|Halo`
 }
 exports.Addlist__ = (arg) => {
-    return `Lista de respuesta con clave : *${arg}* ya en este grupo.`
+    return `List of responses with key : *${arg}* already in this group.`
 }
 exports.AddlistDone = (arg) => {
-    return `Establecer correctamente el mensaje de la lista con la clave : *${arg}*\n\nNota: Espere unos minutos si la lista no cambia`
+    return `Successfully set list message with key : *${arg}*\n\nNote : Wait a few minutes if the list doesn't change`
 }
 exports.Dellist = () => {
-    return `No hay lista de mensajes en la base de datos.`
+    return `There is no message list in the database`
 }
 exports.Dellist_  = (prefix, command) => {
-    return `Úsalo de una manera ${prefix + command} *key*\n\n_Ejemplo_\n\n${prefix + command} Hi`
+    return `Use it in a way ${prefix + command} *key*\n\n_Example_\n\n${prefix + command} Hi`
 }
 exports.Dellist__ = (key) => {
-    return `Lista de respuesta con clave *${key}* no está en la base de datos!`
+    return `List response with key *${key}* not in database!`
 }
 exports.DellistDone = (key) => {
-    return `Eliminar correctamente el mensaje de la lista con la clave *${key}*`
+    return `Successfully delete list message with key *${key}*`
 }
 exports.ListUp = (key) => {
-    return `perdon por la llave *${key}* no registrado en este grupo`
+    return `Sorry, the key *${key}* is not yet registered in this group`
 }
 exports.UpList = (key) => {
-    return `Actualizar correctamente el mensaje de la lista con la clave : *${key}*\n\nNota: Espere unos minutos si la lista no cambia`
+    return `Successfully update list message with key : *${key}*\n\nNote : Wait a few minutes if the list doesn't change`
 }
 exports.Anonymous = (pushname, prefix) => {
-    return `Hola ${pushname} Bienvenido al chat anónimo\n\nEscribe ${prefix}start para encontrar a sus amigos de chat, o puede presionar el botón Buscar a continuación`
+    return `Hi ${pushname} Welcome to Anonymous Chat\n\nType ${prefix}start to find your Chat Friend, or you can press the Search button below`
 }
 exports.Anon = () => {
-    return `Buscar chat de amigos`
+    return `Find Friends Chat`
 }
 exports.StopAnon = () => {
-    return `No estás en una sesión anónima, pulsa el botón para buscar pareja `
+    return `You are not in an anonymous session\n${prefix}start -- _cari pasangan baru_`
 }
 exports.AnonNew = () => {
-    return `Encontrar nuevos amigos`
+    return `Find New Friends`
 }
 exports.AnonDahStop = () => {
-    return `✅ Chat detenido con éxito`
+    return `✅ Successfully stopped chat\n${prefix}start -- _cari pasangan baru_`
 }
 exports.StopAnonByFren = () => {
-    return `⚠️ Esta sesión de chat ha sido cancelada por su amigo de chat`
+    return `⚠️ This chat session has been terminated by your chat friend\n${prefix}start -- _cari pasangan baru_`
 }
 exports.AnonOn = () => {
-    return `⚠️ ¡Aún estás en una sesión de chat con un compañero!`
+    return `️ You are still in a chat session with a partner\n${prefix}skip -- _cari pasangan baru_\n${prefix}stop -- _hentikan dialog ini_!`
 }
 exports.AnonFind = (prefix) => {
-    return `_pareja encontrada 🐼_\n${prefix}skip -- _buscando un nuevo socio_\n${prefix}stop -- _detener este diálogo_`
+    return `_Partner Found 🐼_\n${prefix}skip -- _find a new partner_\n${prefix}stop -- _stop this dialog_`
 }
 exports.AnonSearch = () => {
-    return `🔎 Por favor espera buscando amigos de chat`
+    return `🔎 Please wait looking for chat friends\n${prefix}skip -- _cari pasangan baru_\n${prefix}stop -- _hentikan percarian ini_`
 }
 exports.NoAnon = () => {
-    return `⚠️ Nunca has iniciado un chat.!`
+    return `⚠️ You've never started a chat!\n${prefix}start -- _cari pasangan baru_`
 }
 exports.NoAudRep = (prefix, command) => {
-    return `Responda al audio que desea cambiar con un título *${prefix + command}*`
+    return `Reply to the audio you want to change with caption *${prefix + command}*`
+}
+exports.NoTagBan = () => {
+    return `Usage examples :\n${prefix + command} 62938828728992 \nor\n${prefix + command} @tagmember`
 }
 
-exports.NoTagBan = (prefix, command) => {
-    return `Ejemplo :\n${prefix + command} 62938828728992 \no\n${prefix + command} @tagmember`
-}
 exports.getBan = (a) => {
-    return `⚠️ Lo sentimos, su número ha sido prohibido por el propietario\n\ndueño del bot 👇\nwa.me/${a}`
+    return `⚠️ Sorry, your number has been banned by the owner\n\nOwner 👇\nwa.me/${a}`
 }
 exports.Addstik = (prefix, command, t) => {
-    return `respuesta ${t} con subtítulo ${prefix + command} texto\n\nEjemplo : ${prefix + command} bot`
+    return `Reply ${t} with caption ${prefix + command} text\n\nExample : ${prefix + command} bot`
 }
+
 exports.AllFitur = () => {
-    return `\n_Todas las características de los bots_`
+    return `\nAll bot features`
 }
 exports.InfoMenu = () => {
-    return `\n_Buscando la información más reciente a través de bot_`
+    return `\n_Looking for the latest information via bot_`
 }
 exports.KhususOwn = () => {
-    return `\n_Características especiales del bot propietario_`
+    return `\n_Owner Bots Special Features_`
 }
 exports.DataBor = () => {
-    return `\n_Almacenar algo en la base de datos del bot_`
+    return `\n_Storing something in the bot database_`
 }
 exports.MenuGc = () => {
-    return `\n_Muestra características específicas del grupo_`
+    return `\n_Show group specific features_`
 }
 exports.MenuAni = () => {
-    return `\n_Buscando fotos de anime al azar_`
+    return `\n_Looking for random anime pictures_`
 }
 exports.TagMem = () => {
-    return `\n_Miembro del grupo de etiquetas_`
+    return `\n_Tag group member_`
 }
 exports.StalkOrk = () => {
-    return `\n_Puntos de las personas en las redes sociales_`
+    return `\n_People's social media stalking_`
 }
 exports.Hoja = () => {
-    return `\n_Buscando algo sin importancia_`
+    return `\n_Looking for something unimportant_`
 }
 exports.CovertWi = () => {
-    return `\n_Convertir algo con bot_`
+    return `\n_Convert something with bot_`
 }
 exports.AnuFoto = () => {
-    return `\n_Cambia la imagen para que sea más interesante._`
+    return `\n_Change the picture to be more interesting_`
 }
 exports.HajuStik = () => {
-    return `\n_Crea pegatinas únicas_`
+    return `\n_Create unique stickers_`
 }
 exports.EloDown= () => {
-    return `\n_Mostrar función de descarga_`
+    return `\n_Show download feature_`
 }
 exports.StikerWibu = () => {
-    return `\n_pegatinas de anime al azar_`
+    return `\n_Random anime stickers_`
 }
 exports.ImageDewasa = () => {
-    return `\n_Anime de imagen aleatoria 18+_`
+    return `\n_Random image anime 18+_`
 }
 exports.MakeLogo = () => {
-    return `\n_Para crear un logo usando un bot_`
+    return `\n_To create a logo using a bot_`
 }
 exports.oterMenu = () => {
-    return `\n_Más menú_`
+    return `\n_More menu_`
 }
 exports.GameBot = () => {
-    return `\n_Funciones para jugar con bots_`
+    return `\n_Features for playing with bots_`
 }
 exports.RandRik = () => {
-    return `\n_Videos aleatorios de tiktok_`
+    return `\n_Random tiktok videos_`
 }
 exports.RandCew = () => {
-    return `\n_fotos al azar de chicas hermosas_`
+    return `\n_Random pictures of beautiful girls_`
 }
 exports.RamalOi = () => {
-    return `\n_pronóstico de hoy_`
+    return `\n_Today's forecast_`
 }
 exports.TeleStik= () => {
-    return `\n_Etiqueta aleatoria de Telegram_`
+    return `\n_Random sticker from telegram_`
 }
 exports.BuatLogoLagi = () => {
-    return `\n_Crea logotipos geniales con bots_`
+    return `\n_Create cool logos with bots_`
 }
 exports.SoundNih= () => {
-    return `\n_Sonido aleatorio_`
+    return `\n_Random sound_`
 }
 exports.KanLogoLagi = () => {
-    return `\n_Haz un logo atractivo_`
+    return `\n_Make an attractive logo_`
 }
 exports.TobatBro = () => {
-    return `\n_características islámicas_`
+    return `\n_Islamic features_`
 }
 exports.MauJualan = () => {
-    return `\n_Funciones para vender_`
+    return `\n_Features for selling_`
 }
 exports.Maustorage = () => {
-    return `\n_Fcaracterísticas para almacenar pegatinas, audio, fotos y videos_`
+    return `\n_Features to save stickers, audio, photos and videos_`
 }
 exports.MauChanger = () => {
-    return `\n_Función para cambiar el sonido de audio/vn_`
+    return `\n_Feature to change audio/vn sound_`
 }
 exports.GadaChat = () => {
-    return `\n_Funciones para chat aleatorio_`
+    return `\n_Features for random chat_`
 }
 exports.SumberBot = () => {
-    return `\n_Fuente de este script de bot_`
+    return `\n_Source of this bot script_`
 }
 exports.Tqnya = () => {
-    return `\n_Quién contribuyó a este bot_`
+    return `\n_Who contributed to this bot_`
 }
 exports.SetAh = () => {
-    return `¿Quieres un menú fijo? ?`
+    return `Do you want a set menu?`
 }
 exports.KickAh = (gc) => {
-    return `*Grupo antienlace detectado*\n\nSerás eliminado del grupo. ${gc}`
+    return `*Antilink Group Detected*\n\nYou will be removed from the group ${gc}`
     }
     exports.GjdKick = () => {
-    return `Parece que enviaste el enlace de este grupo, no serás expulsado`
+    return `Looks like you sent this group link, you won't be kicked out`
     }
 /////////
 
 /////////
 exports.private = () =>{
-	return`La función solo se puede usar en el chat privado.`
+	return`The feature can only be used in private chat`
 	}
 exports.wait = () => {
-    return `⏳ Por favor, espere un momento`
+    return `⏳ Please wait a moment`
 }
 exports.ok = () => {
-    return `✅ hecho.`
+    return `✅ Done.`
 }
 
 exports.err = () => {
-    return `⚠️ Características de error moderado`
+    return `⚠️ Error Moderate Features`
 }
 exports.erorLink = () => {
-    return `⚠️ el enlace es un error`
+    return `⚠️ The link is error`
 }
 exports.media = () => {
-    return `Seleccione los medios que desea descargar`
+    return `Please select the media you want to download`
 }
 exports.replyImg = (prefix, command) => {
-    return `Enviar/Responder foto con leyenda ${prefix + command}`
+    return `Send/Reply Photo With Caption ${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
-    return `Formato incorrecto Por favor verifique cómo usar en *${prefix}allmenu*.`
+    return `Incorrect format Please check how to use at *${prefix}allmenu*.`
 }
 
 exports.emptyMess = () => {
-    return `❎ Por favor ingrese el mensaje que desea transmitir!`
+    return `❎ Please enter the message you want to convey!`
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `❎ Dominio *${cmd}* no registrado en *${prefix}allmenu*`
+    return `❎ Command *${cmd}* not registered in *${prefix}allmenu*`
 }
 
 exports.ownerOnly = () => {
-    return `❎ Este comando es para el dueño`
+    return `❎ This command is for the owner`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️Está hecho, Propietario~`
+    return `✅  ️It's done, Owner ~`
 }
 
 exports.groupOnly = () => {
-    return `👥  ¡Este comando solo se puede usar en grupos!`
+    return `👥  This command can only be used in groups!`
 }
 
 exports.adminOnly = () => {
-    return `🙅  ¡Este comando solo puede ser utilizado por administradores de grupo!`
+    return `🙅  This command can only be used by group admins!`
 }
 
 exports.nhFalse = () => {
-    return `Kode tidak valid!`
+    return `Invalid code!`
 }
 
 exports.listBlock = (blockNumber) => {
     return `*── 「 HALL OF SHAME 」 ──*
     
-Total diblokir: *${blockNumber.length}* user\n`
+Totally blocked: *${blockNumber.length}* user\n`
 }
 
 exports.notAdmin = () => {
-    return `❎ User bukan seorang admin! ❎`
+    return `❎ User is not an admin! ❎`
 }
 
 exports.adminAlready = () => {
-    return `❎ Tidak  dapat mem-promote user yang merupakan admin!`
+    return `❎ Cannot promote a user who is an admin!`
 }
 
 exports.botNotAdmin = () => {
-    return `¡Haz que el bot sea administrador primero! 🙏`
+    return `Make bot as admin first! `
 }
 
 exports.received = (pushname) => {
     return `
-Halo ${pushname}!
-Terima kasih telah melapor, laporanmu akan kami segera terima.`
+Hello ${pushname}!
+Thank you for reporting, we will receive your report soon.`
 }
 
 exports.videoLimit = () => {
-    return `Ukuran file terlalu besar!`
+    return `File size is too big!`
 }
 
 exports.notNum = (q) => {
-    return `"${q}", bukan angka!`
+    return `"${q}", not numbers!`
 }
 exports.menunya = (salam, pushname, botname) =>{
-	return`Hola hermano ${pushname} 👋 seguro ${salam} , 
-yo ${botname}, este bot es Whatsapp Multi-Device Beta.
+	return`Hi bro ${pushname} 👋 good ${salam} , 
+i'm ${botname}, this bot is Whatsapp Multi-Device Beta.
 `
 }
-exports.listMenu = (time, salam, pushname, prefix) => {
-    return `*Feliz ${salam} ${pushname}*
-*⌚ Servidores de tiempo : ${time}*
-*📚 Menú de lista :*
-
-╭─❒ 「 Robots de información 」 
-│○ !owner
-│○ !rules
-│○ !sc
-│○ !ping
-│○ !runtime
-│○ !botstatus
-╰❒ !donate
-
-
-╭─❒ 「 dueño 」 
-│○ !setmenu [query]
-│○ !setmenu katalog
-│○ !setmenu katalog2
-│○ !setmenu list
-│○ !setwm packname|author
-│○ !sendsesi
-│○ !listpc
-│○ !listgc
-│○ !broadcast [text]
-│○ !bc [text]
-│○ !bcgc 
-│○ !bcimage
-│○ !bcaudio
-│○ !bcstiker
-│○ !bcvn
-│○ !bcvideo
-│○ !banuser
-│○ !unban
-│○ !banned
-│○ !listbanned
-│○ !block
-│○ !ublock
-│○ !listblock
-│○ !addpremium
-│○ !delpremium
-│○ !listpremium
-│○ !nsfw [on/off]
-│○ !mute [on/off]
-│○ !autoblok212 [on/off]
-│○ !banchat
-│○ !unbanchat
-│○ !autorespond [on/off]
-│○ !antiviewonce [on/off]
-│○ !antidelete [on/off]
-│○ !autobio [on/off]
-│○ !anticall [on/off]
-│○ !join [link]
-│○ !self
-│○ !public [only bot]
-│○ !del [reply pesan bot]
-│○ !pppanjang
-│○ !setpppanjang
-╰❒ !setppbot [reply image]
-
-╭─❒ 「 Menú Tienda 」
-│○ !list
-│○ !addlist [key|respond]
-│○ !dellist [key]
-│○ !update [key|respond]
-│○ !store
-│○ !kali
-│○ !bagi
-│○ !tambah
-│○ !kurang
-│○ !kalkulator
-│○ !setproses
-│○ !updateproses
-│○ !cekproses
-│○ !delproses
-│○ !setdone
-│○ !updatedone
-│○ !cekdone
-│○ !deldone
-│○ !pay
-│○ !setcaptionpay
-│○ !setpaysewa
-│○ !proses
-╰❒ !done
-
-╭─❒ 「 Anónimo 」
-│○ !menfess
-│○ !confess
-│○ !balasmenfess
-│○ !tolakmenfess
-│○ !stopmenfess
-│○ !anonymous 
-│○ !start
-│○ !skip [daerah]
-╰❒ !stop [surah|ayat]
+exports.listMenu = (prefix) => {
+    return `╭─❒ 「 List Menu 」 
+│𒆜 ${prefix}infomenu
+│𒆜 ${prefix}storemenu
+│𒆜 ${prefix}rpgmenu
+│𒆜 ${prefix}photooxymenu
+│𒆜 ${prefix}storagemenu
+│𒆜 ${prefix}voicemenu
+│𒆜 ${prefix}anonymouscmd
+│𒆜 ${prefix}ownermenu
+│𒆜 ${prefix}databasemenu
+│𒆜 ${prefix}groupmenu
+│𒆜 ${prefix}animemenu
+│𒆜 ${prefix}tagmenu
+│𒆜 ${prefix}stalkmenu
+│𒆜 ${prefix}searchmenu
+│𒆜 ${prefix}convertmenu
+│𒆜 ${prefix}imageeffect
+│𒆜 ${prefix}stickereffect
+│𒆜 ${prefix}downloadmenu
+│𒆜 ${prefix}randomanime
+│𒆜 ${prefix}nsfwmenu
+│𒆜 ${prefix}textpromenu
+│𒆜 ${prefix}othermenu
+│𒆜 ${prefix}gamemenu
+│𒆜 ${prefix}soundmenu
+│𒆜 ${prefix}logomenu
+│𒆜 ${prefix}islammenu
+│𒆜 ${prefix}asupanmenu
+│𒆜 ${prefix}cecanmenu
+│𒆜 ${prefix}primboncmd
+│𒆜 ${prefix}telestiker
+│𒆜 ${prefix}ephotocmd
+╰❒ ${prefix}tqto
+`
+}
+exports.listMenu2 = (prefix) => {
+    return `╭─❒ 「 Bot Info 」 
+│𒆜 ${prefix}owner
+│𒆜 ${prefix}rules
+│𒆜 ${prefix}sc
+│𒆜 ${prefix}ping
+│𒆜 ${prefix}runtime
+│𒆜 ${prefix}botstatus
+╰❒ ${prefix}donate
 
 
-╭─❒ 「 bases de datos 」 
-│○ !setcmd [reply stiker]
-│○ !delcmd [reply stiker]
-│○ !listcmd
-│○ !absen
-│○ !cekabsen
-│○ !deleteabsen
-│○ !absenstart
-│○ !addmsg [nama file]
-│○ !getmsg [nama file]
-│○ !listmsg
-╰❒ !delmsg [nama file]
+╭─❒ 「 Owner 」 
+│𒆜 ${prefix}setmenu [query]
+│𒆜 ${prefix}setmenu katalog
+│𒆜 ${prefix}setmenu katalog2
+│𒆜 ${prefix}setmenu list
+│𒆜 ${prefix}setwm packname|author
+│𒆜 ${prefix}sendsesi
+│𒆜 ${prefix}listpc
+│𒆜 ${prefix}listgc
+│𒆜 ${prefix}broadcast [text]
+│𒆜 ${prefix}bc [text]
+│𒆜 ${prefix}bcgc 
+│𒆜 ${prefix}bcimage
+│𒆜 ${prefix}bcaudio
+│𒆜 ${prefix}bcstiker
+│𒆜 ${prefix}bcvn
+│𒆜 ${prefix}bcvideo
+│𒆜 ${prefix}banuser
+│𒆜 ${prefix}unban
+│𒆜 ${prefix}banned
+│𒆜 ${prefix}listbanned
+│𒆜 ${prefix}block
+│𒆜 ${prefix}ublock
+│𒆜 ${prefix}listblock
+│𒆜 ${prefix}addpremium
+│𒆜 ${prefix}delpremium
+│𒆜 ${prefix}listpremium
+│𒆜 ${prefix}nsfw [on/off]
+│𒆜 ${prefix}mute [on/off]
+│𒆜 ${prefix}autoblok212 [on/off]
+│𒆜 ${prefix}banchat
+│𒆜 ${prefix}unbanchat
+│𒆜 ${prefix}autorespond [on/off]
+│𒆜 ${prefix}antiviewonce [on/off]
+│𒆜 ${prefix}antidelete [on/off]
+│𒆜 ${prefix}autobio [on/off]
+│𒆜 ${prefix}anticall [on/off]
+│𒆜 ${prefix}join [link]
+│𒆜 ${prefix}self
+│𒆜 ${prefix}public [only bot]
+│𒆜 ${prefix}del [reply pesan bot]
+│𒆜 ${prefix}pppanjang
+│𒆜 ${prefix}setpppanjang
+╰❒ ${prefix}setppbot [reply image]
 
-╭─❒ 「 Juegos de rol 」
-│○ !adventure
-│○ !weekly
-│○ !use
-│○ !transfer
-│○ !slot
-│○ !shop
-│○ !pasar
-│○ !profile
-│○ !ojek
-│○ !open
-│○ !nguli
-│○ !narik
-│○ !nabung
-│○ !monthly
-│○ !mining
-│○ !merampok
-│○ !mancing
-│○ !kolam
-│○ !koboy
-│○ !kerja
-│○ !kandang
-│○ !levelup
-│○ !judi
-│○ !inventory
-│○ !hourly
-│○ !fishop
-│○ !feed
-│○ !duel
-│○ !daily
-│○ !craft
-│○ !cooldown
-│○ !cook
-│○ !collect
-│○ !chop
-│○ !casino
-│○ !buy
-│○ !bank 
-│○ !bansos
-│○ !berdagang
-│○ !berkebon
-╰❒ !build
+╭─❒ 「 Store Menu 」
+│𒆜 ${prefix}list
+│𒆜 ${prefix}addlist [key|respond]
+│𒆜 ${prefix}dellist [key]
+│𒆜 ${prefix}update [key|respond]
+│𒆜 ${prefix}store
+│𒆜 ${prefix}kali
+│𒆜 ${prefix}bagi
+│𒆜 ${prefix}tambah
+│𒆜 ${prefix}kurang
+│𒆜 ${prefix}kalkulator
+│𒆜 ${prefix}setproses
+│𒆜 ${prefix}updateproses
+│𒆜 ${prefix}cekproses
+│𒆜 ${prefix}delproses
+│𒆜 ${prefix}setdone
+│𒆜 ${prefix}updatedone
+│𒆜 ${prefix}cekdone
+│𒆜 ${prefix}deldone
+│𒆜 ${prefix}pay
+│𒆜 ${prefix}setcaptionpay
+│𒆜 ${prefix}setpaysewa
+│𒆜 proses
+╰❒ done
 
-
-╭─❒ 「 Grupo 」 
-│○ !addsewa
-│○ !delsewa
-│○ !listsewa
-│○ !ceksewa
-│○ !delsewa
-│○ !register
-│○ !unregister
-│○ !ceksn
-│○ !listonline
-│○ !sider
-│○ !wm packname|author
-│○ !infochat
-│○ !setdesk [text]
-│○ !setppgrup [reply image]
-│○ !pppanjanggc
-│○ !setpppanjanggc
-│○ !revoke
-│○ !leave
-│○ !add [62***]
-│○ !kick @tag
-│○ !leave
-│○ !linkgc
-│○ !welcome [on/off]
-│○ !goodbye [on/off]
-│○ !demotedetect [on/off]
-│○ !promotedetect  [on/off]
-│○ !setwelcome
-│○ !updatewelcome
-│○ !delwelcome
-│○ !cekwelcome
-│○ !setgoodbye
-│○ !updategoodbye
-│○ !delgoodbye
-│○ !cekgoodbye
-│○ !setpromote
-│○ !updatepromote
-│○ !setdemote
-│○ !updatedemote
-│○ !cekpromote
-│○ !cekdemote
-│○ !delpromote
-│○ !deldemote
-│○ !nsfw [on/off]
-│○ !antilink [on/off]
-│○ !antiwame [on/off]
-│○ !take packname|author
-│○ !group [open/close]
-│○ !tagall [text]
-╰❒ !hidetag [text]
-
-╭─❒ 「 animado 」 
-│○ !jadiwibu
-│○ !towibu
-│○ !toanime
-│○ !jadianime
-│○ !quotesanime
-│○ !anime [query]
-│○ !animeinfo
-│○ !manga [query]
-╰❒ !character [query]
-
-╭─❒ 「 etiquetas 」 
-│○ !stickertag
-│○ !videotag [query]
-│○ !vntag [query]
-╰❒ !imagetag [query]
-
-╭─❒ 「 acecho 」 
-│○ !mlstalk [id|zona id]
-│○ !ffstalk [id]
-│○ !igstalk [username]
-│○ !ghstalk [username]
-╰❒ !ytstalk [channel]
+╭─❒ 「 Anonymous 」
+│𒆜 ${prefix}menfess
+│𒆜 ${prefix}confess
+│𒆜 ${prefix}balasmenfess
+│𒆜 ${prefix}tolakmenfess
+│𒆜 ${prefix}stopmenfess
+│𒆜 ${prefix}anonymous 
+│𒆜 ${prefix}start
+│𒆜 ${prefix}skip
+╰❒ ${prefix}stop
 
 
-╭─❒ 「 Buscar 」 
-│○ !ytsearch [query]
-│○ !openai [query]
-│○ !chatgpt [query]
-│○ !githubsearch [query]
-│○ !kbbi [query]
-│○ !lirik [query]
-│○ !wallpaper [query]
-│○ !google [query]
-│○ !wikimedia [query]
-│○ !apksearch
-│○ !findapk
-│○ !hentai
-│○ !wattpad [query]
-│○ !webtoons [query]
-│○ !brainly [query]
-╰❒ !pinterest [query]
+╭─❒ 「 Database 」 
+│𒆜 ${prefix}setcmd [reply stiker]
+│𒆜 ${prefix}delcmd [reply stiker]
+│𒆜 ${prefix}listcmd
+│𒆜 ${prefix}absen
+│𒆜 ${prefix}cekabsen
+│𒆜 ${prefix}deleteabsen
+│𒆜 ${prefix}absenstart
+│𒆜 ${prefix}addmsg [nama file]
+│𒆜 ${prefix}getmsg [nama file]
+│𒆜 ${prefix}listmsg
+╰❒ ${prefix}delmsg [nama file]
+
+╭─❒ 「 Rpg Games 」
+│𒆜 ${prefix}adventure
+│𒆜 ${prefix}weekly
+│𒆜 ${prefix}use
+│𒆜 ${prefix}transfer
+│𒆜 ${prefix}slot
+│𒆜 ${prefix}shop
+│𒆜 ${prefix}pasar
+│𒆜 ${prefix}profile
+│𒆜 ${prefix}ojek
+│𒆜 ${prefix}open
+│𒆜 ${prefix}nguli
+│𒆜 ${prefix}narik
+│𒆜 ${prefix}nabung
+│𒆜 ${prefix}monthly
+│𒆜 ${prefix}mining
+│𒆜 ${prefix}merampok
+│𒆜 ${prefix}mancing
+│𒆜 ${prefix}kolam
+│𒆜 ${prefix}koboy
+│𒆜 ${prefix}kerja
+│𒆜 ${prefix}kandang
+│𒆜 ${prefix}levelup
+│𒆜 ${prefix}judi
+│𒆜 ${prefix}inventory
+│𒆜 ${prefix}hourly
+│𒆜 ${prefix}fishop
+│𒆜 ${prefix}feed
+│𒆜 ${prefix}duel
+│𒆜 ${prefix}daily
+│𒆜 ${prefix}craft
+│𒆜 ${prefix}cooldown
+│𒆜 ${prefix}cook
+│𒆜 ${prefix}collect
+│𒆜 ${prefix}chop
+│𒆜 ${prefix}casino
+│𒆜 ${prefix}buy
+│𒆜 ${prefix}bank 
+│𒆜 ${prefix}bansos
+│𒆜 ${prefix}berdagang
+│𒆜 ${prefix}berkebon
+╰❒ ${prefix}build
+
+╭─❒ 「 Group 」 
+│𒆜 ${prefix}addsewa
+│𒆜 ${prefix}delsewa
+│𒆜 ${prefix}listsewa
+│𒆜 ${prefix}ceksewa
+│𒆜 ${prefix}register
+│𒆜 ${prefix}unregister
+│𒆜 ${prefix}ceksn
+│𒆜 ${prefix}listonline
+│𒆜 ${prefix}sider
+│𒆜 ${prefix}wm packname|author
+│𒆜 ${prefix}infochat
+│𒆜 ${prefix}setdesk [text]
+│𒆜 ${prefix}setppgrup [reply image]
+│𒆜 ${prefix}pppanjanggc
+│𒆜 ${prefix}setpppanjanggc
+│𒆜 ${prefix}revoke
+│𒆜 ${prefix}leave
+│𒆜 ${prefix}add [62***]
+│𒆜 ${prefix}kick @tag
+│𒆜 ${prefix}leave
+│𒆜 ${prefix}linkgc
+│𒆜 ${prefix}welcome [on/off]
+│𒆜 ${prefix}goodbye [on/off]
+│𒆜 ${prefix}demotedetect [on/off]
+│𒆜 ${prefix}promotedetect  [on/off]
+│𒆜 ${prefix}setwelcome
+│𒆜 ${prefix}updatewelcome
+│𒆜 ${prefix}delwelcome
+│𒆜 ${prefix}cekwelcome
+│𒆜 ${prefix}setgoodbye
+│𒆜 ${prefix}updategoodbye
+│𒆜 ${prefix}delgoodbye
+│𒆜 ${prefix}cekgoodbye
+│𒆜 ${prefix}setpromote
+│𒆜 ${prefix}updatepromote
+│𒆜 ${prefix}setdemote
+│𒆜 ${prefix}updatedemote
+│𒆜 ${prefix}cekpromote
+│𒆜 ${prefix}cekdemote
+│𒆜 ${prefix}delpromote
+│𒆜 ${prefix}deldemote
+│𒆜 ${prefix}nsfw [on/off]
+│𒆜 ${prefix}antilink [on/off]
+│𒆜 ${prefix}antiwame [on/off]
+│𒆜 ${prefix}take packname|author
+│𒆜 ${prefix}group [open/close]
+│𒆜 ${prefix}tagall [text]
+╰❒ ${prefix}hidetag [text]
+
+╭─❒ 「 Anime 」 
+│𒆜 ${prefix}quotesanime
+│𒆜 ${prefix}anime [query]
+│𒆜 ${prefix}animeinfo
+│𒆜 ${prefix}manga [query]
+╰❒ ${prefix}character [query]
+
+╭─❒ 「 Tag 」 
+│𒆜 ${prefix}stickertag
+│𒆜 ${prefix}videotag [query]
+│𒆜 ${prefix}vntag [query]
+╰❒ ${prefix}imagetag [query]
+
+╭─❒ 「 Stalking 」 
+│𒆜 ${prefix}mlstalk [id|zona id]
+│𒆜 ${prefix}ffstalk [id]
+│𒆜 ${prefix}igstalk [username]
+│𒆜 ${prefix}ghstalk [username]
+╰❒ ${prefix}ytstalk [channel]
 
 
-╭─❒ 「 Convertidores 」
-│○ !emoji [😭]
-│○ !emojimix [😭+💩]
-│○ !toaudio [video]
-│○ !tomp3 [video]
-│○ !tovn [video]
-│○ !stiker [reply image]
-│○ !tourl [image/video]
-│○ !ssweb [url]
-│○ !togif [sticker]
-│○ !tomp4 [sticker]
-╰❒ !toimg [reply sticker]
+╭─❒ 「 Search 」 
+│𒆜 ${prefix}ytsearch [query]
+│𒆜 ${prefix}openai [query]
+│𒆜 ${prefix}openaiimg [query]
+│𒆜 ${prefix}chatgpt [query]
+│𒆜 ${prefix}githubsearch [query]
+│𒆜 ${prefix}kbbi [query]
+│𒆜 ${prefix}lirik [query]
+│𒆜 ${prefix}wallpaper [query]
+│𒆜 ${prefix}google [query]
+│𒆜 ${prefix}wikimedia [query]
+│𒆜 ${prefix}apksearch
+│𒆜 ${prefix}findapk
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}wattpad [query]
+│𒆜 ${prefix}webtoons [query]
+│𒆜 ${prefix}brainly [query]
+╰❒ ${prefix}pinterest [query]
 
 
-╭─❒ 「 Efectos de imagen 」 
-│○ !wanted [reply image/stiker]
-│○ !utatoo [reply image/stiker]
-│○ !unsharpen [reply image/stiker]
-│○ !thanos [reply image/stiker]
-│○ !sniper [reply image/stiker]
-│○ !sharpen [reply image/stiker]
-│○ !sepia [reply image/stiker]
-│○ !scary [reply image/stiker]
-│○ !rip [reply image/stiker]
-│○ !redple [reply image/stiker]
-│○ !rejected [reply image/stiker]
-│○ !posterize [reply image/stiker]
-│○ !ps4 [reply image/stiker]
-│○ !pixelize [reply image/stiker]
-│○ !missionpassed [reply image/stiker]
-│○ !moustache [reply image/stiker]
-│○ !lookwhatkarenhave [reply image/stiker]
-│○ !jail [reply image/stiker]
-│○ !invert [reply image/stiker]
-│○ !instagram [reply image/stiker]
-│○ !greyscale [reply image/stiker]
-│○ !glitch2 [reply image/stiker]
-│○ !gay [reply image/stiker]
-│○ !frame [reply image/stiker]
-│○ !fire [reply image/stiker]
-│○ !distort [reply image/stiker]
-│○ !dictator [reply image/stiker]
-│○ !deepfry [reply image/stiker]
-│○ !ddungeon [reply image/stiker]
-│○ !circle [reply image/stiker]
-│○ !challenger [reply image/stiker]
-│○ !burn [reply image/stiker]
-│○ !brazzers [reply image/stiker]
-╰❒ !beautiful [reply image/stiker]
+╭─❒ 「 Converter 」
+│𒆜 ${prefix}emoji [😭]
+│𒆜 ${prefix}emojimix [😭+💩]
+│𒆜 ${prefix}toaudio [video]
+│𒆜 ${prefix}tomp3 [video]
+│𒆜 ${prefix}tovn [video]
+│𒆜 ${prefix}stiker [reply image]
+│𒆜 ${prefix}tourl [image/video]
+│𒆜 ${prefix}ssweb [url]
+│𒆜 ${prefix}togif [sticker]
+│𒆜 ${prefix}tomp4 [sticker]
+╰❒ ${prefix}toimg [reply sticker]
 
 
-╭─❒ 「 Efectos de pegatinas 」 
-│○ !jail [reply image/stiker]
-│○ !red [reply image/stiker]
-│○ !gay [reply image/stiker]
-│○ !bloo [reply image/stiker]
-│○ !blue [reply image/stiker]
-│○ !sepia [reply image/stiker]
-│○ !green [reply image/stiker]
-│○ !glass [reply image/stiker]
-│○ !invert [reply image/stiker]
-│○ !blurple [reply image/stiker]
-│○ !blurple2 [reply image/stiker]
-│○ !wasted [reply image/stiker]
-│○ !passed [reply image/stiker]
-│○ !triggered [reply image/stiker]
-│○ !comrade [reply image/stiker]
-│○ !greyscale [reply image/stiker]
-│○ !threshold [reply image/stiker]
-│○ !brightness [reply image/stiker]
-╰❒ !invertgreyscale [reply image/stiker]
+╭─❒ 「 Image Effect 」 
+│𒆜 ${prefix}wanted [reply image/stiker]
+│𒆜 ${prefix}utatoo [reply image/stiker]
+│𒆜 ${prefix}unsharpen [reply image/stiker]
+│𒆜 ${prefix}thanos [reply image/stiker]
+│𒆜 ${prefix}sniper [reply image/stiker]
+│𒆜 ${prefix}sharpen [reply image/stiker]
+│𒆜 ${prefix}sepia [reply image/stiker]
+│𒆜 ${prefix}scary [reply image/stiker]
+│𒆜 ${prefix}rip [reply image/stiker]
+│𒆜 ${prefix}redple [reply image/stiker]
+│𒆜 ${prefix}rejected [reply image/stiker]
+│𒆜 ${prefix}posterize [reply image/stiker]
+│𒆜 ${prefix}ps4 [reply image/stiker]
+│𒆜 ${prefix}pixelize [reply image/stiker]
+│𒆜 ${prefix}missionpassed [reply image/stiker]
+│𒆜 ${prefix}moustache [reply image/stiker]
+│𒆜 ${prefix}lookwhatkarenhave [reply image/stiker]
+│𒆜 ${prefix}jail [reply image/stiker]
+│𒆜 ${prefix}invert [reply image/stiker]
+│𒆜 ${prefix}instagram [reply image/stiker]
+│𒆜 ${prefix}greyscale [reply image/stiker]
+│𒆜 ${prefix}glitch2 [reply image/stiker]
+│𒆜 ${prefix}gay [reply image/stiker]
+│𒆜 ${prefix}frame [reply image/stiker]
+│𒆜 ${prefix}fire [reply image/stiker]
+│𒆜 ${prefix}distort [reply image/stiker]
+│𒆜 ${prefix}dictator [reply image/stiker]
+│𒆜 ${prefix}deepfry [reply image/stiker]
+│𒆜 ${prefix}ddungeon [reply image/stiker]
+│𒆜 ${prefix}circle [reply image/stiker]
+│𒆜 ${prefix}challenger [reply image/stiker]
+│𒆜 ${prefix}burn [reply image/stiker]
+│𒆜 ${prefix}brazzers [reply image/stiker]
+╰❒ ${prefix}beautiful [reply image/stiker]
 
 
-╭─❒ 「 Descargas 」 
-│○ !tiktok [link]
-│○ !tiktoknowm [link]
-│○ !tiktokwm [link]
-│○ !tiktokaudio [link]
-│○ !ytdl [link]
-│○ !play [query]
-│○ !ytmp3 [link]
-│○ !ytshortmp3 [link]
-│○ !ytmp4 [link]
-│○ !ytshorts [link]
-│○ !facebook [link]
-│○ !facebooksd [link]
-│○ !facebookhd [link]
-│○ !fbaudio [link]
-│○ !igstory [username]
-│○ !igdl [link]
-│○ !igphoto [link]
-│○ !igvideo [link]
-│○ !igreels [link]
-│○ !igtv [link]
-│○ !soundcloud [link]
-│○ !gitclone [link repo]
-│○ !gitrepo [username repo branch]
-│○ !mediafire [link]
-│○ !nhentaipdf [id]
-╰❒ !twitter link
+╭─❒ 「 Sticker Effect 」 
+│𒆜 ${prefix}jail [reply image/stiker]
+│𒆜 ${prefix}red [reply image/stiker]
+│𒆜 ${prefix}gay [reply image/stiker]
+│𒆜 ${prefix}bloo [reply image/stiker]
+│𒆜 ${prefix}blue [reply image/stiker]
+│𒆜 ${prefix}sepia [reply image/stiker]
+│𒆜 ${prefix}green [reply image/stiker]
+│𒆜 ${prefix}glass [reply image/stiker]
+│𒆜 ${prefix}invert [reply image/stiker]
+│𒆜 ${prefix}blurple [reply image/stiker]
+│𒆜 ${prefix}blurple2 [reply image/stiker]
+│𒆜 ${prefix}wasted [reply image/stiker]
+│𒆜 ${prefix}passed [reply image/stiker]
+│𒆜 ${prefix}triggered [reply image/stiker]
+│𒆜 ${prefix}comrade [reply image/stiker]
+│𒆜 ${prefix}greyscale [reply image/stiker]
+│𒆜 ${prefix}threshold [reply image/stiker]
+│𒆜 ${prefix}brightness [reply image/stiker]
+╰❒ ${prefix}invertgreyscale [reply image/stiker]
 
-╭─❒ 「 Horóscopo 」
-│○ !nomorhoki 887435047326
-│○ !artimimpi [query]
-│○ !artinama [query]
-│○ !ramaljodoh
-│○ !ramaljodohbali
-│○ !suamiistri
-│○ !ramalcinta
-│○ !cocoknama
-│○ !pasangan
-│○ !jadiannikah
-│○ !sifatusaha
-│○ !rezeki
-│○ !pekerjaan
-│○ !nasib
-│○ !penyakit
-│○ !tarot
-│○ !fengshui
-│○ !haribaik
-│○ !harisangar
-│○ !harisial
-│○ !nagahari
-│○ !arahrezeki
-│○ !peruntungan
-│○ !weton
-│○ !karakter
-│○ !keberuntungan
-│○ !memancing
-│○ !masasubur
-│○ !zodiak 
-╰❒ !shio [query]
 
-╭─❒ 「 Animé aleatorio 」
-│○ !loli
-│○ !neko
-│○ !waifu
-│○ !shinobu
-│○ !megumin
-│○ !bully
-│○ !cuddle
-│○ !cry
-│○ !hug
-│○ !awoo
-│○ !kiss
-│○ !lick
-│○ !pat
-│○ !smug
-│○ !bonk
-│○ !yeet
-│○ !blush
-│○ !smile
-│○ !wave
-│○ !highfive
-│○ !handhold
-│○ !nom
-│○ !bite
-│○ !glomp
-│○ !slap
-│○ !kill
-│○ !happy
-│○ !wink
-│○ !poke
-│○ !dance
-╰❒ !cringe
+╭─❒ 「 Download 」 
+│𒆜 ${prefix}tiktok [link]
+│𒆜 ${prefix}tiktoknowm [link]
+│𒆜 ${prefix}tiktokwm [link]
+│𒆜 ${prefix}tiktokaudio [link]
+│𒆜 ${prefix}ytdl [link]
+│𒆜 ${prefix}play [query]
+│𒆜 ${prefix}ytmp3 [link]
+│𒆜 ${prefix}ytshortmp3 [link]
+│𒆜 ${prefix}ytmp4 [link]
+│𒆜 ${prefix}ytshorts [link]
+│𒆜 ${prefix}facebook [link]
+│𒆜 ${prefix}facebooksd [link]
+│𒆜 ${prefix}facebookhd [link]
+│𒆜 ${prefix}fbaudio [link]
+│𒆜 ${prefix}igstory [username]
+│𒆜 ${prefix}igdl [link]
+│𒆜 ${prefix}igphoto [link]
+│𒆜 ${prefix}igvideo [link]
+│𒆜 ${prefix}igreels [link]
+│𒆜 ${prefix}igtv [link]
+│𒆜 ${prefix}soundcloud [link]
+│𒆜 ${prefix}gitclone [link repo]
+│𒆜 ${prefix}gitrepo [username repo branch]
+│𒆜 ${prefix}mediafire [link]
+│𒆜 ${prefix}nhentaipdf [id]
+╰❒ ${prefix}twitter link
 
-╭─❒ 「 Menú de cambio de voz 」
-│○ !bass
-│○ !blown
-│○ !deep
-│○ !earrape
-│○ !fast
-│○ !fat
-│○ !nightcore
-│○ !reverse
-│○ !robot
-│○ !slow
-│○ !smooth
-╰❒ !tupai
+╭─❒ 「 Primbon 」
+│𒆜 ${prefix}nomorhoki 887435047326
+│𒆜 ${prefix}artimimpi [query]
+│𒆜 ${prefix}artinama [query]
+│𒆜 ${prefix}ramaljodoh
+│𒆜 ${prefix}ramaljodohbali
+│𒆜 ${prefix}suamiistri
+│𒆜 ${prefix}ramalcinta
+│𒆜 ${prefix}cocoknama
+│𒆜 ${prefix}pasangan
+│𒆜 ${prefix}jadiannikah
+│𒆜 ${prefix}sifatusaha
+│𒆜 ${prefix}rezeki
+│𒆜 ${prefix}pekerjaan
+│𒆜 ${prefix}nasib
+│𒆜 ${prefix}penyakit
+│𒆜 ${prefix}tarot
+│𒆜 ${prefix}fengshui
+│𒆜 ${prefix}haribaik
+│𒆜 ${prefix}harisangar
+│𒆜 ${prefix}harisial
+│𒆜 ${prefix}nagahari
+│𒆜 ${prefix}arahrezeki
+│𒆜 ${prefix}peruntungan
+│𒆜 ${prefix}weton
+│𒆜 ${prefix}karakter
+│𒆜 ${prefix}keberuntungan
+│𒆜 ${prefix}memancing
+│𒆜 ${prefix}masasubur
+│𒆜 ${prefix}zodiak 
+╰❒ ${prefix}shio [query]
 
-╭─❒ 「 Menú de almacenamiento 」
-│○ !addvn
-│○ !listvn
-│○ !delvn
-│○ !adddocument
-│○ !listdocument
-│○ !deldocument
-│○ !addtext
-│○ !listtext
-│○ !deltext
-│○ !addaudio
-│○ !listaudio
-│○ !delaudio
-│○ !addimage
-│○ !listimage
-│○ !delimage
-│○ !addvideo
-│○ !listvideo
-│○ !delvideo
-│○ !addstik
-│○ !delstik
-╰❒ !liststik
+╭─❒ 「 Random Anime 」
+│𒆜 ${prefix}loli
+│𒆜 ${prefix}neko
+│𒆜 ${prefix}waifu
+│𒆜 ${prefix}shinobu
+│𒆜 ${prefix}megumin
+│𒆜 ${prefix}bully
+│𒆜 ${prefix}cuddle
+│𒆜 ${prefix}cry
+│𒆜 ${prefix}hug
+│𒆜 ${prefix}awoo
+│𒆜 ${prefix}kiss
+│𒆜 ${prefix}lick
+│𒆜 ${prefix}pat
+│𒆜 ${prefix}smug
+│𒆜 ${prefix}bonk
+│𒆜 ${prefix}yeet
+│𒆜 ${prefix}blush
+│𒆜 ${prefix}smile
+│𒆜 ${prefix}wave
+│𒆜 ${prefix}highfive
+│𒆜 ${prefix}handhold
+│𒆜 ${prefix}nom
+│𒆜 ${prefix}bite
+│𒆜 ${prefix}glomp
+│𒆜 ${prefix}slap
+│𒆜 ${prefix}kill
+│𒆜 ${prefix}happy
+│𒆜 ${prefix}wink
+│𒆜 ${prefix}poke
+│𒆜 ${prefix}dance
+╰❒ ${prefix}cringe
+
+╭─❒ 「 Voice Change Menu 」
+│𒆜 ${prefix}bass
+│𒆜 ${prefix}blown
+│𒆜 ${prefix}deep
+│𒆜 ${prefix}earrape
+│𒆜 ${prefix}fast
+│𒆜 ${prefix}fat
+│𒆜 ${prefix}nightcore
+│𒆜 ${prefix}reverse
+│𒆜 ${prefix}robot
+│𒆜 ${prefix}slow
+│𒆜 ${prefix}smooth
+╰❒ ${prefix}tupai
+
+╭─❒ 「 Storage Menu 」
+│𒆜 ${prefix}addvn
+│𒆜 ${prefix}listvn
+│𒆜 ${prefix}delvn
+│𒆜 ${prefix}adddocument
+│𒆜 ${prefix}listdocument
+│𒆜 ${prefix}deldocument
+│𒆜 ${prefix}addtext
+│𒆜 ${prefix}listtext
+│𒆜 ${prefix}deltext
+│𒆜 ${prefix}addaudio
+│𒆜 ${prefix}listaudio
+│𒆜 ${prefix}delaudio
+│𒆜 ${prefix}addimage
+│𒆜 ${prefix}listimage
+│𒆜 ${prefix}delimage
+│𒆜 ${prefix}addvideo
+│𒆜 ${prefix}listvideo
+│𒆜 ${prefix}delvideo
+│𒆜 ${prefix}addstik
+│𒆜 ${prefix}delstik
+╰❒ ${prefix}liststik
 
 ╭─❒ 「 Nsfw & Sfw 」
-│○ !cuddle
-│○ !feed
-│○ !foxgirl
-│○ !kemonomimi2
-│○ !woof
-│○ !holo2
-│○ !hug
-│○ !kiss
-│○ !lizard
-│○ !meowi
-│○ !neko2
-│○ !pat
-│○ !poke
-│○ !slap
-│○ !tickle
-│○ !baka
-│○ !smug
-│○ !neko-sfw
-│○ !hentai
-│○ !hentai-gif
-│○ !spank
-│○ !blowjob
-│○ !cumarts
-│○ !eroyuri
-│○ !eroneko
-│○ !erokemonomimi
-│○ !erokitsune
-│○ !ero
-│○ !feet
-│○ !erofeet
-│○ !feetgif
-│○ !femdom
-│○ !futanari
-│○ !hentai
-│○ !holoero
-│○ !holo
-│○ !keta
-│○ !kitsune
-│○ !kemonomimi
-│○ !pussyart
-│○ !pussywankgif
-│○ !girl-solo
-│○ !girl-solo-gif
-│○ !tits
-│○ !trap
-│○ !yuri
-│○ !avatar2
-│○ !anal
-│○ !bj
-│○ !boobs
-│○ !classic
-│○ !cumsluts
-│○ !kuni
-│○ !lesbian
-│○ !neko
-│○ !neko-gif
-│○ !ahegao
-│○ !bdsm
-│○ !cuckold
-│○ !cum
-│○ !foot
-│○ !gangbang
-│○ !glasses
-│○ !jahy
-│○ !masturbation
-│○ !nsfw-neko
-│○ !orgy
-│○ !panties
-│○ !tentacles
-│○ !thighs
-╰❒ !zettai
+│𒆜 ${prefix}ahegao
+│𒆜 ${prefix}anal
+│𒆜 ${prefix}avatar2
+│𒆜 ${prefix}baka
+│𒆜 ${prefix}bdsm
+│𒆜 ${prefix}bj
+│𒆜 ${prefix}blowjob
+│𒆜 ${prefix}boobs
+│𒆜 ${prefix}classic
+│𒆜 ${prefix}cuckold
+│𒆜 ${prefix}cuddle
+│𒆜 ${prefix}cum
+│𒆜 ${prefix}cumarts
+│𒆜 ${prefix}cumsluts
+│𒆜 ${prefix}ero
+│𒆜 ${prefix}erofeet
+│𒆜 ${prefix}erokemonomimi
+│𒆜 ${prefix}erokitsune
+│𒆜 ${prefix}eroneko
+│𒆜 ${prefix}eroyuri
+│𒆜 ${prefix}feed
+│𒆜 ${prefix}feet
+│𒆜 ${prefix}feetgif
+│𒆜 ${prefix}femdom
+│𒆜 ${prefix}foot
+│𒆜 ${prefix}foxgirl
+│𒆜 ${prefix}futanari
+│𒆜 ${prefix}gangbang
+│𒆜 ${prefix}girl-solo
+│𒆜 ${prefix}girl-solo-gif
+│𒆜 ${prefix}glasses
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}hentai-gif
+│𒆜 ${prefix}holo
+│𒆜 ${prefix}holo2
+│𒆜 ${prefix}holoero
+│𒆜 ${prefix}hug
+│𒆜 ${prefix}jahy
+│𒆜 ${prefix}kemonomimi
+│𒆜 ${prefix}kemonomimi2
+│𒆜 ${prefix}keta
+│𒆜 ${prefix}kiss
+│𒆜 ${prefix}kitsune
+│𒆜 ${prefix}kuni
+│𒆜 ${prefix}lesbian
+│𒆜 ${prefix}lizard
+│𒆜 ${prefix}masturbation
+│𒆜 ${prefix}meowi
+│𒆜 ${prefix}neko
+│𒆜 ${prefix}neko-gif
+│𒆜 ${prefix}neko-sfw
+│𒆜 ${prefix}neko2
+│𒆜 ${prefix}nsfw-neko
+│𒆜 ${prefix}orgy
+│𒆜 ${prefix}panties
+│𒆜 ${prefix}pat
+│𒆜 ${prefix}poke
+│𒆜 ${prefix}pussyart
+│𒆜 ${prefix}pussywankgif
+│𒆜 ${prefix}slap
+│𒆜 ${prefix}smug
+│𒆜 ${prefix}spank
+│𒆜 ${prefix}tentacles
+│𒆜 ${prefix}thighs
+│𒆜 ${prefix}tickle
+│𒆜 ${prefix}tits
+│𒆜 ${prefix}trap
+│𒆜 ${prefix}woof
+│𒆜 ${prefix}yuri
+╰❒ ${prefix}zettai
 
-╭─❒ 「 Menús de Ephoto360 」
-│○ !youtubegold
-│○ !youtubesilver
-│○ !facebookgold
-│○ !facebooksilver
-│○ !instagramgold
-│○ !instagramsilver
-│○ !twittergold
-│○ !twittersilver
-│○ !retrotext
-│○ !halloweenbats
-│○ !texthalloween
-│○ !cardhalloween
-│○ !birthdaycake
-│○ !thundertext
-│○ !icetext
-│○ !milkcake
-│○ !snowontext
-│○ !metalstar
-│○ !dragonfire
-│○ !zombie3d
-│○ !merrycard
-│○ !generalexam 
-│○ !viettel
-│○ !embroider
-│○ !graffititext
-│○ !graffititext2
-│○ !graffititext3
-│○ !covergraffiti
-│○ !moderngold
-│○ !capercut
-│○ !lovecard
-│○ !heartflashlight
-│○ !heartcup
-│○ !sunglightshadow
-│○ !graffiti3d
-│○ !moderngoldsilver
-│○ !moderngold2
-│○ !moderngold3
-│○ !fabrictext
-│○ !masteryavatar
-│○ !messagecoffee
-│○ !announofwin
-│○ !writeblood
-│○ !horrorletter
-│○ !writehorror
-│○ !shirtclub
-│○ !angelwing
-│○ !christmasseason
-│○ !projectyasuo
-│○ !lovelycute
-│○ !womansday
-│○ !covergamepubg
-│○ !nameonheart
-│○ !funnyhalloween
-│○ !lightningpubg
-│○ !greetingcardvideo 
-│○ !christmascard 
-│○ !galaxybat
-│○ !writegalaxy
-│○ !starsnight
-│○ !noeltext
-│○ !textcakes
-│○ !pubgbirthday
-│○ !galaxywallpaper
-│○ !pubgglicthvideo 
-│○ !pubgmascotlogo
-│○ !realembroidery
-│○ !vintagetelevision
-│○ !funnyanimations
-│○ !glowingtext
-│○ !textonglass
-│○ !cartoonstyle
-│○ !multicolor
-│○ !watercolor2
-│○ !textsky
-│○ !summerbeach
-│○ !1917text
-│○ !puppycute
-╰❒ !rosebirthday
-
-
-╭─❒ 「 Menú Textpro 」
-│○ !halloween2 text|text2
-│○ !horror text|text2
-│○ !game8bit text|text2
-│○ !layered text|text2
-│○ !glitch2 text|text2
-│○ !cool-graffiti text|text2
-│○ !cool-wall-graffiti text|text2
-│○ !realistic text|text2
-│○ !space3d text|text2
-│○ !glitch-tiktok text|text2
-│○ !stone text|text2
-│○ !marvel text|text2
-│○ !marvel2 text|text2
-│○ !pornhub text|text2
-│○ !avengers text|text2
-│○ !metal-rainbow text|text2
-│○ !metal-gold text|text2
-│○ !metal-galaxy text|text2
-│○ !halloween2 text|text2
-│○ !lion text|text2
-│○ !wolf-black-white text|text2
-│○ !wolf-galaxy text|text2
-│○ !ninja text|text2
-│○ !3dsteel text|text2
-│○ !horror2 text|text2
-│○ !lava text|text2
-│○ !bagel text|text2
-│○ !blackpink text
-│○ !rainbow2 text
-│○ !water-pipe text
-│○ !halloween text
-│○ !sketch text
-│○ !sircuit text
-│○ !discovery text
-│○ !metallic2 text
-│○ !fiction text
-│○ !demon text
-│○ !transformer text
-│○ !berry text
-│○ !thunder text
-│○ !magma text
-│○ !3dstone text
-│○ !neon text
-│○ !glitch text
-│○ !harry-potter text
-│○ !embossed text
-│○ !broken text
-│○ !papercut text
-│○ !gradient text
-│○ !glossy text
-│○ !watercolor text
-│○ !multicolor text
-│○ !neon-devil text
-│○ !underwater text
-│○ !bear text
-│○ !wonderful-graffiti text
-│○ !christmas text
-│○ !neon-light text
-│○ !snow text
-│○ !cloudsky text
-│○ !luxury2 text
-│○ !gradient2 text
-│○ !summer text
-│○ !writing text
-│○ !engraved text
-│○ !summery text
-│○ !3dglue text
-│○ !metaldark text
-│○ !neonlight text
-│○ !oscar text
-│○ !minion text
-│○ !holographic text
-│○ !purple text
-│○ !glossy-blue text
-│○ !deluxe-gold text
-│○ !glossy-carbon text
-│○ !fabric text
-│○ !neonc text
-│○ !newyear text
-│○ !newyear2 text
-│○ !metal-silver text
-│○ !xmas text
-│○ !blood text
-│○ !dark-gold text
-│○ !joker text
-│○ !wicker text
-│○ !natural text
-│○ !firework text
-│○ !skeleton text
-│○ !red-balloon text
-│○ !purple-balloon text
-│○ !pink-balloon text
-│○ !green-balloon text
-│○ !cyan-balloon text
-│○ !blue-balloon text
-│○ !gold-balloon text
-│○ !steel text
-│○ !gloss text
-│○ !denim text
-│○ !decorate text
-│○ !decorate-purple text
-│○ !peridot text
-│○ !rock text
-│○ !yellow-glass text
-│○ !purple-glass text
-│○ !orange-glass text
-│○ !green-glass text
-│○ !cyan-glass text
-│○ !blue-glass text
-│○ !red-glass text
-│○ !purple-shiny-glass text
-│○ !captain-as2 text
-│○ !robot text
-│○ !equalizer text
-│○ !toxic text
-│○ !pink-sparkling text
-│○ !blue-sparkling text
-│○ !green-sparkling text
-│○ !purple-sparkling text
-│○ !gold-sparkling text
-│○ !red-sparkling text
-│○ !cyan-sparkling text
-│○ !decorative text
-│○ !chocolate text
-│○ !strawberry text
-│○ !koifish text
-│○ !bread text
-│○ !matrix text
-│○ !blood2 text
-│○ !neonligth2 text
-│○ !thunder2 text
-│○ !3dbox text
-│○ !neon2 text
-│○ !road-warning text
-│○ !bokeh text
-│○ !green-neon text
-│○ !advanced text
-│○ !dropwater text
-│○ !wall text
-│○ !chrismast text
-│○ !honey2 text
-│○ !drug text
-│○ !marble text
-│○ !marble2 text
-│○ !ice text
-│○ !juice text
-│○ !rusty text
-│○ !abstra text
-│○ !biscuit text
-│○ !wood text
-│○ !scifi text
-│○ !metal-rainbow text
-│○ !metal-rose-gold text
-│○ !purple-gem text
-│○ !shiny text 
-│○ !yellow-jewelry text
-│○ !silver-jewelry text
-│○ !red-jewelry text
-│○ !purple-jewelry text
-│○ !orange-jewelry text
-│○ !green-jewelry text
-│○ !cyan-jewelry text
-│○ !blue-jewelry text
-│○ !hot-metal text
-│○ !golden text
-│○ !blue-glitter text
-│○ !purple-glitter text
-│○ !pink-glitter text
-│○ !green-glitter text
-│○ !silver-glitter text
-│○ !gold-glitter text
-│○ !bronze-glitter text
-│○ !eroded-metal text
-│○ !carbon text
-│○ !candy text
-│○ !blue-metal text
-│○ !blue-gem text
-│○ !3dchrome text
-│○ !black-metal text
-╰❒ !metal-gold text
+╭─❒ 「 Ephoto360 Menu 」
+│𒆜 ${prefix}1917text
+│𒆜 ${prefix}angelwing
+│𒆜 ${prefix}announofwin
+│𒆜 ${prefix}birthdaycake
+│𒆜 ${prefix}capercut
+│𒆜 ${prefix}cardhalloween
+│𒆜 ${prefix}cartoonstyle
+│𒆜 ${prefix}christmascard 
+│𒆜 ${prefix}christmasseason
+│𒆜 ${prefix}covergamepubg
+│𒆜 ${prefix}covergraffiti
+│𒆜 ${prefix}dragonfire
+│𒆜 ${prefix}embroider
+│𒆜 ${prefix}fabrictext
+│𒆜 ${prefix}facebookgold
+│𒆜 ${prefix}facebooksilver
+│𒆜 ${prefix}funnyanimations
+│𒆜 ${prefix}funnyhalloween
+│𒆜 ${prefix}galaxybat
+│𒆜 ${prefix}galaxywallpaper
+│𒆜 ${prefix}generalexam 
+│𒆜 ${prefix}glowingtext
+│𒆜 ${prefix}graffiti3d
+│𒆜 ${prefix}graffititext
+│𒆜 ${prefix}graffititext2
+│𒆜 ${prefix}graffititext3
+│𒆜 ${prefix}greetingcardvideo 
+│𒆜 ${prefix}halloweenbats
+│𒆜 ${prefix}heartcup
+│𒆜 ${prefix}heartflashlight
+│𒆜 ${prefix}horrorletter
+│𒆜 ${prefix}icetext
+│𒆜 ${prefix}instagramgold
+│𒆜 ${prefix}instagramsilver
+│𒆜 ${prefix}lightningpubg
+│𒆜 ${prefix}lovecard
+│𒆜 ${prefix}lovelycute
+│𒆜 ${prefix}masteryavatar
+│𒆜 ${prefix}merrycard
+│𒆜 ${prefix}messagecoffee
+│𒆜 ${prefix}metalstar
+│𒆜 ${prefix}milkcake
+│𒆜 ${prefix}moderngold
+│𒆜 ${prefix}moderngold2
+│𒆜 ${prefix}moderngold3
+│𒆜 ${prefix}moderngoldsilver
+│𒆜 ${prefix}multicolor
+│𒆜 ${prefix}nameonheart
+│𒆜 ${prefix}noeltext
+│𒆜 ${prefix}projectyasuo
+│𒆜 ${prefix}pubgbirthday
+│𒆜 ${prefix}pubgglicthvideo 
+│𒆜 ${prefix}pubgmascotlogo
+│𒆜 ${prefix}puppycute
+│𒆜 ${prefix}realembroidery
+│𒆜 ${prefix}retrotext
+│𒆜 ${prefix}rosebirthday
+│𒆜 ${prefix}shirtclub
+│𒆜 ${prefix}snowontext
+│𒆜 ${prefix}starsnight
+│𒆜 ${prefix}summerbeach
+│𒆜 ${prefix}sunglightshadow
+│𒆜 ${prefix}textcakes
+│𒆜 ${prefix}texthalloween
+│𒆜 ${prefix}textonglass
+│𒆜 ${prefix}textsky
+│𒆜 ${prefix}thundertext
+│𒆜 ${prefix}twittergold
+│𒆜 ${prefix}twittersilver
+│𒆜 ${prefix}viettel
+│𒆜 ${prefix}vintagetelevision
+│𒆜 ${prefix}watercolor2
+│𒆜 ${prefix}womansday
+│𒆜 ${prefix}writeblood
+│𒆜 ${prefix}writegalaxy
+│𒆜 ${prefix}writehorror
+│𒆜 ${prefix}youtubegold
+│𒆜 ${prefix}youtubesilver
+╰❒ ${prefix}zombie3d
 
 
-╭─❒ 「 Otros 」
-│○ !afk [reason]
-│○ !translate kode_bahasa text
-│○ !kalkulator [query]
-│○ !smeme [text]
-│○ !smeme2 [text|text]
-│○ !memegen [text|text]
+╭─❒ 「 Textpro Menu 」
+│𒆜 ${prefix}halloween2 text|text2
+│𒆜 ${prefix}horror text|text2
+│𒆜 ${prefix}game8bit text|text2
+│𒆜 ${prefix}layered text|text2
+│𒆜 ${prefix}glitch2 text|text2
+│𒆜 ${prefix}cool-graffiti text|text2
+│𒆜 ${prefix}cool-wall-graffiti text|text2
+│𒆜 ${prefix}realistic text|text2
+│𒆜 ${prefix}space3d text|text2
+│𒆜 ${prefix}glitch-tiktok text|text2
+│𒆜 ${prefix}stone text|text2
+│𒆜 ${prefix}marvel text|text2
+│𒆜 ${prefix}marvel2 text|text2
+│𒆜 ${prefix}pornhub text|text2
+│𒆜 ${prefix}avengers text|text2
+│𒆜 ${prefix}metal-rainbow text|text2
+│𒆜 ${prefix}metal-gold text|text2
+│𒆜 ${prefix}metal-galaxy text|text2
+│𒆜 ${prefix}halloween2 text|text2
+│𒆜 ${prefix}lion text|text2
+│𒆜 ${prefix}wolf-black-white text|text2
+│𒆜 ${prefix}wolf-galaxy text|text2
+│𒆜 ${prefix}ninja text|text2
+│𒆜 ${prefix}3dsteel text|text2
+│𒆜 ${prefix}horror2 text|text2
+│𒆜 ${prefix}lava text|text2
+│𒆜 ${prefix}bagel text|text2
+│𒆜 ${prefix}blackpink text
+│𒆜 ${prefix}rainbow2 text
+│𒆜 ${prefix}water-pipe text
+│𒆜 ${prefix}halloween text
+│𒆜 ${prefix}sketch text
+│𒆜 ${prefix}sircuit text
+│𒆜 ${prefix}discovery text
+│𒆜 ${prefix}metallic2 text
+│𒆜 ${prefix}fiction text
+│𒆜 ${prefix}demon text
+│𒆜 ${prefix}transformer text
+│𒆜 ${prefix}berry text
+│𒆜 ${prefix}thunder text
+│𒆜 ${prefix}magma text
+│𒆜 ${prefix}3dstone text
+│𒆜 ${prefix}neon text
+│𒆜 ${prefix}glitch text
+│𒆜 ${prefix}harry-potter text
+│𒆜 ${prefix}embossed text
+│𒆜 ${prefix}broken text
+│𒆜 ${prefix}papercut text
+│𒆜 ${prefix}gradient text
+│𒆜 ${prefix}glossy text
+│𒆜 ${prefix}watercolor text
+│𒆜 ${prefix}multicolor text
+│𒆜 ${prefix}neon-devil text
+│𒆜 ${prefix}underwater text
+│𒆜 ${prefix}bear text
+│𒆜 ${prefix}wonderful-graffiti text
+│𒆜 ${prefix}christmas text
+│𒆜 ${prefix}neon-light text
+│𒆜 ${prefix}snow text
+│𒆜 ${prefix}cloudsky text
+│𒆜 ${prefix}luxury2 text
+│𒆜 ${prefix}gradient2 text
+│𒆜 ${prefix}summer text
+│𒆜 ${prefix}writing text
+│𒆜 ${prefix}engraved text
+│𒆜 ${prefix}summery text
+│𒆜 ${prefix}3dglue text
+│𒆜 ${prefix}metaldark text
+│𒆜 ${prefix}neonlight text
+│𒆜 ${prefix}oscar text
+│𒆜 ${prefix}minion text
+│𒆜 ${prefix}holographic text
+│𒆜 ${prefix}purple text
+│𒆜 ${prefix}glossy-blue text
+│𒆜 ${prefix}deluxe-gold text
+│𒆜 ${prefix}glossy-carbon text
+│𒆜 ${prefix}fabric text
+│𒆜 ${prefix}neonc text
+│𒆜 ${prefix}newyear text
+│𒆜 ${prefix}newyear2 text
+│𒆜 ${prefix}metal-silver text
+│𒆜 ${prefix}xmas text
+│𒆜 ${prefix}blood text
+│𒆜 ${prefix}dark-gold text
+│𒆜 ${prefix}joker text
+│𒆜 ${prefix}wicker text
+│𒆜 ${prefix}natural text
+│𒆜 ${prefix}firework text
+│𒆜 ${prefix}skeleton text
+│𒆜 ${prefix}red-balloon text
+│𒆜 ${prefix}purple-balloon text
+│𒆜 ${prefix}pink-balloon text
+│𒆜 ${prefix}green-balloon text
+│𒆜 ${prefix}cyan-balloon text
+│𒆜 ${prefix}blue-balloon text
+│𒆜 ${prefix}gold-balloon text
+│𒆜 ${prefix}steel text
+│𒆜 ${prefix}gloss text
+│𒆜 ${prefix}denim text
+│𒆜 ${prefix}decorate text
+│𒆜 ${prefix}decorate-purple text
+│𒆜 ${prefix}peridot text
+│𒆜 ${prefix}rock text
+│𒆜 ${prefix}yellow-glass text
+│𒆜 ${prefix}purple-glass text
+│𒆜 ${prefix}orange-glass text
+│𒆜 ${prefix}green-glass text
+│𒆜 ${prefix}cyan-glass text
+│𒆜 ${prefix}blue-glass text
+│𒆜 ${prefix}red-glass text
+│𒆜 ${prefix}purple-shiny-glass text
+│𒆜 ${prefix}captain-as2 text
+│𒆜 ${prefix}robot text
+│𒆜 ${prefix}equalizer text
+│𒆜 ${prefix}toxic text
+│𒆜 ${prefix}pink-sparkling text
+│𒆜 ${prefix}blue-sparkling text
+│𒆜 ${prefix}green-sparkling text
+│𒆜 ${prefix}purple-sparkling text
+│𒆜 ${prefix}gold-sparkling text
+│𒆜 ${prefix}red-sparkling text
+│𒆜 ${prefix}cyan-sparkling text
+│𒆜 ${prefix}decorative text
+│𒆜 ${prefix}chocolate text
+│𒆜 ${prefix}strawberry text
+│𒆜 ${prefix}koifish text
+│𒆜 ${prefix}bread text
+│𒆜 ${prefix}matrix text
+│𒆜 ${prefix}blood2 text
+│𒆜 ${prefix}neonligth2 text
+│𒆜 ${prefix}thunder2 text
+│𒆜 ${prefix}3dbox text
+│𒆜 ${prefix}neon2 text
+│𒆜 ${prefix}road-warning text
+│𒆜 ${prefix}bokeh text
+│𒆜 ${prefix}green-neon text
+│𒆜 ${prefix}advanced text
+│𒆜 ${prefix}dropwater text
+│𒆜 ${prefix}wall text
+│𒆜 ${prefix}chrismast text
+│𒆜 ${prefix}honey2 text
+│𒆜 ${prefix}drug text
+│𒆜 ${prefix}marble text
+│𒆜 ${prefix}marble2 text
+│𒆜 ${prefix}ice text
+│𒆜 ${prefix}juice text
+│𒆜 ${prefix}rusty text
+│𒆜 ${prefix}abstra text
+│𒆜 ${prefix}biscuit text
+│𒆜 ${prefix}wood text
+│𒆜 ${prefix}scifi text
+│𒆜 ${prefix}metal-rainbow text
+│𒆜 ${prefix}metal-rose-gold text
+│𒆜 ${prefix}purple-gem text
+│𒆜 ${prefix}shiny text 
+│𒆜 ${prefix}yellow-jewelry text
+│𒆜 ${prefix}silver-jewelry text
+│𒆜 ${prefix}red-jewelry text
+│𒆜 ${prefix}purple-jewelry text
+│𒆜 ${prefix}orange-jewelry text
+│𒆜 ${prefix}green-jewelry text
+│𒆜 ${prefix}cyan-jewelry text
+│𒆜 ${prefix}blue-jewelry text
+│𒆜 ${prefix}hot-metal text
+│𒆜 ${prefix}golden text
+│𒆜 ${prefix}blue-glitter text
+│𒆜 ${prefix}purple-glitter text
+│𒆜 ${prefix}pink-glitter text
+│𒆜 ${prefix}green-glitter text
+│𒆜 ${prefix}silver-glitter text
+│𒆜 ${prefix}gold-glitter text
+│𒆜 ${prefix}bronze-glitter text
+│𒆜 ${prefix}eroded-metal text
+│𒆜 ${prefix}carbon text
+│𒆜 ${prefix}candy text
+│𒆜 ${prefix}blue-metal text
+│𒆜 ${prefix}blue-gem text
+│𒆜 ${prefix}3dchrome text
+│𒆜 ${prefix}black-metal text
+╰❒ ${prefix}metal-gold text
+ 
+
+╭─❒ 「 Others 」
+│𒆜 ${prefix}afk [reason]
+│𒆜 ${prefix}translate kode_bahasa text
+│𒆜 ${prefix}kalkulator [query]
+│𒆜 ${prefix}smeme [text]
+│𒆜 ${prefix}smeme2 [text|text]
+│𒆜 ${prefix}memegen [text|text]
 ╰❒
 
-╭─❒ 「 Menú Juegos 」
-│○ !tembak
-│○ !tolak
-│○ !terima
-│○ !putusin
-│○ !ikhlasin
-│○ !cekpacar
-│○ !kuismath
-│○ !tebakgambar
-│○ !tebakkata
-│○ !tebakbendera
-│○ !tebakkalimat
-│○ !tebaksiapa
-│○ !tebakkabupaten
-│○ !tebakkimia
-│○ !tebaklirik
-│○ !tebaktebakan
-│○ !tekateki
-│○ !susunkata
-╰❒ !caklontong
+╭─❒ 「 Game Menu 」
+│𒆜 ${prefix}tembak
+│𒆜 ${prefix}tolak
+│𒆜 ${prefix}terima
+│𒆜 ${prefix}putusin
+│𒆜 ${prefix}ikhlasin
+│𒆜 ${prefix}cekpacar
+│𒆜 ${prefix}kuismath
+│𒆜 ${prefix}tebakgambar
+│𒆜 ${prefix}tebakkata
+│𒆜 ${prefix}tebakbendera
+│𒆜 ${prefix}tebakkalimat
+│𒆜 ${prefix}tebaksiapa
+│𒆜 ${prefix}tebakkabupaten
+│𒆜 ${prefix}tebakkimia
+│𒆜 ${prefix}tebaklirik
+│𒆜 ${prefix}tebaktebakan
+│𒆜 ${prefix}tekateki
+│𒆜 ${prefix}susunkata
+╰❒ ${prefix}caklontong
 
 
-╭─❒ 「 Ingesta de Menú 」
-│○ !chika
-│○ !delvira
-│○ !ayu
-│○ !bunga
-│○ !aura
-│○ !nisa
-│○ !ziva
-│○ !yana
-│○ !viona
-│○ !syania
-│○ !riri
-│○ !syifa
-│○ !mama_gina
-│○ !alcakenya
-│○ !mangayutri
-│○ !rikagusriani
-│○ !asupan
-│○ !bocil
-│○ !geayubi
-│○ !santuy
-│○ !ukhty
-╰❒ !syifa
+╭─❒ 「 Asupan Menu 」
+│𒆜 ${prefix}chika
+│𒆜 ${prefix}delvira
+│𒆜 ${prefix}ayu
+│𒆜 ${prefix}bunga
+│𒆜 ${prefix}aura
+│𒆜 ${prefix}nisa
+│𒆜 ${prefix}ziva
+│𒆜 ${prefix}yana
+│𒆜 ${prefix}viona
+│𒆜 ${prefix}syania
+│𒆜 ${prefix}riri
+│𒆜 ${prefix}syifa
+│𒆜 ${prefix}mama_gina
+│𒆜 ${prefix}alcakenya
+│𒆜 ${prefix}mangayutri
+│𒆜 ${prefix}rikagusriani
+│𒆜 ${prefix}asupan
+│𒆜 ${prefix}bocil
+│𒆜 ${prefix}geayubi
+│𒆜 ${prefix}santuy
+│𒆜 ${prefix}ukhty
+╰❒ ${prefix}syifa
 
-╭─❒ 「 Pegatinas de telegramas 」
-│○ !awoawo
-│○ !benedict
-│○ !chat
-│○ !dbfly
-│○ !dino_kuning
-│○ !doge
-│○ !gojosatoru
-│○ !hope_boy
-│○ !jisoo
-│○ !kr_robot
-│○ !kucing
-│○ !lonte
-│○ !manusia_lidi
-│○ !menjamet
-│○ !meow
-│○ !nicholas
-│○ !patrick
-│○ !popoci
-│○ !sponsbob
-│○ !kawan_sponsbob
-╰❒ !tyni
+╭─❒ 「 Telegram Sticker 」
+│𒆜 ${prefix}awoawo
+│𒆜 ${prefix}benedict
+│𒆜 ${prefix}chat
+│𒆜 ${prefix}dbfly
+│𒆜 ${prefix}dino_kuning
+│𒆜 ${prefix}doge
+│𒆜 ${prefix}gojosatoru
+│𒆜 ${prefix}hope_boy
+│𒆜 ${prefix}jisoo
+│𒆜 ${prefix}kr_robot
+│𒆜 ${prefix}kucing
+│𒆜 ${prefix}lonte
+│𒆜 ${prefix}manusia_lidi
+│𒆜 ${prefix}menjamet
+│𒆜 ${prefix}meow
+│𒆜 ${prefix}nicholas
+│𒆜 ${prefix}patrick
+│𒆜 ${prefix}popoci
+│𒆜 ${prefix}sponsbob
+│𒆜 ${prefix}kawan_sponsbob
+╰❒ ${prefix}tyni
 
-╭─❒ 「 Chica al azar 」
-│○ !china 
-│○ !indonesia 
-│○ !malaysia 
-│○ !thailand 
-│○ !korea 
-│○ !japan 
-│○ !vietnam 
-│○ !jenni 
-│○ !jiso 
-│○ !lisa  
-╰❒ !rose
+╭─❒ 「 Random Cewe 」
+│𒆜 ${prefix}china 
+│𒆜 ${prefix}indonesia 
+│𒆜 ${prefix}malaysia 
+│𒆜 ${prefix}thailand 
+│𒆜 ${prefix}korea 
+│𒆜 ${prefix}japan 
+│𒆜 ${prefix}vietnam 
+│𒆜 ${prefix}jenni 
+│𒆜 ${prefix}jiso 
+│𒆜 ${prefix}lisa  
+╰❒ ${prefix}rose
 
-╭─❒ 「 logotipos de menú 」
-│○ !anonymous2
-│○ !astronotspace
-│○ !avatar3q360
-│○ !avatarff
-│○ !avatarleagueofking
-│○ !avatarlolbyname
-│○ !avataroverwatch
-│○ !bannerofaov
-│○ !bannerofaov2
-│○ !bannerofapex
-│○ !banneroffreefire
-│○ !banneroflol
-│○ !bannerofoverwatch
-│○ !bannerofpubg
-│○ !bannerytcsgo
-│○ !beautifulgalaxylol
-│○ !beautifulshimmering
-│○ !blueneon
-│○ !circlemarcotteam
-│○ !colorfulpubg
-│○ !companylogo
-│○ !companylogo2
-│○ !coverbannerlol
-│○ !coverdota2
-│○ !coverfblol
-│○ !coverfreefirefb
-│○ !coverleagueofking
-│○ !coverloknew
-│○ !coverofwarface
-│○ !coveronepiecefb
-│○ !crossfirecover
-│○ !crossfirestyle
-│○ !csgocover
-│○ !cutegirlgamer
-│○ !cyberhunterfb
-│○ !dragonballfb
-│○ !effect3donbeach
-│○ !elegantrotation
-│○ !fbgamepubgcover
-│○ !footballteam
-│○ !gaminglogo4fvs
-│○ !gamingmascot
-│○ !gradientlogo
-│○ !gunlogogaming
-│○ !introvideomaker
-│○ !letterlogos 
-│○ !logoaccording 
-│○ !logogamingassasin 
-│○ !lolcoverbyname 
-│○ !lolpentakill 
-│○ !lolwallpaper 
-│○ !maketeamlogo 
-│○ !mascotstyle 
-│○ !metalmascot 
-│○ !newlolavatar 
-│○ !overwatchcover 
-│○ !overwatchwallpaper 
-│○ !pencilsketch 
-│○ !pubgcutelogo 
-│○ !pubglogomaker 
-│○ !rovwallpaper 
-│○ !rovwallpaperhd 
-│○ !teamlogo 
-│○ !wallpaperaov 
-╰❒ !wallpaperml 
+╭─❒ 「 Logo Menu 」
+│𒆜 ${prefix}anonymous2
+│𒆜 ${prefix}astronotspace
+│𒆜 ${prefix}avatar3q360
+│𒆜 ${prefix}avatarff
+│𒆜 ${prefix}avatarleagueofking
+│𒆜 ${prefix}avatarlolbyname
+│𒆜 ${prefix}avataroverwatch
+│𒆜 ${prefix}bannerofaov
+│𒆜 ${prefix}bannerofaov2
+│𒆜 ${prefix}bannerofapex
+│𒆜 ${prefix}banneroffreefire
+│𒆜 ${prefix}banneroflol
+│𒆜 ${prefix}bannerofoverwatch
+│𒆜 ${prefix}bannerofpubg
+│𒆜 ${prefix}bannerytcsgo
+│𒆜 ${prefix}beautifulgalaxylol
+│𒆜 ${prefix}beautifulshimmering
+│𒆜 ${prefix}blueneon
+│𒆜 ${prefix}circlemarcotteam
+│𒆜 ${prefix}colorfulpubg
+│𒆜 ${prefix}companylogo
+│𒆜 ${prefix}companylogo2
+│𒆜 ${prefix}coverbannerlol
+│𒆜 ${prefix}coverdota2
+│𒆜 ${prefix}coverfblol
+│𒆜 ${prefix}coverfreefirefb
+│𒆜 ${prefix}coverleagueofking
+│𒆜 ${prefix}coverloknew
+│𒆜 ${prefix}coverofwarface
+│𒆜 ${prefix}coveronepiecefb
+│𒆜 ${prefix}crossfirecover
+│𒆜 ${prefix}crossfirestyle
+│𒆜 ${prefix}csgocover
+│𒆜 ${prefix}cutegirlgamer
+│𒆜 ${prefix}cyberhunterfb
+│𒆜 ${prefix}dragonballfb
+│𒆜 ${prefix}effect3donbeach
+│𒆜 ${prefix}elegantrotation
+│𒆜 ${prefix}fbgamepubgcover
+│𒆜 ${prefix}footballteam
+│𒆜 ${prefix}gaminglogo4fvs
+│𒆜 ${prefix}gamingmascot
+│𒆜 ${prefix}gradientlogo
+│𒆜 ${prefix}gunlogogaming
+│𒆜 ${prefix}introvideomaker
+│𒆜 ${prefix}letterlogos 
+│𒆜 ${prefix}logoaccording 
+│𒆜 ${prefix}logogamingassasin 
+│𒆜 ${prefix}lolcoverbyname 
+│𒆜 ${prefix}lolpentakill 
+│𒆜 ${prefix}lolwallpaper 
+│𒆜 ${prefix}maketeamlogo 
+│𒆜 ${prefix}mascotstyle 
+│𒆜 ${prefix}metalmascot 
+│𒆜 ${prefix}newlolavatar 
+│𒆜 ${prefix}overwatchcover 
+│𒆜 ${prefix}overwatchwallpaper 
+│𒆜 ${prefix}pencilsketch 
+│𒆜 ${prefix}pubgcutelogo 
+│𒆜 ${prefix}pubglogomaker 
+│𒆜 ${prefix}rovwallpaper 
+│𒆜 ${prefix}rovwallpaperhd 
+│𒆜 ${prefix}teamlogo 
+│𒆜 ${prefix}wallpaperaov 
+╰❒ ${prefix}wallpaperml 
 
 
-╭─❒ 「 Menú islámico 」
-│○ !asmaulhusna
-│○ !kisahnabi [nabi]
-│○ !jadwalshalat [daerah]
-│○ !randomquran
-│○ !randomquran2
-│○ !listsurah
-│○ !tafsirsurah [surah]
-╰❒ !alquranaudio [surah|ayat]
+╭─❒ 「 Islamic Menu 」
+│𒆜 ${prefix}asmaulhusna
+│𒆜 ${prefix}kisahnabi [nabi]
+│𒆜 ${prefix}jadwalshalat [daerah]
+│𒆜 ${prefix}randomquran
+│𒆜 ${prefix}randomquran2
+│𒆜 ${prefix}listsurah
+│𒆜 ${prefix}tafsirsurah [surah]
+╰❒ ${prefix}alquranaudio [surah|ayat]
 
-╭─❒ 「 Menú de sonido 」
-│○ !sound1
-│○ !sound2
-│○ !sound3
-│○ !sound4
-│○ !sound5
-│○ !sound6
-│○ !sound7
-│○ !sound8
-│○ !sound9
-│○ !sound10
-│○ !sound11
-│○ !sound12
-│○ !sound13
-│○ !sound14
-│○ !sound15
-│○ !sound16
-│○ !sound17
-│○ !sound18 
-│○ !sound19
-│○ !sound20
-│○ !sound21
-│○ !sound22
-│○ !sound23
-│○ !sound24
-│○ !sound25
-│○ !sound26
-│○ !sound27
-│○ !sound28
-│○ !sound29
-│○ !sound30
-│○ !sound31
-│○ !sound32
-│○ !sound33
-│○ !sound34
-│○ !sound35
-│○ !sound36
-│○ !sound37
-│○ !sound38
-│○ !sound39
-│○ !sound40
-│○ !sound41
-│○ !sound42
-│○ !sound43
-│○ !sound44
-│○ !sound45
-│○ !sound46
-│○ !sound47
-│○ !sound48
-│○ !sound49
-│○ !sound50
-│○ !sound51
-│○ !sound52
-│○ !sound53
-│○ !sound54
-│○ !sound55
-│○ !sound56
-│○ !sound57
-│○ !sound58
-│○ !sound59
-│○ !sound60
-│○ !sound61
-│○ !sound62
-│○ !sound63
-│○ !sound64
-│○ !sound65
-│○ !sound66
-│○ !sound67
-│○ !sound68
-│○ !sound69
-╰❒ !sound70
+╭─❒ 「 Sound Menu 」
+│𒆜 ${prefix}sound1
+│𒆜 ${prefix}sound2
+│𒆜 ${prefix}sound3
+│𒆜 ${prefix}sound4
+│𒆜 ${prefix}sound5
+│𒆜 ${prefix}sound6
+│𒆜 ${prefix}sound7
+│𒆜 ${prefix}sound8
+│𒆜 ${prefix}sound9
+│𒆜 ${prefix}sound10
+│𒆜 ${prefix}sound11
+│𒆜 ${prefix}sound12
+│𒆜 ${prefix}sound13
+│𒆜 ${prefix}sound14
+│𒆜 ${prefix}sound15
+│𒆜 ${prefix}sound16
+│𒆜 ${prefix}sound17
+│𒆜 ${prefix}sound18 
+│𒆜 ${prefix}sound19
+│𒆜 ${prefix}sound20
+│𒆜 ${prefix}sound21
+│𒆜 ${prefix}sound22
+│𒆜 ${prefix}sound23
+│𒆜 ${prefix}sound24
+│𒆜 ${prefix}sound25
+│𒆜 ${prefix}sound26
+│𒆜 ${prefix}sound27
+│𒆜 ${prefix}sound28
+│𒆜 ${prefix}sound29
+│𒆜 ${prefix}sound30
+│𒆜 ${prefix}sound31
+│𒆜 ${prefix}sound32
+│𒆜 ${prefix}sound33
+│𒆜 ${prefix}sound34
+│𒆜 ${prefix}sound35
+│𒆜 ${prefix}sound36
+│𒆜 ${prefix}sound37
+│𒆜 ${prefix}sound38
+│𒆜 ${prefix}sound39
+│𒆜 ${prefix}sound40
+│𒆜 ${prefix}sound41
+│𒆜 ${prefix}sound42
+│𒆜 ${prefix}sound43
+│𒆜 ${prefix}sound44
+│𒆜 ${prefix}sound45
+│𒆜 ${prefix}sound46
+│𒆜 ${prefix}sound47
+│𒆜 ${prefix}sound48
+│𒆜 ${prefix}sound49
+│𒆜 ${prefix}sound50
+│𒆜 ${prefix}sound51
+│𒆜 ${prefix}sound52
+│𒆜 ${prefix}sound53
+│𒆜 ${prefix}sound54
+│𒆜 ${prefix}sound55
+│𒆜 ${prefix}sound56
+│𒆜 ${prefix}sound57
+│𒆜 ${prefix}sound58
+│𒆜 ${prefix}sound59
+│𒆜 ${prefix}sound60
+│𒆜 ${prefix}sound61
+│𒆜 ${prefix}sound62
+│𒆜 ${prefix}sound63
+│𒆜 ${prefix}sound64
+│𒆜 ${prefix}sound65
+│𒆜 ${prefix}sound66
+│𒆜 ${prefix}sound67
+│𒆜 ${prefix}sound68
+│𒆜 ${prefix}sound69
+╰❒ ${prefix}sound70
 
-╭─❒ 「 Gracias 」 
-│○ My God
-│○ My Parents
-│○ Fatih A.
-│○ Ferdi
-│○ DikaArdnt
-│○ Mhankbarbar
-│○ Nurutomo
-│○ Rashid
-│○ ZeeoneOfc
-│○ Penyedia Module
+╭─❒ 「 TqTo 」 
+│𒆜 My God
+│𒆜 My Parents
+│𒆜 Fatih A.
+│𒆜 Ferdiz
+│𒆜 DikaArdnt
+│𒆜 Mhankbarbar
+│𒆜 Nurutomo
+│𒆜 ZeeoneOfc
+│𒆜 Penyedia Module
 ╰❒ And All Support
     `
 }
 
 exports.rules = (prefix) => {
     return `
-*── 「 NORMAS AND FAQ 」 ──*
+*── 「 RULES AND FAQ 」 ──*
 
-1. No envíe spam a los bots. 🙅
-2. no llames al bot. ☎️
-3. No compares bots 👍
+1. Jangan spam bot. 🙅
+2. Jangan telepon bot. ☎️
+3. Jangan membandingkan bot 👍
 
-🗯️ Bot no o lento para responder ?
-➡️ Puede verse afectado por la red, la señal, prohibido por Whatsapp y algunas razones.
+🗯️ Bot tidak atau lambat merespon ?
+➡️ Mungkin dipengaruhi oleh jaringan, signal, banned oleh Whatsapp dan beberapa asalan.
 
-🗯️ ¿Dónde puedo obtener el script de este bot?
-➡️ Puede obtener este script en YouTube ZEEONE OFC
+🗯️ Dimana saya bisa mendapatkan Script dari bot ini ?
+➡️ Script ini bisa kalian dapatkan di YouTube ZEEONE OFC
 
-🗯️ ¿Puedo agregar al grupo?
-➡️ Para eso depende del propietario del bot.
+🗯️ Boleh saya menambah ke grup?
+➡️ Untuk itu tergantung dari owner bot sendiri
 
-🗯️ ¿Cuál es el prefijo?
-➡️ Este bot usa prefijo múltiple y puedes usarlo sin prefijo
+🗯️ Prefixnya apa ya?
+➡️ Bot ini menggunakan multi prefix & bisa kamu gunakan tanpa prefix
 
-Si entiende las reglas, por favor escriba *${prefix}menu* ¡para comenzar!
+Jika sudah dipahami rules-nya, silakan ketik *${prefix}menu* untuk memulai!
 
-️ Todas las políticas y condiciones de los bots están sujetas a cambios en cualquier momento 
+⚠️ Segala kebijakan dan ketentuan bot dapat berubah kapan saja 
 
-Gracias! 
+Terimakasih! 
 `
 }
 exports.welcome = () =>{
 	return`𝖩𝖺𝗇𝗀𝖺𝗇 𝗅𝗎𝗉𝖺 𝗂𝗇𝗍𝗋𝗈 𝗄𝖺𝗄 🤗
 	
 ╭ 𝖭𝖺𝗆𝖺 :
-│○ 𝖴𝗆𝗎𝗋 :
-│○ 𝖦𝖾𝗇𝖽𝖾𝗋 :
-│○ 𝖠𝗌𝗄𝗈𝗍 :
+│𒆜 𝖴𝗆𝗎𝗋 :
+│𒆜 𝖦𝖾𝗇𝖽𝖾𝗋 :
+│𒆜 𝖠𝗌𝗄𝗈𝗍 :
 ╰❒ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 𝗄𝖺k ~`
 }
 exports.leave = () =>{
@@ -1808,1190 +1845,1199 @@ exports.leave = () =>{
 Goodbye`
 }
 exports.source = () =>{
-return`*------「 SOURCE CODE 」 ------*
+return`*------「 𝗝𝗢-𝗝0 𝗕𝗢𝗧 」 ------*
 
-Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://s.id/YouTube-Zeeoneofc
+
+http://wa.me/918593074023
 `
 }
 exports.tos = (ownernomer) => {
     return `
-*-------「 DONATE 」 -------*
+*-------「 𝗝𝗢-𝗝0 𝗕𝗢𝗧 」 -------*
 
-Hola hermano ☺️ 
-Puedes ayudarme a mantener este bot actualizado mediante una donación
+Hi bro ☺️ 
+You can support me to keep this bot up to date by donating
 
-Cualquier cantidad de su donación significará mucho 👍
+Any amount of your donation will be very meaningful 👍
+Thanks!
 
-Gracias!
-
-Persona de contacto Titular:
+Contact person Owner:
 wa.me/${ownernomer}
 
     `
 }
 
 exports.info = (prefix) =>{
-	return`╭─❒ 「 Robots de información 」 
-│○ !owner
-│○ !rules
-│○ !sc
-│○ !ping
-│○ !runtime
-│○ !botstatus
-╰❒ !donate
+	return`╭─❒ 「 Bot Info 」 
+│𒆜 ${prefix}owner
+│𒆜 ${prefix}rules
+│𒆜 ${prefix}sc
+│𒆜 ${prefix}ping
+│𒆜 ${prefix}runtime
+│𒆜 ${prefix}botstatus
+╰❒ ${prefix}donate
 `}
 
 exports.ownermenu = (prefix) =>{
-return`╭─❒ 「 dueño 」 
-│○ !setmenu [query]
-│○ !setmenu katalog
-│○ !setmenu katalog2
-│○ !setmenu list
-│○ !setwm packname|author
-│○ !sendsesi
-│○ !listpc
-│○ !listgc
-│○ !broadcast [text]
-│○ !bc [text]
-│○ !bcgc 
-│○ !bcimage
-│○ !bcaudio
-│○ !bcstiker
-│○ !bcvn
-│○ !bcvideo
-│○ !banuser
-│○ !unban
-│○ !banned
-│○ !listbanned
-│○ !block
-│○ !ublock
-│○ !listblock
-│○ !addpremium
-│○ !delpremium
-│○ !listpremium
-│○ !nsfw [on/off]
-│○ !mute [on/off]
-│○ !autoblok212 [on/off]
-│○ !banchat
-│○ !unbanchat
-│○ !autorespond [on/off]
-│○ !antiviewonce [on/off]
-│○ !antidelete [on/off]
-│○ !autobio [on/off]
-│○ !anticall [on/off]
-│○ !join [link]
-│○ !self
-│○ !public [only bot]
-│○ !del [reply pesan bot]
-│○ !pppanjang
-│○ !setpppanjang
-╰❒ !setppbot [reply image]
+return`╭─❒ 「 Owner 」 
+│𒆜 ${prefix}setmenu [query]
+│𒆜 ${prefix}setmenu katalog
+│𒆜 ${prefix}setmenu katalog2
+│𒆜 ${prefix}setmenu list
+│𒆜 ${prefix}setwm packname|author
+│𒆜 ${prefix}sendsesi
+│𒆜 ${prefix}listpc
+│𒆜 ${prefix}listgc
+│𒆜 ${prefix}broadcast [text]
+│𒆜 ${prefix}bc [text]
+│𒆜 ${prefix}bcgc 
+│𒆜 ${prefix}bcimage
+│𒆜 ${prefix}bcaudio
+│𒆜 ${prefix}bcstiker
+│𒆜 ${prefix}bcvn
+│𒆜 ${prefix}bcvideo
+│𒆜 ${prefix}banuser
+│𒆜 ${prefix}unban
+│𒆜 ${prefix}banned
+│𒆜 ${prefix}listbanned
+│𒆜 ${prefix}block
+│𒆜 ${prefix}ublock
+│𒆜 ${prefix}listblock
+│𒆜 ${prefix}addpremium
+│𒆜 ${prefix}delpremium
+│𒆜 ${prefix}listpremium
+│𒆜 ${prefix}nsfw [on/off]
+│𒆜 ${prefix}mute [on/off]
+│𒆜 ${prefix}autoblok212 [on/off]
+│𒆜 ${prefix}banchat
+│𒆜 ${prefix}unbanchat
+│𒆜 ${prefix}autorespond [on/off]
+│𒆜 ${prefix}antiviewonce [on/off]
+│𒆜 ${prefix}antidelete [on/off]
+│𒆜 ${prefix}autobio [on/off]
+│𒆜 ${prefix}anticall [on/off]
+│𒆜 ${prefix}join [link]
+│𒆜 ${prefix}self
+│𒆜 ${prefix}public [only bot]
+│𒆜 ${prefix}del [reply pesan bot]
+│𒆜 ${prefix}pppanjang
+│𒆜 ${prefix}setpppanjang
+╰❒ ${prefix}setppbot [reply image]
 `}
 
 exports.database = (prefix) =>{
-	return`╭─❒ 「 bases de datos 」 
-│○ !setcmd [reply stiker]
-│○ !delcmd [reply stiker]
-│○ !listcmd
-│○ !absen
-│○ !cekabsen
-│○ !deleteabsen
-│○ !absenstart
-│○ !addmsg [nama file]
-│○ !getmsg [nama file]
-│○ !listmsg
-╰❒ !delmsg [nama file]
+	return`╭─❒ 「 Database 」 
+│𒆜 ${prefix}setcmd [reply stiker]
+│𒆜 ${prefix}delcmd [reply stiker]
+│𒆜 ${prefix}listcmd
+│𒆜 ${prefix}absen
+│𒆜 ${prefix}cekabsen
+│𒆜 ${prefix}deleteabsen
+│𒆜 ${prefix}absenstart
+│𒆜 ${prefix}addmsg [nama file]
+│𒆜 ${prefix}getmsg [nama file]
+│𒆜 ${prefix}listmsg
+╰❒ ${prefix}delmsg [nama file]
 `}
 
 exports.group = (prefix) =>{
-	return`╭─❒ 「 Grupo 」 
-│○ !addsewa
-│○ !delsewa
-│○ !listsewa
-│○ !ceksewa
-│○ !delsewa
-│○ !register
-│○ !unregister
-│○ !ceksn
-│○ !listonline
-│○ !sider
-│○ !wm packname|author
-│○ !infochat
-│○ !setdesk [text]
-│○ !setppgrup [reply image]
-│○ !pppanjanggc
-│○ !setpppanjanggc
-│○ !revoke
-│○ !leave
-│○ !add [62***]
-│○ !kick @tag
-│○ !leave
-│○ !linkgc
-│○ !welcome [on/off]
-│○ !goodbye [on/off]
-│○ !demotedetect [on/off]
-│○ !promotedetect  [on/off]
-│○ !setwelcome
-│○ !updatewelcome
-│○ !delwelcome
-│○ !cekwelcome
-│○ !setgoodbye
-│○ !updategoodbye
-│○ !delgoodbye
-│○ !cekgoodbye
-│○ !setpromote
-│○ !updatepromote
-│○ !setdemote
-│○ !updatedemote
-│○ !cekpromote
-│○ !cekdemote
-│○ !delpromote
-│○ !deldemote
-│○ !nsfw [on/off]
-│○ !antilink [on/off]
-│○ !antiwame [on/off]
-│○ !take packname|author
-│○ !group [open/close]
-│○ !tagall [text]
-╰❒ !hidetag [text]
+	return`╭─❒ 「 Group 」 
+│𒆜 ${prefix}addsewa
+│𒆜 ${prefix}delsewa
+│𒆜 ${prefix}listsewa
+│𒆜 ${prefix}ceksewa
+│𒆜 ${prefix}delsewa
+│𒆜 ${prefix}register
+│𒆜 ${prefix}unregister
+│𒆜 ${prefix}ceksn
+│𒆜 ${prefix}listonline
+│𒆜 ${prefix}sider
+│𒆜 ${prefix}wm packname|author
+│𒆜 ${prefix}infochat
+│𒆜 ${prefix}setdesk [text]
+│𒆜 ${prefix}setppgrup [reply image]
+│𒆜 ${prefix}pppanjanggc
+│𒆜 ${prefix}setpppanjanggc
+│𒆜 ${prefix}revoke
+│𒆜 ${prefix}leave
+│𒆜 ${prefix}add [62***]
+│𒆜 ${prefix}kick @tag
+│𒆜 ${prefix}leave
+│𒆜 ${prefix}linkgc
+│𒆜 ${prefix}welcome [on/off]
+│𒆜 ${prefix}goodbye [on/off]
+│𒆜 ${prefix}demotedetect [on/off]
+│𒆜 ${prefix}promotedetect  [on/off]
+│𒆜 ${prefix}setwelcome
+│𒆜 ${prefix}updatewelcome
+│𒆜 ${prefix}delwelcome
+│𒆜 ${prefix}cekwelcome
+│𒆜 ${prefix}setgoodbye
+│𒆜 ${prefix}updategoodbye
+│𒆜 ${prefix}delgoodbye
+│𒆜 ${prefix}cekgoodbye
+│𒆜 ${prefix}setpromote
+│𒆜 ${prefix}updatepromote
+│𒆜 ${prefix}setdemote
+│𒆜 ${prefix}updatedemote
+│𒆜 ${prefix}cekpromote
+│𒆜 ${prefix}cekdemote
+│𒆜 ${prefix}delpromote
+│𒆜 ${prefix}deldemote
+│𒆜 ${prefix}nsfw [on/off]
+│𒆜 ${prefix}antilink [on/off]
+│𒆜 ${prefix}antiwame [on/off]
+│𒆜 ${prefix}take packname|author
+│𒆜 ${prefix}group [open/close]
+│𒆜 ${prefix}tagall [text]
+╰❒ ${prefix}hidetag [text]
 `}
 
 exports.anime = (prefix) =>{
-	return`╭─❒ 「 animado 」 
-│○ !jadiwibu
-│○ !towibu
-│○ !toanime
-│○ !jadianime
-│○ !quotesanime
-│○ !anime [query]
-│○ !animeinfo
-│○ !manga [query]
-╰❒ !character [query]
+	return`╭─❒ 「 Anime 」 
+│𒆜 ${prefix}quotesanime
+│𒆜 ${prefix}anime [query]
+│𒆜 ${prefix}animeinfo
+│𒆜 ${prefix}manga [query]
+╰❒ ${prefix}character [query]
 `}
 
 exports.tag = (prefix) =>{
-	return`╭─❒ 「 etiquetas 」 
-│○ !stickertag
-│○ !videotag [query]
-│○ !vntag [query]
-╰❒ !imagetag [query]
+	return`╭─❒ 「 Tag 」 
+│𒆜 ${prefix}stickertag
+│𒆜 ${prefix}videotag [query]
+│𒆜 ${prefix}vntag [query]
+╰❒ ${prefix}imagetag [query]
 `}
 
 exports.stalk = (prefix) =>{
-	return`╭─❒ 「 acecho 」 
-│○ !mlstalk [id|zona id]
-│○ !ffstalk [id]
-│○ !igstalk [username]
-│○ !ghstalk [username]
-╰❒ !ytstalk [channel]
+	return`╭─❒ 「 Stalking 」 
+│𒆜 ${prefix}mlstalk [id|zona id]
+│𒆜 ${prefix}ffstalk [id]
+│𒆜 ${prefix}igstalk [username]
+│𒆜 ${prefix}ghstalk [username]
+╰❒ ${prefix}ytstalk [channel]
 `}
 
 exports.search = (prefix) =>{
-	return`╭─❒ 「 Buscar 」 
-│○ !ytsearch [query]
-│○ !openai [query]
-│○ !chatgpt [query]
-│○ !githubsearch [query]
-│○ !kbbi [query]
-│○ !lirik [query]
-│○ !wallpaper [query]
-│○ !google [query]
-│○ !wikimedia [query]
-│○ !apksearch
-│○ !findapk
-│○ !hentai
-│○ !wattpad [query]
-│○ !webtoons [query]
-│○ !brainly [query]
-╰❒ !pinterest [query]
+	return`╭─❒ 「 Search 」 
+│𒆜 ${prefix}ytsearch [query]
+│𒆜 ${prefix}openai [query]
+│𒆜 ${prefix}openaiimg [query]
+│𒆜 ${prefix}chatgpt [query]
+│𒆜 ${prefix}githubsearch [query]
+│𒆜 ${prefix}kbbi [query]
+│𒆜 ${prefix}lirik [query]
+│𒆜 ${prefix}wallpaper [query]
+│𒆜 ${prefix}google [query]
+│𒆜 ${prefix}wikimedia [query]
+│𒆜 ${prefix}apksearch
+│𒆜 ${prefix}findapk
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}wattpad [query]
+│𒆜 ${prefix}webtoons [query]
+│𒆜 ${prefix}brainly [query]
+╰❒ ${prefix}pinterest [query]
 `}
 
 exports.converter = (prefix) =>{
-	return`╭─❒ 「 Convertidores 」 
-│○ !emoji [😭]
-│○ !emojimix [😭+💩]
-│○ !toaudio [video]
-│○ !tomp3 [video]
-│○ !tovn [video]
-│○ !stiker [reply image]
-│○ !tourl [image/video]
-│○ !ssweb [url]
-│○ !togif [sticker]
-│○ !tomp4 [sticker]
+	return`╭─❒ 「 Converter 」 
+│𒆜 ${prefix}emoji [😭]
+│𒆜 ${prefix}emojimix [😭+💩]
+│𒆜 ${prefix}toaudio [video]
+│𒆜 ${prefix}tomp3 [video]
+│𒆜 ${prefix}tovn [video]
+│𒆜 ${prefix}stiker [reply image]
+│𒆜 ${prefix}tourl [image/video]
+│𒆜 ${prefix}ssweb [url]
+│𒆜 ${prefix}togif [sticker]
+│𒆜 ${prefix}tomp4 [sticker]
 ╰❒${prefix}toimg [reply sticker]
 `}
 
 exports.effect = (prefix) =>{
-	return`╭─❒ 「 Efectos de imagen 」 
-│○ !wanted [reply image/stiker]
-│○ !utatoo [reply image/stiker]
-│○ !unsharpen [reply image/stiker]
-│○ !thanos [reply image/stiker]
-│○ !sniper [reply image/stiker]
-│○ !sharpen [reply image/stiker]
-│○ !sepia [reply image/stiker]
-│○ !scary [reply image/stiker]
-│○ !rip [reply image/stiker]
-│○ !redple [reply image/stiker]
-│○ !rejected [reply image/stiker]
-│○ !posterize [reply image/stiker]
-│○ !ps4 [reply image/stiker]
-│○ !pixelize [reply image/stiker]
-│○ !missionpassed [reply image/stiker]
-│○ !moustache [reply image/stiker]
-│○ !lookwhatkarenhave [reply image/stiker]
-│○ !jail [reply image/stiker]
-│○ !invert [reply image/stiker]
-│○ !instagram [reply image/stiker]
-│○ !greyscale [reply image/stiker]
-│○ !glitch [reply image/stiker]
-│○ !gay [reply image/stiker]
-│○ !frame [reply image/stiker]
-│○ !fire [reply image/stiker]
-│○ !distort [reply image/stiker]
-│○ !dictator [reply image/stiker]
-│○ !deepfry [reply image/stiker]
-│○ !ddungeon [reply image/stiker]
-│○ !circle [reply image/stiker]
-│○ !challenger [reply image/stiker]
-│○ !burn [reply image/stiker]
-│○ !brazzers [reply image/stiker]
-╰❒ !beautiful [reply image/stiker]
+	return`╭─❒ 「 Image Effect 」 
+│𒆜 ${prefix}wanted [reply image/stiker]
+│𒆜 ${prefix}utatoo [reply image/stiker]
+│𒆜 ${prefix}unsharpen [reply image/stiker]
+│𒆜 ${prefix}thanos [reply image/stiker]
+│𒆜 ${prefix}sniper [reply image/stiker]
+│𒆜 ${prefix}sharpen [reply image/stiker]
+│𒆜 ${prefix}sepia [reply image/stiker]
+│𒆜 ${prefix}scary [reply image/stiker]
+│𒆜 ${prefix}rip [reply image/stiker]
+│𒆜 ${prefix}redple [reply image/stiker]
+│𒆜 ${prefix}rejected [reply image/stiker]
+│𒆜 ${prefix}posterize [reply image/stiker]
+│𒆜 ${prefix}ps4 [reply image/stiker]
+│𒆜 ${prefix}pixelize [reply image/stiker]
+│𒆜 ${prefix}missionpassed [reply image/stiker]
+│𒆜 ${prefix}moustache [reply image/stiker]
+│𒆜 ${prefix}lookwhatkarenhave [reply image/stiker]
+│𒆜 ${prefix}jail [reply image/stiker]
+│𒆜 ${prefix}invert [reply image/stiker]
+│𒆜 ${prefix}instagram [reply image/stiker]
+│𒆜 ${prefix}greyscale [reply image/stiker]
+│𒆜 ${prefix}glitch [reply image/stiker]
+│𒆜 ${prefix}gay [reply image/stiker]
+│𒆜 ${prefix}frame [reply image/stiker]
+│𒆜 ${prefix}fire [reply image/stiker]
+│𒆜 ${prefix}distort [reply image/stiker]
+│𒆜 ${prefix}dictator [reply image/stiker]
+│𒆜 ${prefix}deepfry [reply image/stiker]
+│𒆜 ${prefix}ddungeon [reply image/stiker]
+│𒆜 ${prefix}circle [reply image/stiker]
+│𒆜 ${prefix}challenger [reply image/stiker]
+│𒆜 ${prefix}burn [reply image/stiker]
+│𒆜 ${prefix}brazzers [reply image/stiker]
+╰❒ ${prefix}beautiful [reply image/stiker]
 `}
 
 //
 exports.effect2 = (prefix) =>{
-	return`╭─❒ 「 Efectos de pegatinas 」 
-│○ !jail [reply image/stiker]
-│○ !red [reply image/stiker]
-│○ !gay [reply image/stiker]
-│○ !bloo [reply image/stiker]
-│○ !blue [reply image/stiker]
-│○ !sepia [reply image/stiker]
-│○ !green [reply image/stiker]
-│○ !glass [reply image/stiker]
-│○ !invert [reply image/stiker]
-│○ !blurple [reply image/stiker]
-│○ !blurple2 [reply image/stiker]
-│○ !wasted [reply image/stiker]
-│○ !passed [reply image/stiker]
-│○ !triggered [reply image/stiker]
-│○ !comrade [reply image/stiker]
-│○ !greyscale [reply image/stiker]
-│○ !threshold [reply image/stiker]
-│○ !brightness [reply image/stiker]
-╰❒ !invertgreyscale [reply image/stiker]
+	return`╭─❒ 「 Sticker Effect 」 
+│𒆜 ${prefix}jail [reply image/stiker]
+│𒆜 ${prefix}red [reply image/stiker]
+│𒆜 ${prefix}gay [reply image/stiker]
+│𒆜 ${prefix}bloo [reply image/stiker]
+│𒆜 ${prefix}blue [reply image/stiker]
+│𒆜 ${prefix}sepia [reply image/stiker]
+│𒆜 ${prefix}green [reply image/stiker]
+│𒆜 ${prefix}glass [reply image/stiker]
+│𒆜 ${prefix}invert [reply image/stiker]
+│𒆜 ${prefix}blurple [reply image/stiker]
+│𒆜 ${prefix}blurple2 [reply image/stiker]
+│𒆜 ${prefix}wasted [reply image/stiker]
+│𒆜 ${prefix}passed [reply image/stiker]
+│𒆜 ${prefix}triggered [reply image/stiker]
+│𒆜 ${prefix}comrade [reply image/stiker]
+│𒆜 ${prefix}greyscale [reply image/stiker]
+│𒆜 ${prefix}threshold [reply image/stiker]
+│𒆜 ${prefix}brightness [reply image/stiker]
+╰❒ ${prefix}invertgreyscale [reply image/stiker]
 `
 }
 
 exports.download = (prefix) =>{
-return`╭─❒ 「 Descargas 」 
-│○ !tiktok [link]
-│○ !tiktoknowm [link]
-│○ !tiktokwm [link]
-│○ !tiktokaudio [link]
-│○ !ytdl [link]
-│○ !play [query]
-│○ !ytmp3 [link]
-│○ !ytshortmp3 [link]
-│○ !ytmp4 [link]
-│○ !ytshorts [link]
-│○ !facebook [link]
-│○ !facebooksd [link]
-│○ !facebookhd [link]
-│○ !fbaudio [link]
-│○ !igstory [username]
-│○ !igdl [link]
-│○ !igphoto [link]
-│○ !igvideo [link]
-│○ !igreels [link]
-│○ !igtv [link]
-│○ !soundcloud [link]
-│○ !gitclone [link repo]
-│○ !gitrepo [username repo branch]
-│○ !mediafire [link]
-│○ !nhentaipdf [id]
-╰❒ !twitter link
+return`╭─❒ 「 Download 」 
+│𒆜 ${prefix}tiktok [link]
+│𒆜 ${prefix}tiktoknowm [link]
+│𒆜 ${prefix}tiktokwm [link]
+│𒆜 ${prefix}tiktokaudio [link]
+│𒆜 ${prefix}ytdl [link]
+│𒆜 ${prefix}play [query]
+│𒆜 ${prefix}ytmp3 [link]
+│𒆜 ${prefix}ytshortmp3 [link]
+│𒆜 ${prefix}ytmp4 [link]
+│𒆜 ${prefix}ytshorts [link]
+│𒆜 ${prefix}facebook [link]
+│𒆜 ${prefix}facebooksd [link]
+│𒆜 ${prefix}facebookhd [link]
+│𒆜 ${prefix}fbaudio [link]
+│𒆜 ${prefix}igstory [username]
+│𒆜 ${prefix}igdl [link]
+│𒆜 ${prefix}igphoto [link]
+│𒆜 ${prefix}igvideo [link]
+│𒆜 ${prefix}igreels [link]
+│𒆜 ${prefix}igtv [link]
+│𒆜 ${prefix}soundcloud [link]
+│𒆜 ${prefix}gitclone [link repo]
+│𒆜 ${prefix}gitrepo [username repo branch]
+│𒆜 ${prefix}mediafire [link]
+│𒆜 ${prefix}nhentaipdf [id]
+╰❒ ${prefix}twitter link
 `
 }
 
 exports.ranime = (prefix) =>{
-	return`╭─❒ 「 Animé aleatorio 」
-│○ !loli
-│○ !neko
-│○ !waifu
-│○ !shinobu
-│○ !megumin
-│○ !bully
-│○ !cuddle
-│○ !cry
-│○ !hug
-│○ !awoo
-│○ !kiss
-│○ !lick
-│○ !pat
-│○ !smug
-│○ !bonk
-│○ !yeet
-│○ !blush
-│○ !smile
-│○ !wave
-│○ !highfive
-│○ !handhold
-│○ !nom
-│○ !bite
-│○ !glomp
-│○ !slap
-│○ !kill
-│○ !happy
-│○ !wink
-│○ !poke
-│○ !dance
-╰❒ !cringe
+	return`╭─❒ 「 Random Anime 」
+│𒆜 ${prefix}loli
+│𒆜 ${prefix}neko
+│𒆜 ${prefix}waifu
+│𒆜 ${prefix}shinobu
+│𒆜 ${prefix}megumin
+│𒆜 ${prefix}bully
+│𒆜 ${prefix}cuddle
+│𒆜 ${prefix}cry
+│𒆜 ${prefix}hug
+│𒆜 ${prefix}awoo
+│𒆜 ${prefix}kiss
+│𒆜 ${prefix}lick
+│𒆜 ${prefix}pat
+│𒆜 ${prefix}smug
+│𒆜 ${prefix}bonk
+│𒆜 ${prefix}yeet
+│𒆜 ${prefix}blush
+│𒆜 ${prefix}smile
+│𒆜 ${prefix}wave
+│𒆜 ${prefix}highfive
+│𒆜 ${prefix}handhold
+│𒆜 ${prefix}nom
+│𒆜 ${prefix}bite
+│𒆜 ${prefix}glomp
+│𒆜 ${prefix}slap
+│𒆜 ${prefix}kill
+│𒆜 ${prefix}happy
+│𒆜 ${prefix}wink
+│𒆜 ${prefix}poke
+│𒆜 ${prefix}dance
+╰❒ ${prefix}cringe
 `
 }
 
 exports.nsfw = (prefix) =>{
 	return`╭─❒ 「 Nsfw & Sfw 」
-│○ !cuddle
-│○ !feed
-│○ !foxgirl
-│○ !kemonomimi2
-│○ !woof
-│○ !holo2
-│○ !hug
-│○ !kiss
-│○ !lizard
-│○ !meowi
-│○ !neko2
-│○ !pat
-│○ !poke
-│○ !slap
-│○ !tickle
-│○ !baka
-│○ !smug
-│○ !neko-sfw
-│○ !hentai
-│○ !hentai-gif
-│○ !spank
-│○ !blowjob
-│○ !cumarts
-│○ !eroyuri
-│○ !eroneko
-│○ !erokemonomimi
-│○ !erokitsune
-│○ !ero
-│○ !feet
-│○ !erofeet
-│○ !feetgif
-│○ !femdom
-│○ !futanari
-│○ !hentai
-│○ !holoero
-│○ !holo
-│○ !keta
-│○ !kitsune
-│○ !kemonomimi
-│○ !pussyart
-│○ !pussywankgif
-│○ !girl-solo
-│○ !girl-solo-gif
-│○ !tits
-│○ !trap
-│○ !yuri
-│○ !avatar2
-│○ !anal
-│○ !bj
-│○ !boobs
-│○ !classic
-│○ !cumsluts
-│○ !kuni
-│○ !lesbian
-│○ !neko
-│○ !neko-gif
-│○ !ahegao
-│○ !bdsm
-│○ !cuckold
-│○ !cum
-│○ !foot
-│○ !gangbang
-│○ !glasses
-│○ !jahy
-│○ !masturbation
-│○ !nsfw-neko
-│○ !orgy
-│○ !panties
-│○ !tentacles
-│○ !thighs
-╰❒ !zettai
+│𒆜 ${prefix}cuddle
+│𒆜 ${prefix}feed
+│𒆜 ${prefix}foxgirl
+│𒆜 ${prefix}kemonomimi2
+│𒆜 ${prefix}woof
+│𒆜 ${prefix}holo2
+│𒆜 ${prefix}hug
+│𒆜 ${prefix}kiss
+│𒆜 ${prefix}lizard
+│𒆜 ${prefix}meowi
+│𒆜 ${prefix}neko2
+│𒆜 ${prefix}pat
+│𒆜 ${prefix}poke
+│𒆜 ${prefix}slap
+│𒆜 ${prefix}tickle
+│𒆜 ${prefix}baka
+│𒆜 ${prefix}smug
+│𒆜 ${prefix}neko-sfw
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}hentai-gif
+│𒆜 ${prefix}spank
+│𒆜 ${prefix}blowjob
+│𒆜 ${prefix}cumarts
+│𒆜 ${prefix}eroyuri
+│𒆜 ${prefix}eroneko
+│𒆜 ${prefix}erokemonomimi
+│𒆜 ${prefix}erokitsune
+│𒆜 ${prefix}ero
+│𒆜 ${prefix}feet
+│𒆜 ${prefix}erofeet
+│𒆜 ${prefix}feetgif
+│𒆜 ${prefix}femdom
+│𒆜 ${prefix}futanari
+│𒆜 ${prefix}hentai
+│𒆜 ${prefix}holoero
+│𒆜 ${prefix}holo
+│𒆜 ${prefix}keta
+│𒆜 ${prefix}kitsune
+│𒆜 ${prefix}kemonomimi
+│𒆜 ${prefix}pussyart
+│𒆜 ${prefix}pussywankgif
+│𒆜 ${prefix}girl-solo
+│𒆜 ${prefix}girl-solo-gif
+│𒆜 ${prefix}tits
+│𒆜 ${prefix}trap
+│𒆜 ${prefix}yuri
+│𒆜 ${prefix}avatar2
+│𒆜 ${prefix}anal
+│𒆜 ${prefix}bj
+│𒆜 ${prefix}boobs
+│𒆜 ${prefix}classic
+│𒆜 ${prefix}cumsluts
+│𒆜 ${prefix}kuni
+│𒆜 ${prefix}lesbian
+│𒆜 ${prefix}neko
+│𒆜 ${prefix}neko-gif
+│𒆜 ${prefix}ahegao
+│𒆜 ${prefix}bdsm
+│𒆜 ${prefix}cuckold
+│𒆜 ${prefix}cum
+│𒆜 ${prefix}foot
+│𒆜 ${prefix}gangbang
+│𒆜 ${prefix}glasses
+│𒆜 ${prefix}jahy
+│𒆜 ${prefix}masturbation
+│𒆜 ${prefix}nsfw-neko
+│𒆜 ${prefix}orgy
+│𒆜 ${prefix}panties
+│𒆜 ${prefix}tentacles
+│𒆜 ${prefix}thighs
+╰❒ ${prefix}zettai
 `
 }
 
 exports.textpro = (prefix) =>{
-	return`╭─❒ 「 Menú Textpro 」
-│○ !halloween2 text|text2
-│○ !horror text|text2
-│○ !game8bit text|text2
-│○ !layered text|text2
-│○ !glitch2 text|text2
-│○ !cool-graffiti text|text2
-│○ !cool-wall-graffiti text|text2
-│○ !realistic text|text2
-│○ !space3d text|text2
-│○ !glitch-tiktok text|text2
-│○ !stone text|text2
-│○ !marvel text|text2
-│○ !marvel2 text|text2
-│○ !pornhub text|text2
-│○ !avengers text|text2
-│○ !metal-rainbow text|text2
-│○ !metal-gold text|text2
-│○ !metal-galaxy text|text2
-│○ !halloween2 text|text2
-│○ !lion text|text2
-│○ !wolf-black-white text|text2
-│○ !wolf-galaxy text|text2
-│○ !ninja text|text2
-│○ !3dsteel text|text2
-│○ !horror2 text|text2
-│○ !lava text|text2
-│○ !bagel text|text2
-│○ !blackpink text
-│○ !rainbow2 text
-│○ !water-pipe text
-│○ !halloween text
-│○ !sketch text
-│○ !sircuit text
-│○ !discovery text
-│○ !metallic2 text
-│○ !fiction text
-│○ !demon text
-│○ !transformer text
-│○ !berry text
-│○ !thunder text
-│○ !magma text
-│○ !3dstone text
-│○ !neon text
-│○ !glitch text
-│○ !harry-potter text
-│○ !embossed text
-│○ !broken text
-│○ !papercut text
-│○ !gradient text
-│○ !glossy text
-│○ !watercolor text
-│○ !multicolor text
-│○ !neon-devil text
-│○ !underwater text
-│○ !bear text
-│○ !wonderful-graffiti text
-│○ !christmas text
-│○ !neon-light text
-│○ !snow text
-│○ !cloudsky text
-│○ !luxury2 text
-│○ !gradient2 text
-│○ !summer text
-│○ !writing text
-│○ !engraved text
-│○ !summery text
-│○ !3dglue text
-│○ !metaldark text
-│○ !neonlight text
-│○ !oscar text
-│○ !minion text
-│○ !holographic text
-│○ !purple text
-│○ !glossy-blue text
-│○ !deluxe-gold text
-│○ !glossy-carbon text
-│○ !fabric text
-│○ !neonc text
-│○ !newyear text
-│○ !newyear2 text
-│○ !metal-silver text
-│○ !xmas text
-│○ !blood text
-│○ !dark-gold text
-│○ !joker text
-│○ !wicker text
-│○ !natural text
-│○ !firework text
-│○ !skeleton text
-│○ !red-balloon text
-│○ !purple-balloon text
-│○ !pink-balloon text
-│○ !green-balloon text
-│○ !cyan-balloon text
-│○ !blue-balloon text
-│○ !gold-balloon text
-│○ !steel text
-│○ !gloss text
-│○ !denim text
-│○ !decorate text
-│○ !decorate-purple text
-│○ !peridot text
-│○ !rock text
-│○ !yellow-glass text
-│○ !purple-glass text
-│○ !orange-glass text
-│○ !green-glass text
-│○ !cyan-glass text
-│○ !blue-glass text
-│○ !red-glass text
-│○ !purple-shiny-glass text
-│○ !captain-as2 text
-│○ !robot text
-│○ !equalizer text
-│○ !toxic text
-│○ !pink-sparkling text
-│○ !blue-sparkling text
-│○ !green-sparkling text
-│○ !purple-sparkling text
-│○ !gold-sparkling text
-│○ !red-sparkling text
-│○ !cyan-sparkling text
-│○ !decorative text
-│○ !chocolate text
-│○ !strawberry text
-│○ !koifish text
-│○ !bread text
-│○ !matrix text
-│○ !blood2 text
-│○ !neonligth2 text
-│○ !thunder2 text
-│○ !3dbox text
-│○ !neon2 text
-│○ !road-warning text
-│○ !bokeh text
-│○ !green-neon text
-│○ !advanced text
-│○ !dropwater text
-│○ !wall text
-│○ !chrismast text
-│○ !honey2 text
-│○ !drug text
-│○ !marble text
-│○ !marble2 text
-│○ !ice text
-│○ !juice text
-│○ !rusty text
-│○ !abstra text
-│○ !biscuit text
-│○ !wood text
-│○ !scifi text
-│○ !metal-rainbow text
-│○ !metal-rose-gold text
-│○ !purple-gem text
-│○ !shiny text 
-│○ !yellow-jewelry text
-│○ !silver-jewelry text
-│○ !red-jewelry text
-│○ !purple-jewelry text
-│○ !orange-jewelry text
-│○ !green-jewelry text
-│○ !cyan-jewelry text
-│○ !blue-jewelry text
-│○ !hot-metal text
-│○ !golden text
-│○ !blue-glitter text
-│○ !purple-glitter text
-│○ !pink-glitter text
-│○ !green-glitter text
-│○ !silver-glitter text
-│○ !gold-glitter text
-│○ !bronze-glitter text
-│○ !eroded-metal text
-│○ !carbon text
-│○ !candy text
-│○ !blue-metal text
-│○ !blue-gem text
-│○ !3dchrome text
-│○ !black-metal text
-╰❒ !metal-gold text
+	return`╭─❒ 「 Textpro Menu 」
+│𒆜 ${prefix}halloween2 text|text2
+│𒆜 ${prefix}horror text|text2
+│𒆜 ${prefix}game8bit text|text2
+│𒆜 ${prefix}layered text|text2
+│𒆜 ${prefix}glitch2 text|text2
+│𒆜 ${prefix}cool-graffiti text|text2
+│𒆜 ${prefix}cool-wall-graffiti text|text2
+│𒆜 ${prefix}realistic text|text2
+│𒆜 ${prefix}space3d text|text2
+│𒆜 ${prefix}glitch-tiktok text|text2
+│𒆜 ${prefix}stone text|text2
+│𒆜 ${prefix}marvel text|text2
+│𒆜 ${prefix}marvel2 text|text2
+│𒆜 ${prefix}pornhub text|text2
+│𒆜 ${prefix}avengers text|text2
+│𒆜 ${prefix}metal-rainbow text|text2
+│𒆜 ${prefix}metal-gold text|text2
+│𒆜 ${prefix}metal-galaxy text|text2
+│𒆜 ${prefix}halloween2 text|text2
+│𒆜 ${prefix}lion text|text2
+│𒆜 ${prefix}wolf-black-white text|text2
+│𒆜 ${prefix}wolf-galaxy text|text2
+│𒆜 ${prefix}ninja text|text2
+│𒆜 ${prefix}3dsteel text|text2
+│𒆜 ${prefix}horror2 text|text2
+│𒆜 ${prefix}lava text|text2
+│𒆜 ${prefix}bagel text|text2
+│𒆜 ${prefix}blackpink text
+│𒆜 ${prefix}rainbow2 text
+│𒆜 ${prefix}water-pipe text
+│𒆜 ${prefix}halloween text
+│𒆜 ${prefix}sketch text
+│𒆜 ${prefix}sircuit text
+│𒆜 ${prefix}discovery text
+│𒆜 ${prefix}metallic2 text
+│𒆜 ${prefix}fiction text
+│𒆜 ${prefix}demon text
+│𒆜 ${prefix}transformer text
+│𒆜 ${prefix}berry text
+│𒆜 ${prefix}thunder text
+│𒆜 ${prefix}magma text
+│𒆜 ${prefix}3dstone text
+│𒆜 ${prefix}neon text
+│𒆜 ${prefix}glitch text
+│𒆜 ${prefix}harry-potter text
+│𒆜 ${prefix}embossed text
+│𒆜 ${prefix}broken text
+│𒆜 ${prefix}papercut text
+│𒆜 ${prefix}gradient text
+│𒆜 ${prefix}glossy text
+│𒆜 ${prefix}watercolor text
+│𒆜 ${prefix}multicolor text
+│𒆜 ${prefix}neon-devil text
+│𒆜 ${prefix}underwater text
+│𒆜 ${prefix}bear text
+│𒆜 ${prefix}wonderful-graffiti text
+│𒆜 ${prefix}christmas text
+│𒆜 ${prefix}neon-light text
+│𒆜 ${prefix}snow text
+│𒆜 ${prefix}cloudsky text
+│𒆜 ${prefix}luxury2 text
+│𒆜 ${prefix}gradient2 text
+│𒆜 ${prefix}summer text
+│𒆜 ${prefix}writing text
+│𒆜 ${prefix}engraved text
+│𒆜 ${prefix}summery text
+│𒆜 ${prefix}3dglue text
+│𒆜 ${prefix}metaldark text
+│𒆜 ${prefix}neonlight text
+│𒆜 ${prefix}oscar text
+│𒆜 ${prefix}minion text
+│𒆜 ${prefix}holographic text
+│𒆜 ${prefix}purple text
+│𒆜 ${prefix}glossy-blue text
+│𒆜 ${prefix}deluxe-gold text
+│𒆜 ${prefix}glossy-carbon text
+│𒆜 ${prefix}fabric text
+│𒆜 ${prefix}neonc text
+│𒆜 ${prefix}newyear text
+│𒆜 ${prefix}newyear2 text
+│𒆜 ${prefix}metal-silver text
+│𒆜 ${prefix}xmas text
+│𒆜 ${prefix}blood text
+│𒆜 ${prefix}dark-gold text
+│𒆜 ${prefix}joker text
+│𒆜 ${prefix}wicker text
+│𒆜 ${prefix}natural text
+│𒆜 ${prefix}firework text
+│𒆜 ${prefix}skeleton text
+│𒆜 ${prefix}red-balloon text
+│𒆜 ${prefix}purple-balloon text
+│𒆜 ${prefix}pink-balloon text
+│𒆜 ${prefix}green-balloon text
+│𒆜 ${prefix}cyan-balloon text
+│𒆜 ${prefix}blue-balloon text
+│𒆜 ${prefix}gold-balloon text
+│𒆜 ${prefix}steel text
+│𒆜 ${prefix}gloss text
+│𒆜 ${prefix}denim text
+│𒆜 ${prefix}decorate text
+│𒆜 ${prefix}decorate-purple text
+│𒆜 ${prefix}peridot text
+│𒆜 ${prefix}rock text
+│𒆜 ${prefix}yellow-glass text
+│𒆜 ${prefix}purple-glass text
+│𒆜 ${prefix}orange-glass text
+│𒆜 ${prefix}green-glass text
+│𒆜 ${prefix}cyan-glass text
+│𒆜 ${prefix}blue-glass text
+│𒆜 ${prefix}red-glass text
+│𒆜 ${prefix}purple-shiny-glass text
+│𒆜 ${prefix}captain-as2 text
+│𒆜 ${prefix}robot text
+│𒆜 ${prefix}equalizer text
+│𒆜 ${prefix}toxic text
+│𒆜 ${prefix}pink-sparkling text
+│𒆜 ${prefix}blue-sparkling text
+│𒆜 ${prefix}green-sparkling text
+│𒆜 ${prefix}purple-sparkling text
+│𒆜 ${prefix}gold-sparkling text
+│𒆜 ${prefix}red-sparkling text
+│𒆜 ${prefix}cyan-sparkling text
+│𒆜 ${prefix}decorative text
+│𒆜 ${prefix}chocolate text
+│𒆜 ${prefix}strawberry text
+│𒆜 ${prefix}koifish text
+│𒆜 ${prefix}bread text
+│𒆜 ${prefix}matrix text
+│𒆜 ${prefix}blood2 text
+│𒆜 ${prefix}neonligth2 text
+│𒆜 ${prefix}thunder2 text
+│𒆜 ${prefix}3dbox text
+│𒆜 ${prefix}neon2 text
+│𒆜 ${prefix}road-warning text
+│𒆜 ${prefix}bokeh text
+│𒆜 ${prefix}green-neon text
+│𒆜 ${prefix}advanced text
+│𒆜 ${prefix}dropwater text
+│𒆜 ${prefix}wall text
+│𒆜 ${prefix}chrismast text
+│𒆜 ${prefix}honey2 text
+│𒆜 ${prefix}drug text
+│𒆜 ${prefix}marble text
+│𒆜 ${prefix}marble2 text
+│𒆜 ${prefix}ice text
+│𒆜 ${prefix}juice text
+│𒆜 ${prefix}rusty text
+│𒆜 ${prefix}abstra text
+│𒆜 ${prefix}biscuit text
+│𒆜 ${prefix}wood text
+│𒆜 ${prefix}scifi text
+│𒆜 ${prefix}metal-rainbow text
+│𒆜 ${prefix}metal-rose-gold text
+│𒆜 ${prefix}purple-gem text
+│𒆜 ${prefix}shiny text 
+│𒆜 ${prefix}yellow-jewelry text
+│𒆜 ${prefix}silver-jewelry text
+│𒆜 ${prefix}red-jewelry text
+│𒆜 ${prefix}purple-jewelry text
+│𒆜 ${prefix}orange-jewelry text
+│𒆜 ${prefix}green-jewelry text
+│𒆜 ${prefix}cyan-jewelry text
+│𒆜 ${prefix}blue-jewelry text
+│𒆜 ${prefix}hot-metal text
+│𒆜 ${prefix}golden text
+│𒆜 ${prefix}blue-glitter text
+│𒆜 ${prefix}purple-glitter text
+│𒆜 ${prefix}pink-glitter text
+│𒆜 ${prefix}green-glitter text
+│𒆜 ${prefix}silver-glitter text
+│𒆜 ${prefix}gold-glitter text
+│𒆜 ${prefix}bronze-glitter text
+│𒆜 ${prefix}eroded-metal text
+│𒆜 ${prefix}carbon text
+│𒆜 ${prefix}candy text
+│𒆜 ${prefix}blue-metal text
+│𒆜 ${prefix}blue-gem text
+│𒆜 ${prefix}3dchrome text
+│𒆜 ${prefix}black-metal text
+╰❒ ${prefix}metal-gold text
 `
 }
 
 
 exports.other = (prefix) =>{
-return`╭─❒ 「 Otros 」
-│○ !ttp [text]
-│○ !attp [text]
-│○ !afk [reason]
-│○ !translate kode_bahasa text
-│○ !kalkulator [query]
-│○ !smeme [text]
-│○ !smeme2 [text|text]
-╰❒ !memegen [text|text]
+return`╭─❒ 「 Others 」
+│𒆜 ${prefix}ttp [text]
+│𒆜 ${prefix}attp [text]
+│𒆜 ${prefix}afk [reason]
+│𒆜 ${prefix}translate kode_bahasa text
+│𒆜 ${prefix}kalkulator [query]
+│𒆜 ${prefix}smeme [text]
+│𒆜 ${prefix}smeme2 [text|text]
+╰❒ ${prefix}memegen [text|text]
 `
 }
 exports.game = (prefix) =>{
-return`╭─❒ 「 Menú Juegos 」
-│○ !tembak
-│○ !tolak
-│○ !terima
-│○ !putusin
-│○ !ikhlasin
-│○ !cekpacar
-│○ !kuismath
-│○ !tebakgambar
-│○ !tebakkata
-│○ !tebakbendera
-│○ !tebakkalimat
-│○ !tebaksiapa
-│○ !tebakkabupaten
-│○ !tebakkimia
-│○ !tebaklirik
-│○ !tebaktebakan
-│○ !tekateki
-│○ !susunkata
-╰❒ !caklontong
+return`╭─❒ 「 Game Menu 」
+│𒆜 ${prefix}tembak
+│𒆜 ${prefix}tolak
+│𒆜 ${prefix}terima
+│𒆜 ${prefix}putusin
+│𒆜 ${prefix}ikhlasin
+│𒆜 ${prefix}cekpacar
+│𒆜 ${prefix}kuismath
+│𒆜 ${prefix}tebakgambar
+│𒆜 ${prefix}tebakkata
+│𒆜 ${prefix}tebakbendera
+│𒆜 ${prefix}tebakkalimat
+│𒆜 ${prefix}tebaksiapa
+│𒆜 ${prefix}tebakkabupaten
+│𒆜 ${prefix}tebakkimia
+│𒆜 ${prefix}tebaklirik
+│𒆜 ${prefix}tebaktebakan
+│𒆜 ${prefix}tekateki
+│𒆜 ${prefix}susunkata
+╰❒ ${prefix}caklontong
 `
 }
 exports.asupan = (prefix) =>{
-return`╭─❒ 「 Ingesta de Menú 」
-│○ !chika
-│○ !delvira
-│○ !ayu
-│○ !bunga
-│○ !aura
-│○ !nisa
-│○ !ziva
-│○ !yana
-│○ !viona
-│○ !syania
-│○ !riri
-│○ !syifa
-│○ !mama_gina
-│○ !alcakenya
-│○ !mangayutri
-│○ !rikagusriani
-│○ !asupan
-│○ !bocil
-│○ !geayubi
-│○ !santuy
-│○ !ukhty
-╰❒ !syifa
+return`╭─❒ 「 Asupan Menu 」
+│𒆜 ${prefix}chika
+│𒆜 ${prefix}delvira
+│𒆜 ${prefix}ayu
+│𒆜 ${prefix}bunga
+│𒆜 ${prefix}aura
+│𒆜 ${prefix}nisa
+│𒆜 ${prefix}ziva
+│𒆜 ${prefix}yana
+│𒆜 ${prefix}viona
+│𒆜 ${prefix}syania
+│𒆜 ${prefix}riri
+│𒆜 ${prefix}syifa
+│𒆜 ${prefix}mama_gina
+│𒆜 ${prefix}alcakenya
+│𒆜 ${prefix}mangayutri
+│𒆜 ${prefix}rikagusriani
+│𒆜 ${prefix}asupan
+│𒆜 ${prefix}bocil
+│𒆜 ${prefix}geayubi
+│𒆜 ${prefix}santuy
+│𒆜 ${prefix}ukhty
+╰❒ ${prefix}syifa
 `
 }
 exports.cecan = (prefix) =>{
-return`╭─❒ 「 Chica al azar 」
-│○ !china 
-│○ !indonesia 
-│○ !malaysia 
-│○ !thailand 
-│○ !korea 
-│○ !japan 
-│○ !vietnam 
-│○ !jenni 
-│○ !jiso 
-│○ !lisa  
-╰❒ !rose
+return`╭─❒ 「 Random Cewe 」
+│𒆜 ${prefix}china 
+│𒆜 ${prefix}indonesia 
+│𒆜 ${prefix}malaysia 
+│𒆜 ${prefix}thailand 
+│𒆜 ${prefix}korea 
+│𒆜 ${prefix}japan 
+│𒆜 ${prefix}vietnam 
+│𒆜 ${prefix}jenni 
+│𒆜 ${prefix}jiso 
+│𒆜 ${prefix}lisa  
+╰❒ ${prefix}rose
 `
 }
 
 exports.tqto = () =>{
-	return`╭─❒ 「 Gracias 」 
-│○ My God
-│○ My Parents
-│○ Fatih A.
-│○ Ferdi
-│○ DikaArdnt
-│○ Mhankbarbar
-│○ Nurutomo
-│○ Rashid
-│○ ZeeoneOfc
-│○ Penyedia Module
+	return`╭─❒ 「 TqTo 」 
+│𒆜 My God
+│𒆜 My Parents
+│𒆜 Fatih A.
+│𒆜 Ferdiz
+│𒆜 DikaArdnt
+│𒆜 Mhankbarbar
+│𒆜 Nurutomo
+│𒆜 ZeeoneOfc
+│𒆜 Penyedia Module
 ╰❒ And All Support
 `
 }
 
 exports.primbonmenu = (prefix) =>{
-	return`╭─❒ 「 Horóscopo 」
-│○ !nomorhoki 887435047326
-│○ !artimimpi [query]
-│○ !artinama [query]
-│○ !ramaljodoh
-│○ !ramaljodohbali
-│○ !suamiistri
-│○ !ramalcinta
-│○ !cocoknama
-│○ !pasangan
-│○ !jadiannikah
-│○ !sifatusaha
-│○ !rezeki
-│○ !pekerjaan
-│○ !nasib
-│○ !penyakit
-│○ !tarot
-│○ !fengshui
-│○ !haribaik
-│○ !harisangar
-│○ !harisial
-│○ !nagahari
-│○ !arahrezeki
-│○ !peruntungan
-│○ !weton
-│○ !karakter
-│○ !keberuntungan
-│○ !memancing
-│○ !masasubur
-│○ !zodiak 
-╰❒ !shio [query]
+	return`╭─❒ 「 Primbon 」
+│𒆜 ${prefix}nomorhoki 887435047326
+│𒆜 ${prefix}artimimpi [query]
+│𒆜 ${prefix}artinama [query]
+│𒆜 ${prefix}ramaljodoh
+│𒆜 ${prefix}ramaljodohbali
+│𒆜 ${prefix}suamiistri
+│𒆜 ${prefix}ramalcinta
+│𒆜 ${prefix}cocoknama
+│𒆜 ${prefix}pasangan
+│𒆜 ${prefix}jadiannikah
+│𒆜 ${prefix}sifatusaha
+│𒆜 ${prefix}rezeki
+│𒆜 ${prefix}pekerjaan
+│𒆜 ${prefix}nasib
+│𒆜 ${prefix}penyakit
+│𒆜 ${prefix}tarot
+│𒆜 ${prefix}fengshui
+│𒆜 ${prefix}haribaik
+│𒆜 ${prefix}harisangar
+│𒆜 ${prefix}harisial
+│𒆜 ${prefix}nagahari
+│𒆜 ${prefix}arahrezeki
+│𒆜 ${prefix}peruntungan
+│𒆜 ${prefix}weton
+│𒆜 ${prefix}karakter
+│𒆜 ${prefix}keberuntungan
+│𒆜 ${prefix}memancing
+│𒆜 ${prefix}masasubur
+│𒆜 ${prefix}zodiak 
+╰❒ ${prefix}shio [query]
 `
 }
 
 exports.stcmenu = (prefix) =>{
-	return`╭─❒ 「 Pegatinas de telegramas 」
-│○ !awoawo
-│○ !benedict
-│○ !chat
-│○ !dbfly
-│○ !dino_kuning
-│○ !doge
-│○ !gojosatoru
-│○ !hope_boy
-│○ !jisoo
-│○ !kr_robot
-│○ !kucing
-│○ !lonte
-│○ !manusia_lidi
-│○ !menjamet
-│○ !meow
-│○ !nicholas
-│○ !patrick
-│○ !popoci
-│○ !sponsbob
-│○ !kawan_sponsbob
-╰❒ !tyni
+	return`╭─❒ 「 Telegram Sticker 」
+│𒆜 ${prefix}awoawo
+│𒆜 ${prefix}benedict
+│𒆜 ${prefix}chat
+│𒆜 ${prefix}dbfly
+│𒆜 ${prefix}dino_kuning
+│𒆜 ${prefix}doge
+│𒆜 ${prefix}gojosatoru
+│𒆜 ${prefix}hope_boy
+│𒆜 ${prefix}jisoo
+│𒆜 ${prefix}kr_robot
+│𒆜 ${prefix}kucing
+│𒆜 ${prefix}lonte
+│𒆜 ${prefix}manusia_lidi
+│𒆜 ${prefix}menjamet
+│𒆜 ${prefix}meow
+│𒆜 ${prefix}nicholas
+│𒆜 ${prefix}patrick
+│𒆜 ${prefix}popoci
+│𒆜 ${prefix}sponsbob
+│𒆜 ${prefix}kawan_sponsbob
+╰❒ ${prefix}tyni
 `}
 
 exports.ephotomenu = (prefix) =>{
-	return`╭─❒ 「 Efoto360 menús 」
-│○ !youtubegold text
-│○ !youtubesilver text
-│○ !facebookgold text
-│○ !facebooksilver text
-│○ !instagramgold text
-│○ !instagramsilver text
-│○ !twittergold text
-│○ !twittersilver text
-│○ !retrotext text
-│○ !halloweenbats text
-│○ !texthalloween text
-│○ !cardhalloween text
-│○ !birthdaycake text
-│○ !thundertext text
-│○ !icetext text
-│○ !milkcake text
-│○ !snowontext text
-│○ !metalstar text
-│○ !dragonfire text
-│○ !zombie3d text
-│○ !merrycard text
-│○ !generalexam text 
-│○ !viettel text
-│○ !embroider text
-│○ !graffititext text
-│○ !graffititext2 text
-│○ !graffititext3 text
-│○ !covergraffiti text
-│○ !moderngold text
-│○ !capercut text
-│○ !lovecard text
-│○ !heartflashlight text
-│○ !heartcup text
-│○ !sunglightshadow text
-│○ !graffiti3d text
-│○ !moderngoldsilver text
-│○ !moderngold2 text
-│○ !moderngold3 text
-│○ !fabrictext text
-│○ !masteryavatar text
-│○ !messagecoffee text
-│○ !announofwin text
-│○ !writeblood text
-│○ !horrorletter text
-│○ !writehorror text
-│○ !shirtclub text
-│○ !angelwing text
-│○ !christmasseason text
-│○ !projectyasuo text
-│○ !lovelycute text
-│○ !womansday text
-│○ !covergamepubg text
-│○ !nameonheart text
-│○ !funnyhalloween text
-│○ !lightningpubg text
-│○ !greetingcardvideo text 
-│○ !christmascard text 
-│○ !galaxybat text
-│○ !writegalaxy text
-│○ !starsnight text
-│○ !noeltext text
-│○ !textcakes text
-│○ !pubgbirthday text
-│○ !galaxywallpaper text
-│○ !pubgglicthvideo text 
-│○ !pubgmascotlogo text
-│○ !realembroidery text
-│○ !vintagetelevision text
-│○ !funnyanimations text
-│○ !glowingtext text
-│○ !textonglass text
-│○ !cartoonstyle text
-│○ !multicolor text
-│○ !watercolor2 text
-│○ !textsky text
-│○ !summerbeach text
-│○ !1917text text
-│○ !puppycute text
-│○ !rosebirthday text
-│○ !steellettering text|text2
-│○ !letterstext text|text2
-│○ !barcashirt text|text2
-│○ !premiercup text|text2
-│○ !stylepoligon text|text2
-│○ !lifebuoys text|text2
-╰❒ !juventusshirt text|text2`
+	return`╭─❒ 「 Ephoto360 Menu 」
+│𒆜 ${prefix}youtubegold text
+│𒆜 ${prefix}youtubesilver text
+│𒆜 ${prefix}facebookgold text
+│𒆜 ${prefix}facebooksilver text
+│𒆜 ${prefix}instagramgold text
+│𒆜 ${prefix}instagramsilver text
+│𒆜 ${prefix}twittergold text
+│𒆜 ${prefix}twittersilver text
+│𒆜 ${prefix}retrotext text
+│𒆜 ${prefix}halloweenbats text
+│𒆜 ${prefix}texthalloween text
+│𒆜 ${prefix}cardhalloween text
+│𒆜 ${prefix}birthdaycake text
+│𒆜 ${prefix}thundertext text
+│𒆜 ${prefix}icetext text
+│𒆜 ${prefix}milkcake text
+│𒆜 ${prefix}snowontext text
+│𒆜 ${prefix}metalstar text
+│𒆜 ${prefix}dragonfire text
+│𒆜 ${prefix}zombie3d text
+│𒆜 ${prefix}merrycard text
+│𒆜 ${prefix}generalexam text 
+│𒆜 ${prefix}viettel text
+│𒆜 ${prefix}embroider text
+│𒆜 ${prefix}graffititext text
+│𒆜 ${prefix}graffititext2 text
+│𒆜 ${prefix}graffititext3 text
+│𒆜 ${prefix}covergraffiti text
+│𒆜 ${prefix}moderngold text
+│𒆜 ${prefix}capercut text
+│𒆜 ${prefix}lovecard text
+│𒆜 ${prefix}heartflashlight text
+│𒆜 ${prefix}heartcup text
+│𒆜 ${prefix}sunglightshadow text
+│𒆜 ${prefix}graffiti3d text
+│𒆜 ${prefix}moderngoldsilver text
+│𒆜 ${prefix}moderngold2 text
+│𒆜 ${prefix}moderngold3 text
+│𒆜 ${prefix}fabrictext text
+│𒆜 ${prefix}masteryavatar text
+│𒆜 ${prefix}messagecoffee text
+│𒆜 ${prefix}announofwin text
+│𒆜 ${prefix}writeblood text
+│𒆜 ${prefix}horrorletter text
+│𒆜 ${prefix}writehorror text
+│𒆜 ${prefix}shirtclub text
+│𒆜 ${prefix}angelwing text
+│𒆜 ${prefix}christmasseason text
+│𒆜 ${prefix}projectyasuo text
+│𒆜 ${prefix}lovelycute text
+│𒆜 ${prefix}womansday text
+│𒆜 ${prefix}covergamepubg text
+│𒆜 ${prefix}nameonheart text
+│𒆜 ${prefix}funnyhalloween text
+│𒆜 ${prefix}lightningpubg text
+│𒆜 ${prefix}greetingcardvideo text 
+│𒆜 ${prefix}christmascard text 
+│𒆜 ${prefix}galaxybat text
+│𒆜 ${prefix}writegalaxy text
+│𒆜 ${prefix}starsnight text
+│𒆜 ${prefix}noeltext text
+│𒆜 ${prefix}textcakes text
+│𒆜 ${prefix}pubgbirthday text
+│𒆜 ${prefix}galaxywallpaper text
+│𒆜 ${prefix}pubgglicthvideo text 
+│𒆜 ${prefix}pubgmascotlogo text
+│𒆜 ${prefix}realembroidery text
+│𒆜 ${prefix}vintagetelevision text
+│𒆜 ${prefix}funnyanimations text
+│𒆜 ${prefix}glowingtext text
+│𒆜 ${prefix}textonglass text
+│𒆜 ${prefix}cartoonstyle text
+│𒆜 ${prefix}multicolor text
+│𒆜 ${prefix}watercolor2 text
+│𒆜 ${prefix}textsky text
+│𒆜 ${prefix}summerbeach text
+│𒆜 ${prefix}1917text text
+│𒆜 ${prefix}puppycute text
+│𒆜 ${prefix}rosebirthday text
+│𒆜 ${prefix}steellettering text|text2
+│𒆜 ${prefix}letterstext text|text2
+│𒆜 ${prefix}barcashirt text|text2
+│𒆜 ${prefix}premiercup text|text2
+│𒆜 ${prefix}stylepoligon text|text2
+│𒆜 ${prefix}lifebuoys text|text2
+╰❒ ${prefix}juventusshirt text|text2`
 }
 
 exports.logomenu = (prefix) =>{
-	return`╭─❒ 「 logotipos de menú 」
-│○ !anonymous2
-│○ !astronotspace
-│○ !avatar3q360
-│○ !avatarff
-│○ !avatarleagueofking
-│○ !avatarlolbyname
-│○ !avataroverwatch
-│○ !bannerofaov
-│○ !bannerofaov2
-│○ !bannerofapex
-│○ !banneroffreefire
-│○ !banneroflol
-│○ !bannerofoverwatch
-│○ !bannerofpubg
-│○ !bannerytcsgo
-│○ !beautifulgalaxylol
-│○ !beautifulshimmering
-│○ !blueneon
-│○ !circlemarcotteam
-│○ !colorfulpubg
-│○ !companylogo
-│○ !companylogo2
-│○ !coverbannerlol
-│○ !coverdota2
-│○ !coverfblol
-│○ !coverfreefirefb
-│○ !coverleagueofking
-│○ !coverloknew
-│○ !coverofwarface
-│○ !coveronepiecefb
-│○ !crossfirecover
-│○ !crossfirestyle
-│○ !csgocover
-│○ !cutegirlgamer
-│○ !cyberhunterfb
-│○ !dragonballfb
-│○ !effect3donbeach
-│○ !elegantrotation
-│○ !fbgamepubgcover
-│○ !footballteam
-│○ !gaminglogo4fvs
-│○ !gamingmascot
-│○ !gradientlogo
-│○ !gunlogogaming
-│○ !introvideomaker
-│○ !letterlogos 
-│○ !logoaccording 
-│○ !logogamingassasin 
-│○ !lolcoverbyname 
-│○ !lolpentakill 
-│○ !lolwallpaper 
-│○ !maketeamlogo 
-│○ !mascotstyle 
-│○ !metalmascot 
-│○ !newlolavatar 
-│○ !overwatchcover 
-│○ !overwatchwallpaper 
-│○ !pencilsketch 
-│○ !pubgcutelogo 
-│○ !pubglogomaker 
-│○ !rovwallpaper 
-│○ !rovwallpaperhd 
-│○ !teamlogo 
-│○ !wallpaperaov 
-╰❒ !wallpaperml 
+	return`╭─❒ 「 Logo Menu 」
+│𒆜 ${prefix}coverbannerlol text|heroes
+│𒆜 ${prefix}pubglogomaker text|style
+│𒆜 ${prefix}colorfulpubg text|color
+│𒆜 ${prefix}astronotspace text|style
+│𒆜 ${prefix}wallpaperaov text|heroes
+│𒆜 ${prefix}maketeamlogo text|style
+│𒆜 ${prefix}circlemarcotteam text|logo
+│𒆜 ${prefix}wallpaperml text|heroes
+│𒆜 ${prefix}dragonballfb text|character
+│𒆜 ${prefix}bannerofaov text|character
+│𒆜 ${prefix}effect3donbeach text|background
+│𒆜 ${prefix}cutegirlgamer text|logo
+│𒆜 ${prefix}footballteam text|logo
+│𒆜 ${prefix}beautifulshimmering text|champion
+│𒆜 ${prefix}pubgcutelogo text|logo
+│𒆜 ${prefix}elegantrotation text|logo
+│𒆜 ${prefix}logogamingassasin text|logo
+│𒆜 ${prefix}introvideomaker text|logo
+│𒆜 ${prefix}gaminglogo4fvs text|logo
+│𒆜 ${prefix}blueneon text|logo
+│𒆜 ${prefix}metalmascot text|logo
+│𒆜 ${prefix}anonymous2 text|style
+│𒆜 ${prefix}lolpentakill text|style
+│𒆜 ${prefix}avatarleagueofking text|style
+│𒆜 ${prefix}avatarff text|character
+│𒆜 ${prefix}overwatchwallpaper text|character
+│𒆜 ${prefix}rovwallpaperhd text|hero
+│𒆜 ${prefix}rovwallpaper text|avatar
+│𒆜 ${prefix}beautifulgalaxylol text|style
+│𒆜 ${prefix}crossfirecover text|character
+│𒆜 ${prefix}lolwallpaper text|wallpaper
+│𒆜 ${prefix}coverdota2 text|heroes
+│𒆜 ${prefix}coverleagueofking text|character
+│𒆜 ${prefix}avatar3q360 text|avatar
+│𒆜 ${prefix}coverofwarface text|character
+│𒆜 ${prefix}newlolavatar text|avatar
+│𒆜 ${prefix}csgocover text|background
+│𒆜 ${prefix}coverloknew text|hero
+│𒆜 ${prefix}coverfblol text|letters
+│𒆜 ${prefix}overwatchcover text|hero
+│𒆜 ${prefix}crossfirestyle text|avatar
+│𒆜 ${prefix}avatarlolbyname text|style
+│𒆜 ${prefix}lolcoverbyname text|avatar
+│𒆜 ${prefix}cyberhunterfb text|character
+│𒆜 ${prefix}coverfreefirefb text|character
+│𒆜 ${prefix}gamingmascot text|style
+│𒆜 ${prefix}coveronepiecefb text|character
+│𒆜 ${prefix}bannerytcsgo text|banner
+│𒆜 ${prefix}fbgamepubgcover text|template
+│𒆜 ${prefix}banneroflol text|text2|banner
+│𒆜 ${prefix}bannerofaov2 text|text2|banner
+│𒆜 ${prefix}teamlogo text|text2|background
+│𒆜 ${prefix}companylogo2 text|text2|background
+│𒆜 ${prefix}companylogo text|text2|background
+│𒆜 ${prefix}gradientlogo text|text2|background
+│𒆜 ${prefix}pencilsketch text|text2|icon
+│𒆜 ${prefix}gunlogogaming text|text2|background
+│𒆜 ${prefix}banneroffreefire text|text2|background
+│𒆜 ${prefix}letterlogos text|text2|thumb
+│𒆜 ${prefix}bannerofoverwatch text|text2|background
+│𒆜 ${prefix}bannerofapex text|text2|background
+│𒆜 ${prefix}bannerofpubg text|text2|background
+│𒆜 ${prefix}mascotstyle text|text2|thumb
+│𒆜 ${prefix}logoaccording text|text2|thumb
+╰❒ ${prefix}avataroverwatch text|text2|thumb
 `
 }
 
 exports.islammenu = (prefix) =>{
-	return`╭─❒ 「 Menú islámico 」
-│○ !asmaulhusna
-│○ !kisahnabi [nabi]
-│○ !jadwalshalat [daerah]
-│○ !randomquran
-│○ !randomquran2
-│○ !listsurah
-│○ !tafsirsurah [surah]
-╰❒ !alquranaudio [surah|ayat]
+	return`╭─❒ 「 Islamic Menu 」
+│𒆜 ${prefix}asmaulhusna
+│𒆜 ${prefix}kisahnabi [nabi]
+│𒆜 ${prefix}jadwalshalat [daerah]
+│𒆜 ${prefix}randomquran
+│𒆜 ${prefix}randomquran2
+│𒆜 ${prefix}listsurah
+│𒆜 ${prefix}tafsirsurah [surah]
+╰❒ ${prefix}alquranaudio [surah|ayat]
 `
 }
 exports.anonchat = (prefix) =>{
-	return`╭─❒ 「 Anónimo 」
-│○ !menfess
-│○ !confess
-│○ !balasmenfess
-│○ !tolakmenfess
-│○ !stopmenfess
-│○ !anonymous 
-│○ !start
-│○ !skip [daerah]
-╰❒ !stop [surah|ayat]
+	return`╭─❒ 「 Anonymous 」
+│𒆜 ${prefix}menfess
+│𒆜 ${prefix}confess
+│𒆜 ${prefix}balasmenfess
+│𒆜 ${prefix}tolakmenfess
+│𒆜 ${prefix}stopmenfess
+│𒆜 ${prefix}anonymous 
+│𒆜 ${prefix}start
+│𒆜 ${prefix}skip [daerah]
+╰❒ ${prefix}stop [surah|ayat]
 `
 }
 
 exports.storemenu = (prefix) =>{
-	return`╭─❒ 「 Menú Tienda 」
-│○ !list
-│○ !addlist [key|respond]
-│○ !dellist [key]
-│○ !update [key|respond]
-│○ !store
-│○ !kali
-│○ !bagi
-│○ !tambah
-│○ !kurang
-│○ !kalkulator
-│○ !setproses
-│○ !updateproses
-│○ !cekproses
-│○ !delproses
-│○ !setdone
-│○ !updatedone
-│○ !cekdone
-│○ !deldone
-│○ !pay
-│○ !setcaptionpay
-│○ !setpaysewa
-│○ !proses
-╰❒ !done
+	return`╭─❒ 「 Store Menu 」
+│𒆜 ${prefix}list
+│𒆜 ${prefix}addlist [key|respond]
+│𒆜 ${prefix}dellist [key]
+│𒆜 ${prefix}update [key|respond]
+│𒆜 ${prefix}store
+│𒆜 ${prefix}kali
+│𒆜 ${prefix}bagi
+│𒆜 ${prefix}tambah
+│𒆜 ${prefix}kurang
+│𒆜 ${prefix}kalkulator
+│𒆜 ${prefix}setproses
+│𒆜 ${prefix}updateproses
+│𒆜 ${prefix}cekproses
+│𒆜 ${prefix}delproses
+│𒆜 ${prefix}setdone
+│𒆜 ${prefix}updatedone
+│𒆜 ${prefix}cekdone
+│𒆜 ${prefix}deldone
+│𒆜 ${prefix}pay
+│𒆜 ${prefix}setcaptionpay
+│𒆜 ${prefix}setpaysewa
+│𒆜 proses
+╰❒ done
 `
 }
 
 exports.voiceChange = (prefix) =>{
-	return`╭─❒ 「 Menú de cambio de voz 」
-│○ !bass
-│○ !blown
-│○ !deep
-│○ !earrape
-│○ !fast
-│○ !fat
-│○ !nightcore
-│○ !reverse
-│○ !robot
-│○ !slow
-│○ !smooth
-╰❒ !tupai
+	return`╭─❒ 「 Voice Change Menu 」
+│𒆜 ${prefix}bass
+│𒆜 ${prefix}blown
+│𒆜 ${prefix}deep
+│𒆜 ${prefix}earrape
+│𒆜 ${prefix}fast
+│𒆜 ${prefix}fat
+│𒆜 ${prefix}nightcore
+│𒆜 ${prefix}reverse
+│𒆜 ${prefix}robot
+│𒆜 ${prefix}slow
+│𒆜 ${prefix}smooth
+╰❒ ${prefix}tupai
 `
 }
+
 exports.storagemenu = (prefix) =>{
-	return`╭─❒ 「 Menú de almacenamiento 」
-│○ !addvn
-│○ !listvn
-│○ !delvn
-│○ !adddocument
-│○ !listdocument
-│○ !deldocument
-│○ !addtext
-│○ !listtext
-│○ !deltext
-│○ !addaudio
-│○ !listaudio
-│○ !delaudio
-│○ !addimage
-│○ !listimage
-│○ !delimage
-│○ !addvideo
-│○ !listvideo
-│○ !delvideo
-│○ !addstik
-│○ !delstik
-╰❒ !liststik
+	return`╭─❒ 「 Storage Menu 」
+│𒆜 ${prefix}addvn
+│𒆜 ${prefix}listvn
+│𒆜 ${prefix}delvn
+│𒆜 ${prefix}adddocument
+│𒆜 ${prefix}listdocument
+│𒆜 ${prefix}deldocument
+│𒆜 ${prefix}addtext
+│𒆜 ${prefix}listtext
+│𒆜 ${prefix}deltext
+│𒆜 ${prefix}addaudio
+│𒆜 ${prefix}listaudio
+│𒆜 ${prefix}delaudio
+│𒆜 ${prefix}addimage
+│𒆜 ${prefix}listimage
+│𒆜 ${prefix}delimage
+│𒆜 ${prefix}addvideo
+│𒆜 ${prefix}listvideo
+│𒆜 ${prefix}delvideo
+│𒆜 ${prefix}addstik
+│𒆜 ${prefix}delstik
+╰❒ ${prefix}liststik
 `
 }
 
 exports.rpgmenu = (prefix) =>{
-	return`╭─❒ 「 Juegos de rol 」
-│○ !adventure
-│○ !weekly
-│○ !use
-│○ !transfer
-│○ !slot
-│○ !shop
-│○ !pasar
-│○ !profile
-│○ !ojek
-│○ !open
-│○ !nguli
-│○ !narik
-│○ !nabung
-│○ !monthly
-│○ !mining
-│○ !merampok
-│○ !mancing
-│○ !kolam
-│○ !koboy
-│○ !kerja
-│○ !kandang
-│○ !levelup
-│○ !judi
-│○ !inventory
-│○ !hourly
-│○ !fishop
-│○ !feed
-│○ !duel
-│○ !daily
-│○ !craft
-│○ !cooldown
-│○ !cook
-│○ !collect
-│○ !chop
-│○ !casino
-│○ !buy
-│○ !bank 
-│○ !bansos
-│○ !berdagang
-│○ !berkebon
-╰❒ !build
+	return`╭─❒ 「 Rpg Games 」
+│𒆜 ${prefix}adventure
+│𒆜 ${prefix}weekly
+│𒆜 ${prefix}use
+│𒆜 ${prefix}transfer
+│𒆜 ${prefix}slot
+│𒆜 ${prefix}shop
+│𒆜 ${prefix}pasar
+│𒆜 ${prefix}profile
+│𒆜 ${prefix}ojek
+│𒆜 ${prefix}open
+│𒆜 ${prefix}nguli
+│𒆜 ${prefix}narik
+│𒆜 ${prefix}nabung
+│𒆜 ${prefix}monthly
+│𒆜 ${prefix}mining
+│𒆜 ${prefix}merampok
+│𒆜 ${prefix}mancing
+│𒆜 ${prefix}kolam
+│𒆜 ${prefix}koboy
+│𒆜 ${prefix}kerja
+│𒆜 ${prefix}kandang
+│𒆜 ${prefix}levelup
+│𒆜 ${prefix}judi
+│𒆜 ${prefix}inventory
+│𒆜 ${prefix}hourly
+│𒆜 ${prefix}fishop
+│𒆜 ${prefix}feed
+│𒆜 ${prefix}duel
+│𒆜 ${prefix}daily
+│𒆜 ${prefix}craft
+│𒆜 ${prefix}cooldown
+│𒆜 ${prefix}cook
+│𒆜 ${prefix}collect
+│𒆜 ${prefix}chop
+│𒆜 ${prefix}casino
+│𒆜 ${prefix}buy
+│𒆜 ${prefix}bank 
+│𒆜 ${prefix}bansos
+│𒆜 ${prefix}berdagang
+│𒆜 ${prefix}berkebon
+╰❒ ${prefix}build
 `
 }
 
 exports.photooxy = (prefix)=>{
-	return`╭─❒ 「 Menú Fotooxi 」
-│○ !battlegrounds-logo
-│○ !battlefield4
-│○ !text-8bit
-│○ !typography-flower 
-│○ !under-flower 
-│○ !bevel-text 
-│○ !silk-text 
-│○ !sweet-andy 
-│○ !smoke-typography 
-│○ !carvedwood 
-│○ !scary-cemetery 
-│○ !royallook 
-│○ !coffeecup2 
-│○ !illuminated 
-│○ !harry-potter2
-│○ !birthday-cake 
-│○ !embroidery
-│○ !flaming 
-│○ !furtext 
-│○ !nightsky 
-│○ !glow-rainbow 
-│○ !gradient-avatar 
-│○ !white-cube
-│○ !graffiti-cover 
-│○ !rainbow-shine 
-│○ !smoky-neon 
-│○ !quotes-underfall
-│○ !vector-nature 
-│○ !yellow-rose 
-│○ !love-text 
-│○ !underwater-ocean 
-│○ !nature-text 
-│○ !wolf-metal 
-│○ !summer-text 
-│○ !wooden-board
-│○ !quote-wood 
-│○ !love-text 
-│○ !quotes-undergrass 
-│○ !naruto-banner 
-│○ !love-message 
-│○ !textoncup2 
-│○ !burn-paper 
-│○ !smoke 
-│○ !romantic-messages 
-│○ !shadow-sky 
-│○ !text-cup 
-╰❒ !coffecup
+	return`╭─❒ 「 Photooxy Menu 」
+│𒆜 ${prefix}battlegrounds-logo
+│𒆜 ${prefix}battlefield4
+│𒆜 ${prefix}text-8bit
+│𒆜 ${prefix}typography-flower 
+│𒆜 ${prefix}under-flower 
+│𒆜 ${prefix}bevel-text 
+│𒆜 ${prefix}silk-text 
+│𒆜 ${prefix}sweet-andy 
+│𒆜 ${prefix}smoke-typography 
+│𒆜 ${prefix}carvedwood 
+│𒆜 ${prefix}scary-cemetery 
+│𒆜 ${prefix}royallook 
+│𒆜 ${prefix}coffeecup2 
+│𒆜 ${prefix}illuminated 
+│𒆜 ${prefix}harry-potter2 //
+│𒆜 ${prefix}woodblack //
+│𒆜 ${prefix}butterfly-reflection //
+│𒆜 ${prefix}watermelon // 
+│𒆜 ${prefix}striking // 
+│𒆜 ${prefix}metallicglow //
+│𒆜 ${prefix}rainbow-text 
+│𒆜 ${prefix}birthday-cake 
+│𒆜 ${prefix}embroidery // 
+│𒆜 ${prefix}crisp 
+│𒆜 ${prefix}flaming 
+│𒆜 ${prefix}furtext 
+│𒆜 ${prefix}nightsky 
+│𒆜 ${prefix}glow-rainbow 
+│𒆜 ${prefix}gradient-avatar 
+│𒆜 ${prefix}white-cube // 
+│𒆜 ${prefix}honey-text // 
+│𒆜 ${prefix}vintage-style //
+│𒆜 ${prefix}glowing-3d // 
+│𒆜 ${prefix}army-camouflage 
+│𒆜 ${prefix}graffiti-cover 
+│𒆜 ${prefix}rainbow-shine 
+│𒆜 ${prefix}smoky-neon 
+│𒆜 ${prefix}quotes-underfall //
+│𒆜 ${prefix}layered-leaves 
+│𒆜 ${prefix}vector-nature 
+│𒆜 ${prefix}yellow-rose 
+│𒆜 ${prefix}love-text 
+│𒆜 ${prefix}underwater-ocean 
+│𒆜 ${prefix}nature-text 
+│𒆜 ${prefix}wolf-metal 
+│𒆜 ${prefix}summer-text 
+│𒆜 ${prefix}wooden-board //
+│𒆜 ${prefix}flower-heart
+│𒆜 ${prefix}quote-wood 
+│𒆜 ${prefix}love-text 
+│𒆜 ${prefix}quotes-undergrass 
+│𒆜 ${prefix}naruto-banner 
+│𒆜 ${prefix}love-message 
+│𒆜 ${prefix}textoncup2 
+│𒆜 ${prefix}burn-paper 
+│𒆜 ${prefix}smoke 
+│𒆜 ${prefix}romantic-messages 
+│𒆜 ${prefix}shadow-sky 
+│𒆜 ${prefix}text-cup 
+╰❒ ${prefix}coffecup
 `
 }
 
 exports.soundmenu = (prefix) =>{
-return`╭─❒ 「 Menú de sonido 」
-│○ !sound1
-│○ !sound2
-│○ !sound3
-│○ !sound4
-│○ !sound5
-│○ !sound6
-│○ !sound7
-│○ !sound8
-│○ !sound9
-│○ !sound10
-│○ !sound11
-│○ !sound12
-│○ !sound13
-│○ !sound14
-│○ !sound15
-│○ !sound16
-│○ !sound17
-│○ !sound18 
-│○ !sound19
-│○ !sound20
-│○ !sound21
-│○ !sound22
-│○ !sound23
-│○ !sound24
-│○ !sound25
-│○ !sound26
-│○ !sound27
-│○ !sound28
-│○ !sound29
-│○ !sound30
-│○ !sound31
-│○ !sound32
-│○ !sound33
-│○ !sound34
-│○ !sound35
-│○ !sound36
-│○ !sound37
-│○ !sound38
-│○ !sound39
-│○ !sound40
-│○ !sound41
-│○ !sound42
-│○ !sound43
-│○ !sound44
-│○ !sound45
-│○ !sound46
-│○ !sound47
-│○ !sound48
-│○ !sound49
-│○ !sound50
-│○ !sound51
-│○ !sound52
-│○ !sound53
-│○ !sound54
-│○ !sound55
-│○ !sound56
-│○ !sound57
-│○ !sound58
-│○ !sound59
-│○ !sound60
-│○ !sound61
-│○ !sound62
-│○ !sound63
-│○ !sound64
-│○ !sound65
-│○ !sound66
-│○ !sound67
-│○ !sound68
-│○ !sound69
-╰❒ !sound70
+return`╭─❒ 「 Sound Menu 」
+│𒆜 ${prefix}sound1
+│𒆜 ${prefix}sound2
+│𒆜 ${prefix}sound3
+│𒆜 ${prefix}sound4
+│𒆜 ${prefix}sound5
+│𒆜 ${prefix}sound6
+│𒆜 ${prefix}sound7
+│𒆜 ${prefix}sound8
+│𒆜 ${prefix}sound9
+│𒆜 ${prefix}sound10
+│𒆜 ${prefix}sound11
+│𒆜 ${prefix}sound12
+│𒆜 ${prefix}sound13
+│𒆜 ${prefix}sound14
+│𒆜 ${prefix}sound15
+│𒆜 ${prefix}sound16
+│𒆜 ${prefix}sound17
+│𒆜 ${prefix}sound18 
+│𒆜 ${prefix}sound19
+│𒆜 ${prefix}sound20
+│𒆜 ${prefix}sound21
+│𒆜 ${prefix}sound22
+│𒆜 ${prefix}sound23
+│𒆜 ${prefix}sound24
+│𒆜 ${prefix}sound25
+│𒆜 ${prefix}sound26
+│𒆜 ${prefix}sound27
+│𒆜 ${prefix}sound28
+│𒆜 ${prefix}sound29
+│𒆜 ${prefix}sound30
+│𒆜 ${prefix}sound31
+│𒆜 ${prefix}sound32
+│𒆜 ${prefix}sound33
+│𒆜 ${prefix}sound34
+│𒆜 ${prefix}sound35
+│𒆜 ${prefix}sound36
+│𒆜 ${prefix}sound37
+│𒆜 ${prefix}sound38
+│𒆜 ${prefix}sound39
+│𒆜 ${prefix}sound40
+│𒆜 ${prefix}sound41
+│𒆜 ${prefix}sound42
+│𒆜 ${prefix}sound43
+│𒆜 ${prefix}sound44
+│𒆜 ${prefix}sound45
+│𒆜 ${prefix}sound46
+│𒆜 ${prefix}sound47
+│𒆜 ${prefix}sound48
+│𒆜 ${prefix}sound49
+│𒆜 ${prefix}sound50
+│𒆜 ${prefix}sound51
+│𒆜 ${prefix}sound52
+│𒆜 ${prefix}sound53
+│𒆜 ${prefix}sound54
+│𒆜 ${prefix}sound55
+│𒆜 ${prefix}sound56
+│𒆜 ${prefix}sound57
+│𒆜 ${prefix}sound58
+│𒆜 ${prefix}sound59
+│𒆜 ${prefix}sound60
+│𒆜 ${prefix}sound61
+│𒆜 ${prefix}sound62
+│𒆜 ${prefix}sound63
+│𒆜 ${prefix}sound64
+│𒆜 ${prefix}sound65
+│𒆜 ${prefix}sound66
+│𒆜 ${prefix}sound67
+│𒆜 ${prefix}sound68
+│𒆜 ${prefix}sound69
+╰❒ ${prefix}sound70
 `
 }
