@@ -43,7 +43,7 @@ global.language = english //change indonesia to english if you don't understand 
 // Other
 global.botname = "𝗝𝗢-𝗝0 𝗕𝗢𝗧" //namabot kalian
 global.ownername = "𝐽𝑂-𝑗𝑜" //nama kalian
-global.myweb = "" //bebas asal jan hapus
+global.myweb = "http://wa.me/918593074023" //bebas asal jan hapus
 global.youtube = "http://wa.me/918593074023" //bebas asal jan hapus
 global.myweb2 = "" //bebas
 global.email = "" //bebas
@@ -61,9 +61,9 @@ global.packname = '© 𝗝𝗢-𝗝0 𝗕𝗢𝗧' + botname //sticker wm ubah
 global.author = 'Created By JO-jo ' + ownername //sticker wm ganti nama kalian
 global.sessionName = 'session'
 //type menu for menu
-global.typemenu = 'templateImage' //
+global.typemenu = 'menuDocument' //
 //type menu for downloadmenu, animemenu, etc
-global.typemenu2 = 'templateImage' //
+global.typemenu2 = 'menuDocument' //
 global.multiplier = 69
 global.limitawal = {
    premium: "Infinity", //unlimited
