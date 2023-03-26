@@ -41,24 +41,24 @@ global.language = english //change indonesia to english if you don't understand 
 
 // Other
 // Other
-global.botname = "Alphabot-Mdོ" //namabot kalian
-global.ownername = "ᴹᴿ᭄ ZeeoneOfcོ ×፝֟͜×" //nama kalian
-global.myweb = "https://s.id/zeeoneofc" //bebas asal jan hapus
-global.youtube = "https://youtube.com/c/@ZeeoneOfc" //bebas asal jan hapus
-global.myweb2 = "https://s.id/zeeoneofc" //bebas
-global.email = "zeeoneofc@gmail.com" //bebas
-global.region = "Indonesia" //bebas
+global.botname = "𝗝𝗢-𝗝0 𝗕𝗢𝗧" //namabot kalian
+global.ownername = "𝐽𝑂-𝑗𝑜" //nama kalian
+global.myweb = "" //bebas asal jan hapus
+global.youtube = "http://wa.me/918593074023" //bebas asal jan hapus
+global.myweb2 = "" //bebas
+global.email = "" //bebas
+global.region = "India" //bebas
 global.timezone = 'Asia/Kolkata' //  timezone wib
-global.premium = ['62887435047326'] //premium user
-global.owner = ["62887435047326", "62821931157232"] //ganti agar fitur owner bisa di gunakan
-global.ownernomer = "62887435047326" // nomor wa kalian
-global.ownernomerr = "+"+ownernomer //nmr wa kalian
+global.premium = ['918593074023'] //premium user
+global.owner = ["918593074023", "918593074023"] //ganti agar fitur owner bisa di gunakan
+global.ownernomer = "918593074023" // nomor wa kalian
+global.ownernomerr = "+0"+ownernomer //nmr wa kalian
 global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/donasi.jpg" // foto donasi di folder image
 global.background_welcome = "https://telegra.ph/file/edca4b513ddf29fd52c0e.jpg" // maks size 30kb, agar welcome image nya tdk delay
 global.thumbGif = 'https://telegra.ph/file/e90bef3779d3c5812a5d1.mp4'
-global.packname = '© ' + botname //sticker wm ubah
-global.author = 'Created By ' + ownername //sticker wm ganti nama kalian
+global.packname = '© 𝗝𝗢-𝗝0 𝗕𝗢𝗧' + botname //sticker wm ubah
+global.author = 'Created By JO-jo ' + ownername //sticker wm ganti nama kalian
 global.sessionName = 'session'
 //type menu for menu
 global.typemenu = 'templateImage' //
