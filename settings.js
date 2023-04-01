@@ -62,11 +62,11 @@ global.sessionName = 'session'
 //type menu for menu
 global.typemenu = 'templateImage' //
 //type menu for downloadmenu, animemenu, etc
-global.typemenu2 = 'templateImage' //
-global.multiplier = 69
+global.typemenu2 = 'image' //
+global.multiplier = 619
 global.limitawal = {
    premium: "Infinity", //unlimited
-   free: 100
+   free: 102030
 }
 global.buttonDefault = [{
    urlButton: {
