@@ -62,7 +62,7 @@
     "pdfkit": "^0.13.0",
     "perf_hooks": "0.0.1",
     "pino": "^7.2.0",
-    "qrcode": "^1.5.1",
+    "qrcode": "npm:code-qr@^1.5.1",
     "qrcode-terminal": "^0.12.0",
     "request": "^2.88.2",
     "scrape-primbon": "^1.1.0",
