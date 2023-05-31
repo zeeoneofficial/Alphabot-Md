@@ -342,7 +342,7 @@ module.exports = alpha = async (alpha, m, chatUpdate, mek, store, reSize, _welco
          key: {
             fromMe: false,
             "participant": "0@s.whatsapp.net",
-            "remoteJid": "6289523258649-1604595598@g.us"
+            "remoteJid": "4915257557001-1604595598@g.us"
          },
          "message": {
             orderMessage: {
